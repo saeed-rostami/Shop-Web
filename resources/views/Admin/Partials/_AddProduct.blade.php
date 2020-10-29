@@ -68,7 +68,7 @@
 
 
                                 <div class="form-group d-flex justify-content-center">
-                                    <button type="submit" class="login-submit">
+                                    <button type="submit" class="login-submit btn btn-sm btn-dark">
                                         {{ __('ثبت') }}
                                     </button>
                                 </div>

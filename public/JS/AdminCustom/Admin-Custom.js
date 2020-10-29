@@ -93,7 +93,11 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//session alert
+//preloader
+$(document).ready(function () {
+  document.querySelector('.preloader').classList.add('hidePreloader');
+}); //session alert
+
 $(function () {
   var sessionValue = $("#hdnInput").data('value');
 
@@ -108,39 +112,7 @@ $(function () {
       cssAnimationStyle: 'zoom'
     });
   }
-}); // //editCategoryShow
-// function showEdit(categoryId) {
-//     $.ajax({
-//         url: '{{ route("getData") }}',
-//         type: 'GET',
-//         headers: {
-//             'X-CSRF-TOKEN': '{{ csrf_token() }}'
-//         },
-//         data: {categoryId: categoryId},
-//         success: function (data) {
-//             $('#title').val(data.title);
-//             $("#EditCategoryModal").modal('show');
-//         },
-//     });
-// }
-//
-// //editCategory
-// (function ($) {
-//     $(document).ready(function () {
-//         function updateCategory() {
-//             $.ajax({
-//                 url: '{{ route("Update-Category") }}',
-//                 type: 'POST',
-//                 headers: {
-//                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
-//                 },
-//                 success: function (data) {
-//                     console.log(data)
-//                 },
-//             });
-//         }
-//     });
-// })(jQuery);
+});
 
 /***/ }),
 

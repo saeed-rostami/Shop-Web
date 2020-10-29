@@ -2,7 +2,7 @@
 @section('Content')
     @includeIf('Partials._messages')
     <div class="row">
-        <div class="sidenav col-3">
+        <div class="sidenav col-2">
             <a class="btn btn-block btn-warning" href="{{route('Admin-Categories')}}"><h6 class="text-dark">مدیریت دسته
                     های ورزشی</h6></a>
             <a class="btn btn-block btn-warning" href="{{route('Admin-Posts')}}"><h6 class="text-dark">مدیریت رشته های
@@ -12,7 +12,7 @@
 
 
         </div>
-        <div class="main col-9">
+        <div class="main col-10">
             @yield('Admin.Content')
         </div>
     </div>

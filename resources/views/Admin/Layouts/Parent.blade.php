@@ -34,6 +34,12 @@ header("Pragma: no-cache");
 ?>
 
 <div class="main">
+    <!--preloader-->
+    <div class="preloader d-flex justify-content-center align-items-center">
+        <img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">
+    </div>
+    <!--end-preloader-->
+
     <div class="container py-3">
         @yield("Content")
     </div>
@@ -45,7 +51,6 @@ header("Pragma: no-cache");
     {{--<script src="{{ asset('JS/app.js') }}"></script>--}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

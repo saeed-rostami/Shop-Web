@@ -59,9 +59,15 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
     Route::get('/edit/post/{post}', 'Admin\PostsController@edit')->name('edit-post');
     Route::put('/update-post/{post}', 'Admin\PostsController@update')->name('Update-Post');
 
+
+//   product-update
+    Route::get('/edit/product/{product}', 'Admin\ProductsController@edit')->name('edit-product');
+    Route::put('/update-product/{product}', 'Admin\ProductsController@update')->name('Update-Product');
+
 //    delete
     Route::delete('/delete-category/{category:title}', 'Admin\CategoriesController@deleteCategory')->name('Delete-Category');
     Route::delete('/delete-post/{post:title}', 'Admin\PostsController@deletePost')->name('Delete-Post');
+    Route::delete('/delete-product/{product:title}', 'Admin\ProductsController@deleteProduct')->name('Delete-Product');
 });
 
 

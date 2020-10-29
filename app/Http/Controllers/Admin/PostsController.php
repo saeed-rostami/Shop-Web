@@ -68,6 +68,10 @@ class PostsController extends Controller
                 'category_id' => $request->category_id,
                 'image' => $image
             ]);
+
+            $img = Image::make(public_path('/images/posts/' . $image))->resize('340', '255');
+            $img->save();
+
             return redirect()->route('Admin-Posts')->with('success', 'تغییرات با موفقیت اعمال شدند');
         } elseif ($request->image == null) {
             $post->update([

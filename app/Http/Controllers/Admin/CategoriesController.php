@@ -60,6 +60,10 @@ class CategoriesController extends Controller
                 'title' => $request->title,
                 'image' => $image
             ]);
+
+            $img = Image::make(public_path('/images/categories/' . $image))->resize('525', '295');
+            $img->save();
+
             return redirect()->route('Admin-Categories')->with('success', 'تغییرات با موفقیت اعمال شدند');
         } elseif ($request->image == null) {
             $category->update([
