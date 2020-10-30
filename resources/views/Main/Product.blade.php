@@ -26,8 +26,23 @@
                     <p class="text-muted">{{$product->description}}</p>
                 </div>
 
+                <div class="row my-3 m-md-0">
+                <div class="d-flex">
+                    <div class="text-white rounded product-property ml-1">
+                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->price}}  تومان </h5>
+                    </div>
+
+                    <div class="text-white rounded product-property ml-1">
+                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->year}}  </h5>
+                    </div>
+
+                    <div class="text-white rounded product-property ml-1">
+                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->coach}}  </h5>
+                    </div>
+                </div>
+                </div>
+
                 <div class="act d-flex justify-content-around text-white">
-                    <span>{{$product->price}}</span>
                     <form method="post" action="{{route('AddProduct')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$product->id}}">
@@ -40,7 +55,7 @@
 
                         <input type="hidden" name="image" value="{{json_encode($product->image[0])}}">
 
-                        <button type="submit" class="btn add-too-card-btn
+                        <button type="submit" class="btn custom-btn
                     ">
                             <img src="{{asset('images/add-to-basket.png')}}" alt="" style="width: 48px;height: 48px">
                             اضافه

@@ -40,7 +40,7 @@
 
                             <input type="hidden" name="image" value="{{json_encode($product->image[0])}}">
 
-                            <button type="submit" class="btn btn-sm btn-block add-too-card">
+                            <button type="submit" class="btn btn-sm btn-block custom-btn">
                                 <img src="{{asset
                                 ('images/add-to-basket.png')}}" alt="" style="width: 48px;
                                 height: 48px">

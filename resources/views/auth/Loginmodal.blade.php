@@ -65,7 +65,7 @@
                                 </div>
 
                                 <div class="form-group d-flex justify-content-center">
-                                    <button id="loginSubmit" type="submit" class="btn login-submit">
+                                    <button id="loginSubmit" type="submit" class="btn custom-btn">
                                         {{ __('ورود') }}
                                     </button>
                                 </div>

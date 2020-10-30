@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="form-group d-flex justify-content-center">
-                                <button id="registerSubmit" type="submit" class="btn login-submit">
+                                <button id="registerSubmit" type="submit" class="btn custom-btn">
                                     {{ __('ثبت نام') }}
                                 </button>
                             </div>

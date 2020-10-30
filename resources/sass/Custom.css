@@ -3,6 +3,7 @@
     --mainBlack: black;
     --mainGrey: #1f1e1e;
     --mainOrange: rebeccapurple;
+    --mainBlue: #524be5;
 }
 
 
@@ -266,20 +267,20 @@ body {
     width: calc(100% - 3rem);
 }
 
-.login-submit {
-    border: 2px solid var(--mainOrange)!important;
-    background: transparent !important;
-    color: var(--mainWhite)!important;
-    font-size: 1.2rem!important;
-    height: 40px!important;
-    width: auto!important;
-    min-width: 80px;
-    display: block!important;
-    margin: 1rem auto!important;
-    padding: .25rem!important;
-    transition: 250ms background ease-in!important;
-    cursor: pointer!important;
-}
+/*.login-submit {*/
+    /*border: 2px solid var(--mainOrange)!important;*/
+    /*background: transparent !important;*/
+    /*color: var(--mainWhite)!important;*/
+    /*font-size: 1.2rem!important;*/
+    /*height: 40px!important;*/
+    /*width: auto!important;*/
+    /*min-width: 80px;*/
+    /*display: block!important;*/
+    /*margin: 1rem auto!important;*/
+    /*padding: .25rem!important;*/
+    /*transition: 250ms background ease-in!important;*/
+    /*cursor: pointer!important;*/
+/*}*/
 
 .login-submit:hover {
     background: var(--mainOrange)!important;
@@ -323,11 +324,15 @@ body {
     cursor: pointer;
 }
 
-.add-too-card-btn{
-    border: 1px solid blueviolet!important;
+.custom-btn{
+    border-radius: 45%;
+    padding: 1rem;
+    border: 2px solid blueviolet!important;
     color: blueviolet !important;
+    font-size: 1.3rem;
 }
-.add-too-card-btn:hover{
+
+.custom-btn:hover{
     border: 1px solid blueviolet;
     background-color: var(--mainWhite);
     color: blueviolet;
@@ -335,6 +340,10 @@ body {
 
 .product-count{
     background-color: var(--mainOrange);
+}
+
+.product-property{
+    background-color: var(--mainBlue);
 }
 
 /*preloader*/
