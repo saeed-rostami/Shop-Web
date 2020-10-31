@@ -1,6 +1,12 @@
 @extends('Layouts.Parent')
 
+@section('Title')
+    آموزش های
+    {{$posts[0]['category']['title']}}
+@endsection
+
 @section('Content')
+
     <div class="container">
         @includeIf('Partials._breadcrumb')
         <h2 class="product-count text-white-50 badge badge-pill">تعداد رشته های ورزشی موجود : {{$counts}}

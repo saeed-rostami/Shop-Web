@@ -1,5 +1,10 @@
 @extends('Layouts.Parent')
 
+@section('Title')
+    آموزش های
+    {{$products[0]['post']['title']}}
+@endsection
+
 @section('Content')
     @includeIf('Partials._messages')
 

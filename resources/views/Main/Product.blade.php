@@ -1,5 +1,10 @@
 @extends('Layouts.Parent')
 
+@section('Title')
+    آموزش
+    {{$product->title}}
+@endsection
+
 @section('Content')
     @includeIf('Partials._messages')
     <div class="container">
@@ -19,14 +24,14 @@
                     </div>
                 </div>
                 {{--tags--}}
-            <div class="black-bg rounded">
-                <img src="{{asset('images/tag.png')}}" alt="">
-                <div class="d-flex justify-content-end text-muted">
-                    @foreach($product->tags as $tag)
-                        <a href="#" class="mr-1"><span class="purple">{{$tag->name}}</span></a>
-                    @endforeach
+                <div class="black-bg rounded">
+                    <img src="{{asset('images/tag.png')}}" alt="">
+                    <div class="d-flex justify-content-end text-muted">
+                        @foreach($product->tags as $tag)
+                            <a href="#" class="mr-1"><span class="purple">{{$tag->name}}</span></a>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
                 {{--tags--}}
             </div>
 
@@ -40,7 +45,7 @@
                     <h3 class="text-muted text-center">مشخصات</h3>
 
                     <div class="text-white ml-1 d-flex">
-                        <h5 class="text-muted ">{{$product->price}}  تومان </h5>
+                        <h5 class="text-muted ">{{$product->price}} تومان </h5>
                         <span class="purple font-weight-bold"> : قیمت</span>
                     </div>
 

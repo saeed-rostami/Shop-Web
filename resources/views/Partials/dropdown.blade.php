@@ -1,6 +1,6 @@
 <a id="navbarDropdown" class="d-inline-block nav-link dropdown-toggle p-0" href="#" role="button"
    data-toggle="dropdown"
-   aria-haspopup="true" aria-expanded="false" v-pre>
+   aria-haspopup="true" aria-expanded="false">
     <img src="{{asset('images/test-account.png')}}" alt="" style="width: 48px; height: 48px">
     <span>{{auth()->user()->fullName}}</span>
 </a>
