@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
+
 Route::get('/posts', 'PostController@all');
 
 Route::get('/', 'CategoryController@index')->name('Home');
@@ -77,6 +78,7 @@ Route::get('/{category:title}', 'PostController@index')->name('Category');
 Route::get('/{category:title}/posts', 'PostController@fetch_data');
 Route::get('/{category:title}/{post:title}', 'ProductController@index')->name('Posts');
 Route::get('/{category:title}/{post:title}/{product:slug}', 'ProductController@show')->name('Product');
+
 
 
 

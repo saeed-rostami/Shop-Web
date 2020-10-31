@@ -18,6 +18,16 @@
 
                     </div>
                 </div>
+                {{--tags--}}
+            <div class="bg-dark rounded">
+                <img src="{{asset('images/tag.png')}}" alt="">
+                <div class="d-flex justify-content-end text-muted">
+                    @foreach($product->tags as $tag)
+                        <a href="#" class="mr-1">{{$tag->name}}</a>
+                    @endforeach
+                </div>
+            </div>
+                {{--tags--}}
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-around">
@@ -26,20 +36,33 @@
                     <p class="text-muted">{{$product->description}}</p>
                 </div>
 
-                <div class="row my-3 m-md-0">
-                <div class="d-flex">
-                    <div class="text-white rounded product-property ml-1">
-                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->price}}  تومان </h5>
+                <div class="d-flex flex-column align-items-end">
+
+                    <div class="text-white ml-1 d-flex">
+                        <h5>{{$product->price}}  تومان </h5>
+                        <span> : قیمت</span>
                     </div>
 
-                    <div class="text-white rounded product-property ml-1">
-                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->year}}  </h5>
+                    <div class="text-white ml-1 d-flex ">
+                        <h5>30000$ </h5>
+                        <span>: قیمت در آمازون</span>
                     </div>
 
-                    <div class="text-white rounded product-property ml-1">
-                        <h5 class="px-1 py-1 px-md-2 py-md-3">{{$product->coach}}  </h5>
+                    <div class="text-white ml-1 d-flex">
+                        <h5 class="">{{$product->year}}  </h5>
+                        <span> : سال انتشار</span>
                     </div>
-                </div>
+
+                    <div class="text-white ml-1 d-flex">
+                        <h5 class="">{{$product->coach}}  </h5>
+                        <span> : گردآورنده</span>
+                    </div>
+
+                    <div class="text-white ml-1 d-flex">
+                        <h5 class="">{{$product->coach}}  </h5>
+                        <span> : مدت آموزش</span>
+                    </div>
+
                 </div>
 
                 <div class="act d-flex justify-content-around text-white">

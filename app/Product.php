@@ -24,6 +24,11 @@ class Product extends Model
         return $this->belongsTo(Post::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;

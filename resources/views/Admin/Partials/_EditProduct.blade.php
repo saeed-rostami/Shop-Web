@@ -47,20 +47,6 @@
                 <input type="text" value="{{$product->price}}" name="price" class="form-control">
             </div>
 
-
-            {{--category--}}
-            {{--<div class="form-group">--}}
-                {{--<label for="category_id">--}}
-                    {{--دسته ورزشی--}}
-                {{--</label>--}}
-                {{--<select name="category_id" class="form-control">--}}
-                    {{--<option>#</option>--}}
-                    {{--@foreach($categories as $category)--}}
-                        {{--<option value="{{$category->id}}">{{$category->title}}</option>--}}
-                    {{--@endforeach--}}
-                {{--</select>--}}
-            {{--</div>--}}
-
             {{--post--}}
             <div class="form-group">
                 <label for="category_id">

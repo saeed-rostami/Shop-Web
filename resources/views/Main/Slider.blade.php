@@ -21,7 +21,7 @@
                 <div class="card-footer text-capitalize d-flex flex-column justify-content-around text-white-50">
                     <p>{{Str::limit($prod->title ,'25')
                     }}</p>
-                    <span class="car-price">{{$prod->coach}} : توسط</span>
+                    <span class="car-price">{{$prod->coach}} : گرد آورنده</span>
                     <span class="car-price">قیمت :  {{$prod->price}} تومان </span>
                 </div>
             </div>
