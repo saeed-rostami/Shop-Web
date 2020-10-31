@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row mb-2">
+    <div class="row m-3">
         <div class="choose-field col d-flex flex-wrap text-uppercase justify-content-center align-items-center shadow">
             <h3 class="font-weight-bold align-self-center mx-1 text-light text-dynamic ">
                 آخرین آموزش های اضافه شده در سایت</h3>
@@ -18,11 +18,13 @@
                 </a>
 
                 <!--footer-->
-                <div class="card-footer text-capitalize d-flex flex-column justify-content-around text-white-50">
+                <div class="card-footer text-capitalize d-flex flex-column justify-content-around align-items-center text-white-50">
                     <p>{{Str::limit($prod->title ,'25')
                     }}</p>
-                    <span class="car-price">{{$prod->coach}} : گرد آورنده</span>
-                    <span class="car-price">قیمت :  {{$prod->price}} تومان </span>
+
+                    <div class="purple-bg rounded p-2">
+                        <h5 class="text-white-50">قیمت :  {{$prod->price}} تومان </h5>
+                    </div>
                 </div>
             </div>
         @endforeach

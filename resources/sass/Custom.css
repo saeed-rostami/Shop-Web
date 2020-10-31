@@ -6,6 +6,29 @@
     --mainBlue: #524be5;
 }
 
+.black {
+    color: var(--mainBlack);
+}
+
+.purple {
+    color: var(--mainOrange);
+}
+
+.blue {
+    color: var(--mainBlue);
+}
+
+.black-bg {
+    background-color: var(--mainBlack);
+}
+
+.purple-bg {
+    background-color: var(--mainOrange);
+}
+
+.blue-bg {
+    background-color: var(--mainBlue);
+}
 
 body {
     font-family: Parastoo !important;
@@ -128,7 +151,7 @@ body {
     background-color: var(--mainBlack) !important;
 }
 
-.slider-img{
+.slider-img {
     width: 100% !important;
     height: 300px;
 }
@@ -268,24 +291,24 @@ body {
 }
 
 /*.login-submit {*/
-    /*border: 2px solid var(--mainOrange)!important;*/
-    /*background: transparent !important;*/
-    /*color: var(--mainWhite)!important;*/
-    /*font-size: 1.2rem!important;*/
-    /*height: 40px!important;*/
-    /*width: auto!important;*/
-    /*min-width: 80px;*/
-    /*display: block!important;*/
-    /*margin: 1rem auto!important;*/
-    /*padding: .25rem!important;*/
-    /*transition: 250ms background ease-in!important;*/
-    /*cursor: pointer!important;*/
+/*border: 2px solid var(--mainOrange)!important;*/
+/*background: transparent !important;*/
+/*color: var(--mainWhite)!important;*/
+/*font-size: 1.2rem!important;*/
+/*height: 40px!important;*/
+/*width: auto!important;*/
+/*min-width: 80px;*/
+/*display: block!important;*/
+/*margin: 1rem auto!important;*/
+/*padding: .25rem!important;*/
+/*transition: 250ms background ease-in!important;*/
+/*cursor: pointer!important;*/
 /*}*/
 
 .login-submit:hover {
-    background: var(--mainOrange)!important;
-    color: var(--mainWhite)!important;
-    border: 2px solid var(--mainBlack)!important;
+    background: var(--mainOrange) !important;
+    color: var(--mainWhite) !important;
+    border: 2px solid var(--mainBlack) !important;
 }
 
 .rem, .forg {
@@ -320,34 +343,34 @@ body {
 }
 
 /*card*/
-.trash-btn{
+.trash-btn {
     cursor: pointer;
 }
 
-.custom-btn{
+.custom-btn {
     border-radius: 45%;
     padding: 1rem;
-    border: 2px solid blueviolet!important;
+    border: 2px solid blueviolet !important;
     color: blueviolet !important;
     font-size: 1.3rem;
 }
 
-.custom-btn:hover{
+.custom-btn:hover {
     border: 1px solid blueviolet;
     background-color: var(--mainWhite);
     color: blueviolet;
 }
 
-.product-count{
+.product-count {
     background-color: var(--mainOrange);
 }
 
-.product-property{
+.product-property {
     background-color: var(--mainBlue);
 }
 
 /*preloader*/
-.preloader{
+.preloader {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -356,7 +379,8 @@ body {
     background: var(--mainGrey);
     z-index: 999;
 }
-.hidePreloader{
+
+.hidePreloader {
     display: none !important;
 }
 
