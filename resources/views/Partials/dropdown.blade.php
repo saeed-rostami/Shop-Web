@@ -2,7 +2,7 @@
    data-toggle="dropdown"
    aria-haspopup="true" aria-expanded="false">
     <img src="{{asset('images/test-account.png')}}" alt="" style="width: 48px; height: 48px">
-    <span>{{auth()->user()->fullName}}</span>
+    <span class="d-none d-md-inline">{{auth()->user()->fullName}}</span>
 </a>
 
 <div class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="navbarDropdown">

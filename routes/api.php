@@ -36,11 +36,12 @@ Route::get('/email/verify/{id}/{hash}', "VerificationController@verify");
 //******************
 Route::namespace('Api')->group(function () {
 
-    Route::get('/index', 'CategoryController@index');
-    Route::get('/products', 'ProductController@index');
-    Route::get('/posts', 'PostController@index');
+//    Route::get('/index', 'CategoryController@index');
+//    Route::get('/products', 'ProductController@index');
+//    Route::get('/posts', 'PostController@index');
 
 
+    Route::get('/', 'CategoryController@index');
     Route::get('/{category:title}', 'PostController@index');
     Route::get('/{category:title}/{post:title}', 'ProductController@index');
     Route::get('/{category:title}/{post:title}/{product:slug}', 'ProductController@show');
