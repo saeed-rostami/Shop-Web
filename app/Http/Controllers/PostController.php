@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index(Request $request, Category $category)
     {
-        $posts = $category->posts()->paginate(9);
+        $posts = $category->posts()->paginate(6);
         $counts = $category->posts()->count();
 
         if (!count($posts)) {
@@ -32,7 +32,7 @@ class PostController extends Controller
 
     function fetch_data(Request $request, Category $category, Post $post)
     {
-        $posts = $category->posts()->paginate(9);
+        $posts = $category->posts()->paginate(6);
         return View::make('Partials._pagination')->with('posts', $posts)->render();
     }
 

@@ -74,6 +74,8 @@ class Auth extends Controller
         $request['password'] = Hash::make($request['password']);
         $user = User::query()->create($request->toArray());
 
+        $user->sendEmailVerificationNotification();
+
         return response([
             'message' => 'با موفقیت حساب کاربری شما ایجاد شد',
             'user' => $user,

@@ -94,10 +94,23 @@
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+  $(document).ajaxStart(function () {
+    console.log('started');
+    $.blockUI({
+      message: '<h4>در حال بارگیری...</h4>',
+      css: {
+        backgroundColor: '#663399',
+        color: '#fff'
+      }
+    });
+  });
+  $(document).ajaxStop(function () {
+    console.log('stoped');
+    $.unblockUI();
+  });
   $(document).on('click', '.pagination a', function (event) {
     event.preventDefault();
-    var page = $(this).attr('href').split('page=')[1]; // let category = window.location.pathname;
-
+    var page = $(this).attr('href').split('page=')[1];
     fetch_data(page);
   });
 
@@ -106,7 +119,6 @@ $(document).ready(function () {
     $.ajax({
       url: category + "/posts?page=" + page
     }).done(function (data) {
-      console.log(data);
       $("#data-post").html(data);
       location.hash = page;
     });

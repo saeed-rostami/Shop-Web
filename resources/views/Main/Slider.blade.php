@@ -12,7 +12,7 @@
         @foreach($prods as $prod)
             <div class="card car-card ml-2">
                 <a href="{{route('Product', [$prod->post->category->title, $prod->post->title,  $prod->slug])}}">
-                    <img loading="lazy" src="{{asset("images/placeholder-slider.png")}}"  data-src="{{asset
+                    <img src="{{asset
                     ('/images/products/'.array_values($prod->image)[0])}}" class="img-fluid
                     slider-img" alt="">
                 </a>

@@ -1,22 +1,31 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $(document).on('click', '.pagination a', function(event){
+    $(document).ajaxStart(function () {
+        console.log('started');
+        $.blockUI({
+            message: '<h4>در حال بارگیری...</h4>',
+            css: { backgroundColor: '#663399', color: '#fff' }
+        });
+    });
+    $(document).ajaxStop(function () {
+        $.unblockUI();
+    });
+
+    $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
         let page = $(this).attr('href').split('page=')[1];
-        // let category = window.location.pathname;
         fetch_data(page);
     });
 
-    function fetch_data(page)
-    {
+    function fetch_data(page) {
         let category = window.location.pathname;
         $.ajax({
             url: category + "/posts?page=" + page,
-        }).done(function (data) {
-            console.log(data)
-            $("#data-post").html(data);
-            location.hash = page;
-        });
+        })
+            .done(function (data) {
+                $("#data-post").html(data);
+                location.hash = page;
+            });
     }
 
 });

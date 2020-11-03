@@ -26,12 +26,14 @@ Route::group(['middleware' => 'auth:api', 'namespace' => 'Api'], function () {
 Route::namespace('Api')->group(function () {
     Route::post('/auth/register', "Auth@register");
     Route::post('/auth/login', "Auth@login");
+
+    //EMAIL_VERIFY
+    Route::get('/email/resend', "VerificationController@resend");
+    Route::get('/email/verify/{id}/{hash}', "VerificationController@verify");
 });
 
 
-//EMAIL_VERIFY
-Route::get('/email/resend', "VerificationController@resend");
-Route::get('/email/verify/{id}/{hash}', "VerificationController@verify");
+
 
 //******************
 Route::namespace('Api')->group(function () {
