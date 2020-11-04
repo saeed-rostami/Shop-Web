@@ -97,10 +97,11 @@ $(document).ready(function () {
   $(document).ajaxStart(function () {
     console.log('started');
     $.blockUI({
-      message: '<h4>در حال بارگیری...</h4>',
+      message: "<img src=\"http://127.0.0.1:8000/images/25.gif\" alt=\"\">",
       css: {
-        backgroundColor: '#663399',
-        color: '#fff'
+        backgroundColor: 'transparent',
+        color: '#663399',
+        border: 'none'
       }
     });
   });

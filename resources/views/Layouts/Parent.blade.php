@@ -53,7 +53,7 @@ header("Pragma: no-cache");
     <script src="{{ asset('JS/app.js') }}"></script>
 
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+    <script src="{{asset('JS/jquery.blockUI.js')}}"></script>
     @stack('postsPagination.js')
     @stack('productsPagination.js')
 

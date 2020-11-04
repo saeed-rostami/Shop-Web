@@ -26,7 +26,7 @@
                                      data-src="{{asset
                                 ("Images/Categories/".$category->image)}}" alt="#"
                                      class="gallery-img
-                                img-fluid">
+                                img-fluid rounded">
                             </div>
                         </a>
                     </div>
