@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../css-loader??ref--10-1!../postcss-loader/src??ref--10-2!./animate.min.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/animate.css/animate.min.css");
+var content = __webpack_require__(/*! !../css-loader??ref--11-1!../postcss-loader/src??ref--11-2!./animate.min.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/animate.css/animate.min.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -6384,7 +6384,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/animate.css/animate.min.css":
 /*!************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--10-1!./node_modules/postcss-loader/src??ref--10-2!./node_modules/animate.css/animate.min.css ***!
+  !*** ./node_modules/css-loader??ref--11-1!./node_modules/postcss-loader/src??ref--11-2!./node_modules/animate.css/animate.min.css ***!
   \************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6403,7 +6403,7 @@ exports.push([module.i, "@charset \"UTF-8\";/*!\n * animate.css - https://animat
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick-theme.css":
 /*!*********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--10-1!./node_modules/postcss-loader/src??ref--10-2!./node_modules/slick-carousel/slick/slick-theme.css ***!
+  !*** ./node_modules/css-loader??ref--11-1!./node_modules/postcss-loader/src??ref--11-2!./node_modules/slick-carousel/slick/slick-theme.css ***!
   \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6423,7 +6423,7 @@ exports.push([module.i, "@charset 'UTF-8';\n/* Slider */\n.slick-loading .slick-
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick.css":
 /*!***************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--10-1!./node_modules/postcss-loader/src??ref--10-2!./node_modules/slick-carousel/slick/slick.css ***!
+  !*** ./node_modules/css-loader??ref--11-1!./node_modules/postcss-loader/src??ref--11-2!./node_modules/slick-carousel/slick/slick.css ***!
   \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39355,7 +39355,7 @@ module.exports = "/fonts/vendor/slick-carousel/slick/slick.woff?b7c9e1e479de3b53
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--10-1!../../postcss-loader/src??ref--10-2!./slick-theme.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick-theme.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--11-1!../../postcss-loader/src??ref--11-2!./slick-theme.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick-theme.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -39385,7 +39385,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--10-1!../../postcss-loader/src??ref--10-2!./slick.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--11-1!../../postcss-loader/src??ref--11-2!./slick.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -52512,8 +52512,7 @@ $(function () {
   if (sessionValue) {
     Notiflix.Report.Warning("", sessionValue, "متوجه شدم");
   }
-}); // Lozad
-
+});
 var images = document.querySelectorAll("[data-src]");
 
 function preloadImage(img) {
@@ -52767,10 +52766,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/pagination.css":
+/*!***************************************!*\
+  !*** ./resources/sass/pagination.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/Custom.js ./resources/sass/app.scss ./resources/sass/Admin-Custom.css ./resources/sass/Breadcrumb.css ./resources/sass/Navbar.css ./resources/sass/Products.css ***!
-  \******************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/Custom.js ./resources/sass/app.scss ./resources/sass/Admin-Custom.css ./resources/sass/Breadcrumb.css ./resources/sass/Navbar.css ./resources/sass/Products.css ./resources/sass/pagination.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -52780,7 +52790,8 @@ __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resource
 __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\Admin-Custom.css */"./resources/sass/Admin-Custom.css");
 __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\Breadcrumb.css */"./resources/sass/Breadcrumb.css");
 __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\Navbar.css */"./resources/sass/Navbar.css");
-module.exports = __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\Products.css */"./resources/sass/Products.css");
+__webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\Products.css */"./resources/sass/Products.css");
+module.exports = __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\sass\pagination.css */"./resources/sass/pagination.css");
 
 
 /***/ })

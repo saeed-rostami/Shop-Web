@@ -7,6 +7,7 @@ use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
@@ -17,26 +18,19 @@ class ProductController extends Controller
      */
     public function index(Request $request, Category $category, Post $post, Product $product)
     {
-        $products = $post->products()->get();
+        $products = $post->products()->paginate(9);
         $counts = $post->products()->count();
-
-        if ($request->wantsJson()) {
-            if (!count($products)) {
-                return response()->json('در حال حاضر محتوایی برای این بخش وجود ندارد');
-            }
-            return response()->json([
-                'products' => $products,
-                'counts' => $counts,
-                'status' => 201
-            ]);
-
-        }
-
 
         if (!count($products)) {
             return abort(403, 'در حال حاضر محصولی برای این بخش وجود ندارد');
         }
         return view('Main.Products', compact(['products', 'counts']));
+    }
+
+    function fetch_data(Request $request, Category $category, Post $post , Product $product)
+    {
+        $products = $post->products()->paginate(9);
+        return View::make('Partials._productsPagination')->with('products', $products)->render();
     }
 
     /**

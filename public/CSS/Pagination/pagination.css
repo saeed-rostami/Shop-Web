@@ -1,0 +1,22 @@
+
+.pagination li {
+    padding-right: .75rem !important;
+    font-size: 1.5rem!important;
+}
+
+.pagination .page-link {
+    background-color: var(--mainOrange) !important;
+    border-color: var(--mainWhite) !important;
+    border: 1px solid;
+    border-radius: 25px !important;
+    color: var(--mainWhite) !important;
+}
+
+.pagination li.active .page-link {
+    background-color: var(--mainWhite) !important;
+    border: 1px solid;
+    border-color: var(--mainBlack) !important;
+    color: var(--mainBlack) !important;
+
+}
+

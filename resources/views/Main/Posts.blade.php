@@ -19,7 +19,7 @@
             </div>
         </div>
         <div>
-            @include('Partials._pagination')
+            @include('Partials._postsPagination')
         </div>
     </div>
 @endsection

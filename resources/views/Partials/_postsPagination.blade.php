@@ -13,14 +13,18 @@
             </a>
         </div>
     @endforeach
-    <div>
-        {{$posts->links()}}
-    </div>
+
+        <div class="my-3">
+            {{$posts->links()}}
+        </div>
+
+
 </div>
 
 
-@push('Pagination.js')
-    <script src="{{ asset('JS/Pagination/Pagination.js') }}"></script>
+
+@push('postsPagination.js')
+    <script src="{{ asset('JS/Pagination/postsPagination.js') }}"></script>
 @endpush
 
 

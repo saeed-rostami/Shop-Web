@@ -84,59 +84,17 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./resources/js/Pagination.js":
-/*!************************************!*\
-  !*** ./resources/js/Pagination.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $(document).ajaxStart(function () {
-    console.log('started');
-    $.blockUI({
-      message: '<h4>در حال بارگیری...</h4>',
-      css: {
-        backgroundColor: '#663399',
-        color: '#fff'
-      }
-    });
-  });
-  $(document).ajaxStop(function () {
-    console.log('stoped');
-    $.unblockUI();
-  });
-  $(document).on('click', '.pagination a', function (event) {
-    event.preventDefault();
-    var page = $(this).attr('href').split('page=')[1];
-    fetch_data(page);
-  });
-
-  function fetch_data(page) {
-    var category = window.location.pathname;
-    $.ajax({
-      url: category + "/posts?page=" + page
-    }).done(function (data) {
-      $("#data-post").html(data);
-      location.hash = page;
-    });
-  }
-});
-
-/***/ }),
-
-/***/ 1:
+/******/ ([
+/* 0 */,
+/* 1 */
 /*!******************************************!*\
   !*** multi ./resources/js/Pagination.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\js\Pagination.js */"./resources/js/Pagination.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Saeed\\PhpstormProjects\\Shopping-Master\\resources\\js\\Pagination.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
-
-/******/ });
+/******/ ]);

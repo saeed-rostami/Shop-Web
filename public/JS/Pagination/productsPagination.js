@@ -81,49 +81,60 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/Admin-Custom.js":
-/*!**************************************!*\
-  !*** ./resources/js/Admin-Custom.js ***!
-  \**************************************/
+/***/ "./resources/js/productsPagination.js":
+/*!********************************************!*\
+  !*** ./resources/js/productsPagination.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//preloader
 $(document).ready(function () {
-  document.querySelector('.preloader').classList.add('hidePreloader');
-}); //session alert
+  $(document).ajaxStart(function () {
+    console.log('started');
+    $.blockUI({
+      message: '<h4>در حال بارگیری...</h4>',
+      css: {
+        backgroundColor: '#663399',
+        color: '#fff'
+      }
+    });
+  });
+  $(document).ajaxStop(function () {
+    $.unblockUI();
+  });
+  $(document).on('click', '.pagination a', function (event) {
+    event.preventDefault();
+    var page = $(this).attr('href').split('page=')[1];
+    fetch_data(page);
+  });
 
-$(function () {
-  var sessionValue = $("#hdnInput").data('value');
-
-  if (sessionValue) {
-    Notiflix.Notify.Success(sessionValue, {
-      position: "right-bottom",
-      width: "400px",
-      borderRadius: 15,
-      fontSize: 18,
-      cssAnimation: true,
-      cssAnimationDuration: 400,
-      cssAnimationStyle: 'zoom'
+  function fetch_data(page) {
+    console.log(window.location.pathname);
+    var path = window.location.pathname;
+    $.ajax({
+      url: path + "/products?page=" + page
+    }).done(function (data) {
+      $("#data-product").html(data);
+      location.hash = page;
     });
   }
 });
 
 /***/ }),
 
-/***/ 3:
-/*!********************************************!*\
-  !*** multi ./resources/js/Admin-Custom.js ***!
-  \********************************************/
+/***/ 2:
+/*!**************************************************!*\
+  !*** multi ./resources/js/productsPagination.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\js\Admin-Custom.js */"./resources/js/Admin-Custom.js");
+module.exports = __webpack_require__(/*! C:\Users\Saeed\PhpstormProjects\Shopping-Master\resources\js\productsPagination.js */"./resources/js/productsPagination.js");
 
 
 /***/ })

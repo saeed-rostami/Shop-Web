@@ -6,6 +6,7 @@ use App\Category;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -31,10 +32,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+//        breadcrumbs
         Request::macro('breadcrumbs' , function (){
             return new Breadcrumbs($this);
         });
 
+//        composers
         View::composer(['Layouts.Header' , 'Layouts.Footer'], function ($view){
             $view->with('cats', Category::all());
         });

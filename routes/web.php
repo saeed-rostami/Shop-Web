@@ -76,7 +76,10 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
 
 Route::get('/{category:title}', 'PostController@index')->name('Category');
 Route::get('/{category:title}/posts', 'PostController@fetch_data');
+
 Route::get('/{category:title}/{post:title}', 'ProductController@index')->name('Posts');
+Route::get('/{category:title}/{post:title}/products', 'ProductController@fetch_data');
+
 Route::get('/{category:title}/{post:title}/{product:slug}', 'ProductController@show')->name('Product');
 
 
