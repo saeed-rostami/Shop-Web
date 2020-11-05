@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
 //        composers
-        View::composer(['Layouts.Header' , 'Layouts.Footer'], function ($view){
+        View::composer(['Layouts.Header' , 'Layouts.Footer' , 'Layouts.testHeader'], function ($view){
             $view->with('cats', Category::all());
         });
 
