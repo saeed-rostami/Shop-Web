@@ -118,8 +118,3 @@
 
 @includeIf('auth.Registermodal')
 @includeIf('auth.Loginmodal')
-
-<style>
-
-
-</style>
