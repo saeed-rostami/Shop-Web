@@ -5,7 +5,7 @@
     <span class="d-none d-md-inline">{{auth()->user()->fullName}}</span>
 </a>
 
-<div class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown">
 
     @if(auth()->user()->email == env('ADMIN_EMAIL'))
     <a class="dropdown-item mb-2" href="{{route('Admin-Panel')}}">

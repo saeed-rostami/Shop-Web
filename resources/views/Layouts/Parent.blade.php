@@ -22,6 +22,7 @@
     @stack('Products.css')
     @stack('Breadcrumb.css')
     @stack('Pagination.css')
+    @stack('searchNav.scss')
 
     <title>@yield('Title')</title>
 </head>

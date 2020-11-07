@@ -1,4 +1,4 @@
-<a class="d-lg-inline-block nav-link p-0 ml-3 pt-lg-2" href="{{route('CardIndex')}}" role="button">
+<a class="d-lg-inline-block nav-link p-0 ml-3" href="{{route('CardIndex')}}" role="button">
     <img src="{{asset('images/shopping-basket.png')}}" alt="">
 
     @if(Cart::count() > 0)

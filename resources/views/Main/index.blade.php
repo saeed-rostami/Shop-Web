@@ -1,7 +1,7 @@
 @extends('Layouts.Parent')
 @section('Title')
     فیلم های آموزش ورزش های رزمی و بدنسازی
-    @endsection
+@endsection
 
 @section('Content')
     @includeIf('Partials._messages')
