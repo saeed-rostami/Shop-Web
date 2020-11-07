@@ -1,92 +1,125 @@
-<header>
-    <nav id='cssmenu'>
-
-        <div class="logo d-lg-flex justify-content-center d-none"><a href="{{route('Home')}}"><h3
-                    class="brand-title">فروشگاه</h3>
-            </a>
-            <img class="rounded-circle" src="{{asset('images/logo.jpg')}}" alt="">
-        </div>
-        <div id="head-mobile"></div>
-        <div class="button"></div>
-        <ul>
-            <li><a href='{{route("Home")}}'>صفحه اصلی</a></li>
+@include('Partials._smExtraNavbar')
 
 
-            <li><a href='#'>آموزش ها</a>
-                <ul>
+<nav class="navbar navbar-expand-lg black-bg w-100">
+    {{--logo--}}
+    <a class="navbar-brand d-none d-md-block purple" href="{{route('Home')}}">
+        فروشگاه
+        <img class="rounded-circle ml-1" src="{{asset('images/logo.jpg')}}" alt="">
+    </a>
+    {{--end--logo--}}
+
+    {{--search--}}
+    <div>
+        <form class="form-inline my-2 my-lg-0 d-none d-lg-block">
+            <input class="form-control mr-sm-2" type="search" placeholder="آموزش مورد نظر خود را جستجو کنید"
+                   aria-label="Search">
+            <button class="btn my-2 my-sm-0 p-0" type="submit">
+                <img class="rounded-circle" src="{{asset('images/search.png')}}" alt="">
+            </button>
+        </form>
+    </div>
+    {{--end-search--}}
+
+    {{--navtoggler--}}
+    <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+            <i class="fa fa-bars fa-x"></i>
+        </span>
+    </button>
+    {{--end--navtogglec--}}
+
+    {{--nav--itms--}}
+    <div class="collapse navbar-collapse ml-4" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">ارتباط با ما <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">درباره ما</a>
+            </li>
+
+            {{--first-dropdown--}}
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle"
+                   type="button"
+                   role="button"
+                   id="dropdownMenu1"
+                   data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">
+                    آموزش ها
+                </a>
+
+                <ul class="dropdown-menu multi-level bg-black text-justify p-0" role="menu"
+                    aria-labelledby="dropdownMenu">
                     @foreach($cats as $cat)
-                        <li ><a href='{{route('Category' , $cat->title)}}'>{{$cat->title}}</a>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item purple"
+                               href='{{route('Category' , $cat->title)}}'>{{$cat->title}}</a>
                             @if($cat->posts->count())
-                                <ul>
+
+                                <ul class="dropdown-menu text-justify">
                                     @foreach($cat->posts as $item)
-                                        <li><a href='{{route('Posts', [$cat->title, $item->title])
+
+                                        <li class="dropdown-submenu "><a class="dropdown-item purple" href='{{route('Posts', [$cat->title, $item->title])
                                     }}'>{{$item->title}}</a></li>
                                     @endforeach
+
                                 </ul>
                             @endif
                         </li>
                     @endforeach
+
                 </ul>
+
             </li>
+            {{--dropdown--}}
 
 
-            <li><a href='#'>ارتباط با ما</a></li>
-
-
-            @guest()
-                <li class="mr-lg-5 d-none d-lg-block"><a type="button" href="" data-toggle="modal"
-                                                         data-target="#RegisterModal">
-                        <img src="{{asset('images/sign-up.png')}}" alt="" style="width: 38px; height: 38px">
-                        ثبت نام</a>
-                </li>
-
-                <li class="d-none d-md-block"><a type="button" href="" data-toggle="modal"
-                                                 data-target="#LoginModal">
-
-                        <img src="{{asset('images/login-rounded-right.png')}}" alt="" style="width: 38px; height: 38px">
-
-
-                        ورود</a></li>
-            @endguest
-
-            @auth()
-                <div class="d-none d-lg-block">
-                    @include('Partials._basketShop')
-                    @include('Partials.dropdown')
-                </div>
-            @endauth
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('Home')}}">صفحه اصلی</a>
+            </li>
         </ul>
+    </div>
+    {{--end--nav--itms--}}
 
+    {{--login--}}
+    @guest()
+        <div class="mr-5 ml-1 d-none d-md-block">
+            <a
+                class="btn rounded custom"
+                type="button" href="" data-toggle="modal"
+                data-target="#RegisterModal">
+                <img src="{{asset('images/sign-up.png')}}" alt="" style="width: 38px; height: 38px">
+                ثبت نام</a>
 
-        @guest()
-            <div class="d-lg-none logo d-flex justify-content-start">
+            <a
+                class="btn rounded custom"
+                type="button" href="" data-toggle="modal"
+                data-target="#LoginModal">
 
-                <a class="d-lg-inline-block nav-link p-0 ml-3" type="button" href="" data-toggle="modal"
-                   data-target="#LoginModal"
-                   role="button">
-                    <img src="{{asset('images/login-rounded-right.png')}}" alt="" style="width: 38px; height: 38px">
-                    <span>ورود</span>
-                </a>
-                <a class="d-lg-inline-block nav-link p-0 mr-2" type="button" href="" data-toggle="modal"
-                   data-target="#RegisterModal" role="button">
-                    <img src="{{asset('images/sign-up.png')}}" alt="" style="width: 38px; height: 38px">
+                <img src="{{asset('images/login-rounded-right.png')}}" alt="" style="width: 38px; height: 38px">
+                ورود</a>
+        </div>
+    @endguest
 
-                    <span>ثبت نام</span>
-                </a>
-            </div>
-        @endguest
+    @auth()
+        <div class="d-none d-md-flex justify-content-center">
+            @include('Partials._basketShop')
+            @include('Partials.dropdown')
+        </div>
+    @endauth
+    {{--login--}}
 
-        @auth()
-            <div class="d-lg-none logo d-flex justify-content-start">
-                @include('Partials._basketShop')
-                @include('Partials.dropdown')
-            </div>
-        @endauth
-    </nav>
+</nav>
 
-
-</header>
 
 @includeIf('auth.Registermodal')
 @includeIf('auth.Loginmodal')
+
+<style>
+
+
+</style>
