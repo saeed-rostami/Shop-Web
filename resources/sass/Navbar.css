@@ -18,6 +18,10 @@
     display: block;
 }
 
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
 /*.dropdown-submenu > a:after {*/
 /*display: block;*/
 /*content: " ";*/

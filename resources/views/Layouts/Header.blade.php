@@ -42,7 +42,8 @@
 
             {{--first-dropdown--}}
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle"
+                <a
+                    href="#" class="nav-link dropdown-toggle"
                    type="button"
                    role="button"
                    id="dropdownMenu1"
