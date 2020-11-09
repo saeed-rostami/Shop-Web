@@ -2,7 +2,7 @@
     <div class="row m-3">
         <div class="choose-field col d-flex flex-wrap text-uppercase justify-content-center align-items-center shadow">
             <h3 class="font-weight-bold align-self-center mx-1 text-light text-dynamic ">
-                آخرین آموزش های اضافه شده در سایت</h3>
+                آخرین آموزش های اضافه شده</h3>
         </div>
 
     </div>

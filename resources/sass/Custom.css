@@ -330,10 +330,6 @@ body {
     font-size: 18px;
 }
 
-.user-dropdown a:hover {
-    background-color: var(--mainOrange);
-    color: var(--mainWhite);
-}
 
 .have-error {
     border: 1px solid red !important;
