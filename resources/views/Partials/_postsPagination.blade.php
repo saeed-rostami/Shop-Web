@@ -14,7 +14,7 @@
         </div>
     @endforeach
 
-        <div class="my-3">
+        <div class="my-3 col-12 d-flex justify-content-center">
             {{$posts->links()}}
         </div>
 

@@ -67,14 +67,15 @@ body {
 .nav-link {
     font-size: 20px;
     font-weight: bold;
-    color: var(--mainOrange);
-
+    color: var(--mainWhite);
     text-transform: capitalize;
 }
 
 .nav-link:hover {
-    color: var(--mainWhite);
+    color: var(--mainOrange);
     transition: all 0.5s;
+    border-bottom: 1px solid;
+    border-bottom-color: var(--mainOrange);
 }
 
 

@@ -48,6 +48,10 @@
     margin-left: 10px;
     border-radius: 6px 0 6px 6px;
 }
+.dropdown-item:hover{
+    color: var(--mainOrange)!important;
+    background-color: var(--mainBlack);
+}
 
 .custom {
     border: 2px solid;
@@ -55,8 +59,11 @@
     border-bottom-color: var(--mainBlue);
     border-right-color: var(--mainOrange);
     border-left-color: var(--mainOrange);
-    color: var(--mainOrange);
+    color: var(--mainWhite);
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+}
+.custom:hover{
+    color: var(--mainOrange);
 }

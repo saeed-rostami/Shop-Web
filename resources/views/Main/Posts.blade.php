@@ -21,5 +21,7 @@
         <div>
             @include('Partials._postsPagination')
         </div>
+
+
     </div>
 @endsection

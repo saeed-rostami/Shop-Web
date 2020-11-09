@@ -57,14 +57,14 @@
                     aria-labelledby="dropdownMenu">
                     @foreach($cats as $cat)
                         <li class="dropdown-submenu">
-                            <a class="dropdown-item purple"
+                            <a class="dropdown-item text-white"
                                href='{{route('Category' , $cat->title)}}'>{{$cat->title}}</a>
                             @if($cat->posts->count())
 
                                 <ul class="dropdown-menu text-justify">
                                     @foreach($cat->posts as $item)
 
-                                        <li class="dropdown-submenu "><a class="dropdown-item purple" href='{{route('Posts', [$cat->title, $item->title])
+                                        <li class="dropdown-submenu "><a class="dropdown-item text-white" href='{{route('Posts', [$cat->title, $item->title])
                                     }}'>{{$item->title}}</a></li>
                                     @endforeach
 
