@@ -17,6 +17,12 @@ class Product extends Model
         return $this->slug;
     }
 
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = Str::slug($value);
+    }
+
     protected $casts = ['image' => Json::class];
 
     public function post()
@@ -29,10 +35,11 @@ class Product extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function setTitleAttribute($value)
+    public function orders()
     {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        return $this->belongsToMany(Order::class);
     }
+
+
 
 }

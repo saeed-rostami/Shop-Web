@@ -47,5 +47,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->orWhere('email', $username)->orWhere('phone', $username)->first();
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
 
 }

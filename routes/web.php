@@ -15,11 +15,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
 Route::get('/posts', 'PostController@all');
+
 
 Route::get('/', 'CategoryController@index')->name('Home');
 Route::post('/emailCheck', "HomeController@checkEmail")->name('EmailCheck');
@@ -34,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/remove-item/{product}', 'CardController@remove')->name('remove');
     Route::delete('/remove-all', 'CardController@removeAll')->name('removeAll');
     Route::get('/profile', "UserController@profile")->name('Profile');
+    Route::post('/buy', "OrderController@buy")->name('buy');
+
 });
 
 //admin*****

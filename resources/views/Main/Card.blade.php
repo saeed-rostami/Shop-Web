@@ -1,3 +1,4 @@
+
 @extends('Layouts.Parent')
 
 @section('Content')
@@ -106,7 +107,10 @@
 
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت نهایی</a>
+                     <form action="{{route('buy')}}" method="post">
+                         @csrf
+                         <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت نهایی</button>
+                     </form>
                     </div>
                 </div>
 
