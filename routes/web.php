@@ -36,8 +36,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/add-to-card', 'CardController@AddProduct')->name('AddProduct');
     Route::delete('/remove-item/{product}', 'CardController@remove')->name('remove');
     Route::delete('/remove-all', 'CardController@removeAll')->name('removeAll');
-    Route::get('/profile', "UserController@profile")->name('Profile');
+
     Route::post('/buy', "OrderController@buy")->name('buy');
+
+//    user-profile
+    Route::get('/profile', "UserController@profile")->name('Profile');
+    Route::get('/edit-profile', "UserController@editProfile")->name('Edit-Profile');
+    Route::put('/edit-profile', "UserController@storeProfile")->name('Store-Profile');
 
 });
 

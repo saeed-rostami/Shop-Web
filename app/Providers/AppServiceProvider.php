@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Category;
 use App\Post;
 use App\Product;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
@@ -31,6 +32,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
         Schema::defaultStringLength(191);
 
 //        breadcrumbs

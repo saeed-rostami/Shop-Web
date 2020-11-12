@@ -1,6 +1,5 @@
 @extends('Admin.Layouts.Parent')
 @section('Content')
-    @includeIf('Partials._messages')
     <div class="row">
         <div class="sidenav col-2">
             <a class="btn btn-block btn-warning" href="{{route('Admin-Categories')}}"><h6 class="text-dark">مدیریت دسته

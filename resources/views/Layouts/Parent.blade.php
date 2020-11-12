@@ -12,7 +12,7 @@
 
     <!-- Styles -->
 
-        <link href="{{ asset('CSS/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('CSS/app.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -42,8 +42,9 @@ header("Pragma: no-cache");
     <!--end-preloader-->
 
 
-
     <div class="container py-3">
+        @includeIf('Partials._messages')
+
         @yield("Content")
     </div>
 </div>

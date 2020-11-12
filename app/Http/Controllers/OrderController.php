@@ -17,6 +17,7 @@ class OrderController extends Controller
      */
     public function buy(Request $request)
     {
+
         $content = Cart::content();
         $order = new Order();
         $order->user_id = Auth::user()->id;

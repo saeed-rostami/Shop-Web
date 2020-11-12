@@ -41,6 +41,8 @@ header("Pragma: no-cache");
     <!--end-preloader-->
 
     <div class="container py-3">
+        @includeIf('Partials._messages')
+
         @yield("Content")
     </div>
 </div>

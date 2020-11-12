@@ -4,7 +4,6 @@
 @endsection
 
 @section('Content')
-    @includeIf('Partials._messages')
     <section class="gallery py-3 mb-4" id="galley">
         <div class="container">
 

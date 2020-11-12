@@ -8,15 +8,20 @@
 <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown">
 
     @if(auth()->user()->email == env('ADMIN_EMAIL'))
-    <a class="dropdown-item mb-2" href="{{route('Admin-Panel')}}">
-        <img src="{{asset('images/test-account.png')}}" alt="" style="width: 28px;height: 28px">
-        پنل مدیریت
-    </a>
+        <a class="dropdown-item mb-2" href="{{route('Admin-Panel')}}">
+            <img src="{{asset('images/gear.png')}}" alt="" style="width: 28px;height: 28px">
+            پنل مدیریت
+        </a>
     @endif
 
     <a class="dropdown-item mb-2" href="{{route('Profile')}}">
-        <img src="{{asset('images/test-account.png')}}" alt="" style="width: 28px;height: 28px">
-        پروفایل
+        <img src="{{asset('images/test-account.png')}}" alt="" style="width: 32px;height: 32px">
+        مشاهدده حساب کاربری
+    </a>
+
+    <a class="dropdown-item mb-2" href="{{route('Edit-Profile')}}">
+        <img src="{{asset('images/edit.png')}}" alt="" style="width: 28px;height: 28px">
+        ویرایش حساب کاربری
     </a>
 
     <a class="dropdown-item" href="{{ route('logout') }}"
