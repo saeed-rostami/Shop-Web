@@ -393,3 +393,24 @@ body {
 
 
 
+/*product-gallery-popup-slide*/
+.thumb {
+    margin-bottom: 15px;
+}
+
+.thumb:last-child {
+    margin-bottom: 0;
+}
+
+/* CSS Image Hover Effects: https://www.nxworld.net/tips/css-image-hover-effects.html */
+.thumb figure img {
+    filter: grayscale(100%);
+    transition: .3s ease-in-out;
+}
+
+.thumb figure:hover img {
+    filter: grayscale(0);
+}
+
+
+

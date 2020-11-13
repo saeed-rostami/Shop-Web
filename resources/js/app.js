@@ -14,6 +14,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'slick-carousel/slick/slick.min';
 
+import 'magnific-popup/dist/jquery.magnific-popup.min';
+import 'magnific-popup/dist/magnific-popup.css';
+
 import 'animate.css/animate.min.css'
 
 
