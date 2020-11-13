@@ -23,7 +23,7 @@
 
                     </div>
                 </div>
-                {{--tags--}}
+                tags
                 <div class="black-bg rounded">
                     <img src="{{asset('images/tag.png')}}" alt="">
                     <div class="d-flex justify-content-end text-muted">
@@ -32,7 +32,7 @@
                         @endforeach
                     </div>
                 </div>
-                {{--tags--}}
+                tags
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-around">
@@ -95,6 +95,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @push('Products.css')

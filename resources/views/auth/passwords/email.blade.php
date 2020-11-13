@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-dark text-white-50">
-                <div class="card-header">{{ __('تغییر رمز عبور') }}</div>
+                <div class="card-header">{{ __('تغییر رمز عبور') }}
+                    <img style="width: 40px; height: 40px" src="{{asset('images/forgot-password.png')}}" alt="">
+
+                </div>
+
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +22,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('پست الکترونیکی') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('پست الکترونیکی') }}
+
+                                <img style="width: 40px; height: 40px" src="{{asset('images/email.png')}}" alt="">
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,9 +40,9 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="login-submit">
+                                <a type="submit" class="btn custom-btn">
                                     {{ __('ارسال لینک بازگردانی رمز عبور') }}
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </form>

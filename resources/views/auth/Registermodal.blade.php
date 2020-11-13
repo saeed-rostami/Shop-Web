@@ -23,6 +23,8 @@
                             </div>
 
                             <div class="form-group row">
+                                <img style="width: 40px; height: 40px" src="{{asset('images/test-account.png')}}" alt="">
+
                                 <input id="name" type="text" class="form-control input" name="name"
                                        value="{{ old('name') }}" autocomplete="name" autofocus placeholder="نام">
 
@@ -30,6 +32,7 @@
 
 
                             <div class="form-group row">
+                                <img style="width: 40px; height: 40px" src="{{asset('images/family.png')}}" alt="">
 
                                 <input id="family" type="text" class="form-control input" name="family"
                                        value="{{ old('family') }}" autocomplete="family" autofocus
@@ -38,6 +41,7 @@
 
                             <div class="form-group row">
 
+                                <img style="width: 40px; height: 40px" src="{{asset('images/email.png')}}" alt="">
 
                                 <input id="email" class="form-control input" name="email" value="{{ old('email') }}"
                                        autocomplete="email" placeholder="پست الکترونیکی">
@@ -46,6 +50,7 @@
 
                             <div class="form-group row">
 
+                                <img style="width: 40px; height: 40px" src="{{asset('images/phone.png')}}" alt="">
 
                                 <input id="phone" class="form-control input" name="phone" value="{{ old('phone')
                                     }}" autocomplete="phone" placeholder="شماره موبایل">
@@ -54,6 +59,7 @@
 
 
                             <div class="form-group row">
+                                <img style="width: 40px; height: 40px" src="{{asset('images/password.png')}}" alt="">
 
                                 <input id="password" type="password" class="form-control input" name="password"
                                        autocomplete="new-password" placeholder="رمز عبور">
@@ -63,6 +69,7 @@
 
                             <div class="form-group row">
 
+                                <img style="width: 40px; height: 40px" src="{{asset('images/password.png')}}" alt="">
 
                                 <input id="password-confirm" type="password" class="form-control input"
                                        name="password_confirmation" autocomplete="new-password"

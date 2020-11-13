@@ -27,17 +27,17 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <img style="width: 40px; height: 40px" src="{{asset('images/phone.png')}}" alt="">
 
                                     <input type="text" class="form-control input" name="email"
                                            value="{{ old('email') }}" autocomplete="email" autofocus
                                            placeholder="پست الکترونیکی یا شماره موبایل">
 
-
                                 </div>
 
                                 <div class="form-group row">
 
-
+                                    <img style="width: 40px; height: 40px" src="{{asset('images/password.png')}}" alt="">
                                     <input type="password" class="form-control input" name="password"
                                            autocomplete="current-password" placeholder="رمز عبور">
 

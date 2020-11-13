@@ -14,7 +14,7 @@
 
          <div class="form-group text-muted">
              <label for="family">
-                 نام خانوادگی <img style="width: 40px; height: 40px" src="{{asset('images/test-account.png')}}" alt="">
+                 نام خانوادگی <img style="width: 40px; height: 40px" src="{{asset('images/family.png')}}" alt="">
              </label>
              <input type="text" class="form-control" id="family" name="family" value="{{$user->family}}">
          </div>

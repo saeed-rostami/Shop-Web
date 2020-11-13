@@ -331,7 +331,13 @@ body {
 
 .user-dropdown a {
     color: var(--mainWhite);
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.userFullname{
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 
