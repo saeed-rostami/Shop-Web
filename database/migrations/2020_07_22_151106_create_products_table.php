@@ -16,12 +16,15 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('post_id');
-            $table->string('title');
+            $table->string('title' );
             $table->string('slug')->unique();
             $table->text('description');
+            $table->text('extra_description');
             $table->string('image')->nullable();
-            $table->integer('price');
-            $table->string('coach')->nullable();
+            $table->float('price');
+            $table->float('off')->nullable();
+            $table->string('duration' , 32)->nullable();
+            $table->string('coach', 255)->nullable();
             $table->year('year');
             $table->softDeletes();
             $table->timestamps();
