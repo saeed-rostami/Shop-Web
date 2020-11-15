@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Product;
+use App\Tag;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -19,7 +20,8 @@ class ProductsController extends Controller
         $categories = Category::all();
         $posts = Post::all();
         $products = Product::all();
-        return view('Admin.Views.AdminProducts', compact(['categories', 'posts', 'products']));
+        $tags = Tag::all();
+        return view('Admin.Views.AdminProducts', compact(['categories', 'posts', 'products', 'tags']));
     }
 
 //    store
@@ -45,13 +47,14 @@ class ProductsController extends Controller
             }
         }
 
-
         $product->image = $file;
         $product->save();
 
         foreach ($file as $image) {
             $img = Image::make(public_path('/images/products/' . $image))->resize('500', '650');
             $img->save();
+
+            $product->tags()->sync($request->tags, false);
         }
 
         return redirect()->back()->with('success', 'محصول جدید با موفقیت ثبت شد');
@@ -62,7 +65,8 @@ class ProductsController extends Controller
     {
         $categories = Category::all();
         $posts = Post::all();
-        return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories']));
+        $tags = Tag::all();
+        return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories', 'tags']));
     }
 
     public function update(Request $request, Product $product)
@@ -77,9 +81,9 @@ class ProductsController extends Controller
             $title = $request->title;
             $newImages = $request->file('image');
 
-            foreach ($newImages as $newImage){
+            foreach ($newImages as $newImage) {
                 $extension = $newImage->getClientOriginalName();
-                $image = time()."." .$title . "." . $extension;
+                $image = time() . "." . $title . "." . $extension;
                 $newImage->move("Images/Products/", $image);
 
                 $images[] = $image;
@@ -95,15 +99,23 @@ class ProductsController extends Controller
                 'coach' => $request->coach,
                 'year' => $request->year,
                 'image' => $images,
+
             ]);
+
+
+            if (isset($request->tags)) {
+                $product->tags()->sync($request->tags);
+            } else {
+                $product->tags()->sync(array());
+
+            }
 
             foreach ($images as $image) {
                 $img = Image::make(public_path('/images/products/' . $image))->resize('500', '650');
                 $img->save();
             }
             return redirect()->route('Admin-Products')->with('success', 'تغییرات با موفقیت اعمال شدند');
-        }
-        elseif ($request->image == null) {
+        } elseif ($request->image == null) {
             $product->update([
                 'title' => $request->title,
                 'description' => $request->description,
@@ -112,6 +124,15 @@ class ProductsController extends Controller
                 'coach' => $request->coach,
                 'year' => $request->year,
             ]);
+
+
+            if (isset($request->tags)) {
+                $product->tags()->sync($request->tags);
+            } else {
+                $product->tags()->sync(array());
+
+            }
+
             return redirect()->route('Admin-Products')->with('success', 'تغییرات با موفقیت اعمال شدند');
         } else
             return redirect()->back()->with('success', 'تغییری اعمال نشد');

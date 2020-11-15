@@ -55,11 +55,13 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
     Route::get('/categories', 'Admin\CategoriesController@categories')->name('Admin-Categories');
     Route::get('/posts', 'Admin\PostsController@posts')->name('Admin-Posts');
     Route::get('/products', 'Admin\ProductsController@products')->name('Admin-Products');
+    Route::get('/tags', 'Admin\TagController@index')->name('Admin-Tags');
 
 //    store
     Route::post('/store-category', 'Admin\CategoriesController@storeCategory')->name('storeCategory');
     Route::post('/store-post', 'Admin\PostsController@storePost')->name('storePost');
     Route::post('/store-product', 'Admin\ProductsController@storeProduct')->name('storeProduct');
+    Route::post('/store-tag', 'Admin\TagController@storeTag')->name('storeTag');
 
 //update***
 //    category-update

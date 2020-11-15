@@ -9,7 +9,6 @@
                 <h4 class="modal-title">وارد کردن محصول جدید</h4>
             </div>
             <div class="modal-body">
-                {{--body--}}
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -25,7 +24,7 @@
 
                                 <div class="form-group row">
                                     <textarea type="text" class="form-control input" name="description"
-                                           value="{{ old('description') }}" autocomplete="description" autofocus
+                                              value="{{ old('description') }}" autocomplete="description" autofocus
                                               placeholder="توضیحات محصول"></textarea>
                                 </div>
 
@@ -49,6 +48,9 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="post_id" class="text-primary">
+                                        رشته ورزشی
+                                    </label>
                                     <select name="post_id" class="form-control">
                                         <option>#</option>
                                         @foreach($posts as $post)
@@ -59,6 +61,20 @@
 
                                 </div>
 
+                                {{--tags--}}
+                                <div class="form-group row">
+                                    <label for="tags[]" class="text-primary">
+                                        برچسب ها
+                                    </label>
+                                    <select name="tags[]" class="form-control js-example-basic-multiple"
+                                            multiple="multiple">
+                                        @foreach($tags as $tag)
+                                            <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                        @endforeach
+
+                                    </select>
+
+                                </div>
 
 
                                 <div class="form-group row">
@@ -77,9 +93,10 @@
 
                     </div>
                 </div>
-                {{--body--}}
             </div>
         </div>
 
     </div>
 </div>
+
+

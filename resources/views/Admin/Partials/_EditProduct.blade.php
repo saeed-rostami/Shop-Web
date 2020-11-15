@@ -53,9 +53,24 @@
                     رشته ورزشی
                 </label>
                 <select name="post_id" class="form-control">
-                    <option>#</option>
+                    <option value="{{$product->post->id}}">{{$product->post->title}}</option>
                     @foreach($posts as $post)
                         <option value="{{$post->id}}">{{$post->title}}</option>
+                    @endforeach
+
+                </select>
+
+            </div>
+
+            {{--tags--}}
+            <div class="form-group">
+                <label for="tags">
+                    برچسب ها
+                </label>
+                <select name="tags[]" class="form-control js-example-basic-multiple"
+                        multiple="multiple">
+                    @foreach($tags as $tag)
+                        <option value="{{$tag->id}}">{{$tag->name}}</option>
                     @endforeach
 
                 </select>
@@ -76,3 +91,9 @@
         </form>
     </div>
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2().val({!! json_encode($product->tags->pluck('id')) !!}).trigger('change')
+    });
+</script>

@@ -8,6 +8,8 @@
                     های ورزشی</h6></a>
             <a class="btn btn-block btn-warning" href="{{route('Admin-Products')}}"><h6 class="text-dark">مدیریت
                     محصولات</h6></a>
+            <a class="btn btn-block btn-warning" href="{{route('Admin-Tags')}}"><h6 class="text-dark">مدیریت
+                    برچسب ها</h6></a>
 
 
         </div>

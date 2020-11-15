@@ -411,3 +411,14 @@ body {
     filter: grayscale(0);
 }
 
+/*tags*/
+.tags span{
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--purple);
+}
+
+.tags a{
+    text-decoration: none;
+}
+

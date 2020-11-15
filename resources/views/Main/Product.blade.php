@@ -25,7 +25,6 @@
             </div>
             {{--end-products-gallery--}}
 
-
             {{--products-detail--}}
             <div class="col-12 col-md-6">
                 <div class=" d-flex flex-column justify-content-around shadow">
@@ -87,9 +86,16 @@
                         </form>
                     </div>
                 </div>
+
+                {{--tags--}}
+                @include('Partials._productTags')
+                {{--tags--}}
             </div>
             {{--end-products-detail--}}
+
         </div>
+
+
     </section>
 
 @endsection

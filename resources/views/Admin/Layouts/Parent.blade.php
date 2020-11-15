@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-
     <link href="{{ asset('CSS/AdminCustom/Admin-Custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('CSS/select2.min.css') }}" rel="stylesheet">
 
 
     <title>@yield('Admin-Panel')</title>
@@ -50,9 +50,9 @@ header("Pragma: no-cache");
 @section('script')
     <!-- Scripts -->
 
-    {{--<script src="{{ asset('JS/app.js') }}"></script>--}}
+    {{--<script src="{{ asset('JS/jquery-3.5.1.js') }}" defer></script>--}}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -65,9 +65,10 @@ header("Pragma: no-cache");
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="{{ asset('JS/AdminCustom/Admin-Custom.js') }}"></script>
 
+    <script src="{{ asset('JS/AdminCustom/Admin-Custom.js') }}"></script>
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
+    <script src="{{asset('JS/select2.min.js')}}"></script>
 @show
 
 </body>

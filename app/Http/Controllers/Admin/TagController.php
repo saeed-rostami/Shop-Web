@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\Product;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class TagController extends Controller
      */
     public function index()
     {
-
+        $tags = Tag::all();
+        return view('Admin.Views.AdminTags', compact('tags'));
     }
 
     /**
@@ -34,9 +36,14 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeTag(Request $request)
     {
-        //
+        $tag = new Tag();
+        $tag->name = $request->name;
+        $tag->save();
+
+        return redirect()->back()->with('success', 'برچسب جدید با موفقیت ثبت شد');
+
     }
 
     /**
