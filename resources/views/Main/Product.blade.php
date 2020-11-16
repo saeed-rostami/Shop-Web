@@ -31,6 +31,7 @@
                     <div class="info text-white text-center">
                         <h1>{{$product->title}}</h1>
                         <p class="text-muted">{{$product->description}}</p>
+                        <p class="text-muted">{{$product->extra_description}}</p>
                     </div>
 
                     <div class="d-flex flex-column align-items-end black rounded p-2 mb-3">
@@ -39,6 +40,11 @@
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->price}} تومان </h5>
                             <span class="purple font-weight-bold"> : قیمت</span>
+                        </div>
+
+                        <div class="text-white ml-1 d-flex">
+                            <h5 class="text-muted ">{{$product->off}} تومان </h5>
+                            <span class="purple font-weight-bold"> : تخفیف</span>
                         </div>
 
                         <div class="text-white ml-1 d-flex ">
@@ -57,7 +63,7 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->coach}}  </h5>
+                            <h5 class="text-muted ">{{$product->duration}}  </h5>
                             <span class="purple font-weight-bold"> : مدت آموزش</span>
                         </div>
 

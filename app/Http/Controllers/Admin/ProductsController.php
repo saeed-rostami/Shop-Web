@@ -30,9 +30,12 @@ class ProductsController extends Controller
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
+        $product->extra_description = $request->extra_description;
         $product->post_id = $request->post_id;
         $product->price = $request->price;
+        $product->off = $request->off;
         $product->coach = $request->coach;
+        $product->duration = $request->duration;
         $product->year = $request->year;
 
         if ($request->hasFile('image')) {
@@ -94,9 +97,12 @@ class ProductsController extends Controller
             $product->update([
                 'title' => $request->title,
                 'description' => $request->description,
+                'extra_description' => $request->extra_description,
                 'post_id' => $request->post_id,
                 'price' => $request->price,
+                'off' => $request->off,
                 'coach' => $request->coach,
+                'duration' => $request->duration,
                 'year' => $request->year,
                 'image' => $images,
 
@@ -119,9 +125,12 @@ class ProductsController extends Controller
             $product->update([
                 'title' => $request->title,
                 'description' => $request->description,
+                'extra_description' => $request->extra_description,
                 'post_id' => $request->post_id,
                 'price' => $request->price,
+                'off' => $request->off,
                 'coach' => $request->coach,
+                'duration' => $request->duration,
                 'year' => $request->year,
             ]);
 

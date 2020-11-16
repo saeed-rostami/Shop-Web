@@ -18,7 +18,9 @@
                 <th scope="col">دسته ورزشی</th>
                 <th scope="col">آموزش دهندگان</th>
                 <th scope="col">قیمت</th>
+                <th scope="col">تخفیف</th>
                 <th scope="col">سال انتشار</th>
+                <th scope="col">مدت دوره</th>
                 <th scope="col"> عملیات حذف</th>
                 <th scope="col"> عملیات ویرایش</th>
             </tr>
@@ -33,7 +35,9 @@
                     <td>{{$product->post->category->title}}</td>
                     <td>{{$product->coach}}</td>
                     <td>{{$product->price}}</td>
+                    <td>{{$product->off}}</td>
                     <td>{{$product->year}}</td>
+                    <td>{{$product->duration}}</td>
                     <td>
                         <form action="{{route('Delete-Product' , $product->title)}}" method="post">
                             @csrf

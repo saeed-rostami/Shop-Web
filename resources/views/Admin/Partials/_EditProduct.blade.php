@@ -23,6 +23,18 @@
                 <input type="text" value="{{$product->description}}" name="description" class="form-control">
             </div>
 
+            {{--extra-description--}}
+
+            <div class="form-group">
+                <label for="extra_description">
+                    توضیحات اضافه محصول
+                </label>
+                <input type="text" class="form-control" name="extra_description"
+                       value="{{$product->extra_description}}" autocomplete="extra_description"
+                       autofocus
+                       placeholder="توضیحات اضافه محصول">
+            </div>
+
             {{--coach--}}
             <div class="form-group">
                 <label for="coach">
@@ -45,6 +57,26 @@
                     قیمت
                 </label>
                 <input type="text" value="{{$product->price}}" name="price" class="form-control">
+            </div>
+
+            {{--off--}}
+            <label for="off">
+                تخفیف
+            </label>
+            <div class="form-group">
+                <input type="text" class="form-control" name="off"
+                       value="{{ $product->off }}"
+                       placeholder="تخفیف">
+            </div>
+
+            {{--duration--}}
+            <label for="duration">
+                مدت زمان آموزش
+            </label>
+            <div class="form-group">
+                <input type="text" class="form-control" name="duration"
+                       value="{{ $product->duration }}"
+                       placeholder=" مدت زمان آموزش">
             </div>
 
             {{--post--}}

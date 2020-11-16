@@ -10,7 +10,7 @@ use App\Casts\Json;
 class Product extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'image' , 'description' , 'price' , 'year' , 'coach' , 'post_id'];
+    protected $fillable = ['title', 'image' , 'description' , 'extra_description' , 'price' , 'year' , 'coach' , 'post_id' , 'duration' , 'off' ];
 
     public function breadcrumbName()
     {

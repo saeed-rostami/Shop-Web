@@ -1,8 +1,11 @@
 <a id="navbarDropdown" class="d-inline-block nav-link dropdown-toggle p-0" href="#" role="button"
    data-toggle="dropdown"
    aria-haspopup="true" aria-expanded="false">
+    @includeIf('Partials._emailActivationBadge')
+
     <img src="{{asset('images/test-account.png')}}" alt="" style="width: 48px; height: 48px">
     <span class="d-none d-md-inline userFullname">{{auth()->user()->fullName}}</span>
+
 </a>
 
 <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown">
@@ -15,6 +18,7 @@
     @endif
 
     <a class="dropdown-item mb-2" href="{{route('Profile')}}">
+      @includeIf('Partials._emailActivationBadge')
         <img src="{{asset('images/test-account.png')}}" alt="" style="width: 32px;height: 32px">
         مشاهدده حساب کاربری
     </a>

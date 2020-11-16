@@ -16,37 +16,66 @@
                                   enctype="multipart/form-data">
                                 @csrf
 
+                                {{--title--}}
                                 <div class="form-group row">
                                     <input type="text" class="form-control input" name="title"
                                            value="{{ old('title') }}" autocomplete="title" autofocus
                                            placeholder="تیتر محصول">
                                 </div>
 
+                                {{--description--}}
                                 <div class="form-group row">
                                     <textarea type="text" class="form-control input" name="description"
                                               value="{{ old('description') }}" autocomplete="description" autofocus
                                               placeholder="توضیحات محصول"></textarea>
                                 </div>
 
+                                {{--extra-description--}}
+                                <div class="form-group row">
+                                    <textarea type="text" class="form-control input" name="extra_description"
+                                              value="{{ old('extra_description') }}" autocomplete="extra_description"
+                                              autofocus
+                                              placeholder="(توضیحات اضافه محصول(اختیاری"></textarea>
+                                </div>
+
+                                {{--coach--}}
                                 <div class="form-group row">
                                     <input type="text" class="form-control input" name="coach"
                                            value="{{ old('coach') }}" autocomplete="coach" autofocus
-                                           placeholder="آموزش دهنده یا تولید کننده">
+                                           placeholder="(آموزش دهنده یا تولید کننده(اختیاری">
                                 </div>
 
 
+                                {{--year--}}
                                 <div class="form-group row">
                                     <input type="text" class="form-control input" name="year"
                                            value="{{ old('year') }}" autocomplete="year" autofocus
                                            placeholder="سال انتشار">
                                 </div>
 
+                                {{--price--}}
                                 <div class="form-group row">
                                     <input type="text" class="form-control input" name="price"
                                            value="{{ old('price') }}" autocomplete="price" autofocus
                                            placeholder="قیمت">
                                 </div>
 
+                                {{--off--}}
+                                <div class="form-group row">
+                                    <input type="text" class="form-control input" name="off"
+                                           value="{{ old('off') }}" autocomplete="off" autofocus
+                                           placeholder="(تخفیف(اختیاری">
+                                </div>
+
+                                {{--duration--}}
+                                <div class="form-group row">
+                                    <input type="time" class="form-control input" name="duration"
+                                           value="{{ old('duration') }}" autocomplete="duration" autofocus
+                                           placeholder="(مدت آموزش(اختیاری">
+                                </div>
+
+
+                                {{-- رشته ورزشی--}}
                                 <div class="form-group row">
                                     <label for="post_id" class="text-primary">
                                         رشته ورزشی

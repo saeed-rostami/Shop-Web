@@ -19,11 +19,11 @@ class CreateProductsTable extends Migration
             $table->string('title' );
             $table->string('slug')->unique();
             $table->text('description');
-            $table->text('extra_description');
+            $table->text('extra_description')->nullable();
             $table->string('image')->nullable();
-            $table->float('price');
-            $table->float('off')->nullable();
-            $table->string('duration' , 32)->nullable();
+            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('off')->nullable();
+            $table->time('duration')->nullable();
             $table->string('coach', 255)->nullable();
             $table->year('year');
             $table->softDeletes();

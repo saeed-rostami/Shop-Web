@@ -35,7 +35,7 @@
                                 <img style="width: 40px; height: 40px" src="{{asset('images/family.png')}}" alt="">
 
                                 <input id="family" type="text" class="form-control input" name="family"
-                                       value="{{ old('family') }}" autocomplete="family" autofocus
+                                       value="{{ old('family') }}" autocomplete="family"
                                        placeholder="نام خانوادگی">
                             </div>
 
@@ -44,7 +44,7 @@
                                 <img style="width: 40px; height: 40px" src="{{asset('images/email.png')}}" alt="">
 
                                 <input id="email" class="form-control input" name="email" value="{{ old('email') }}"
-                                       autocomplete="email" placeholder="پست الکترونیکی">
+                                       autocomplete="email" placeholder="(پست الکترونیکی (اختیاری">
 
                             </div>
 

@@ -128,7 +128,6 @@ $(function () {
                 wordOnly: true
             },
             email: {
-                required: true,
                 emailCustom: true,
                 remote: {
                     url: 'http://127.0.0.1:8000/emailCheck',
@@ -146,8 +145,8 @@ $(function () {
             phone: {
                 required: true,
                 digits: true,
-                maxlength: 10,
-                minlength: 10,
+                maxlength: 11,
+                minlength: 11,
                 remote: {
                     url: 'http://127.0.0.1:8000/phoneCheck',
                     type: 'POST',
@@ -189,7 +188,6 @@ $(function () {
             },
 
             email: {
-                required: 'لطفا ایمیل را وارد کنید',
                 emailCustom: 'لطفا یک ایمیل معتبر وارد کنید',
                 remote: 'این ایمیل توسط کاربر دیگری از قبل در سیستم ثبت شده است'
             },
@@ -197,8 +195,8 @@ $(function () {
             phone: {
                 required: 'لطفا شماره موبایل را وارد کنید',
                 digits: 'لطفا شماره موبایل معتبر وارد کنید',
-                maxlength: 'تعداد شماره موبایل باید 10 عدد باشد',
-                minlength: 'تعداد شماره موبایل باید 10 عدد باشد',
+                maxlength: 'تعداد شماره موبایل باید 11 عدد باشد',
+                minlength: 'تعداد شماره موبایل باید 11 عدد باشد',
                 remote: 'این شماره توسط کاربر دیگری از قبل در سیستم ثبت شده است'
             },
             password: {
@@ -223,7 +221,7 @@ $(function () {
             position: "right-bottom",
             width: "400px",
             borderRadius: 15,
-            fontSize: 18,
+            fontSize: 20,
             cssAnimation: true, cssAnimationDuration: 400, cssAnimationStyle: 'zoom',
         });
     }
@@ -232,7 +230,7 @@ $(function () {
 $(function () {
     let sessionValue = $("#errorInput").data('value');
     if (sessionValue) {
-        Notiflix.Report.Failure("نا موفق",
+        Notiflix.Report.Failure("عملیات نا موفق",
             "ایمیل یا رمز عبور وارد شده اشتباه میباشد",
             'متوجه شدم');
     }
