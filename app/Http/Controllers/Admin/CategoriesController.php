@@ -20,6 +20,7 @@ class CategoriesController extends Controller
 //    store
     public function storeCategory(Request $request)
     {
+
         $category = new Category();
         $category->title = $request->title;
         $image = $request->file('image');

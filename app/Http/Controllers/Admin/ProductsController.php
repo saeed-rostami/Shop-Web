@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Product;
 use App\Tag;
+use App\Trainer;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -21,7 +22,8 @@ class ProductsController extends Controller
         $posts = Post::all();
         $products = Product::all();
         $tags = Tag::all();
-        return view('Admin.Views.AdminProducts', compact(['categories', 'posts', 'products', 'tags']));
+        $trainers = Trainer::all();
+        return view('Admin.Views.AdminProducts', compact(['categories', 'posts', 'products', 'tags', 'trainers']));
     }
 
 //    store
@@ -34,7 +36,7 @@ class ProductsController extends Controller
         $product->post_id = $request->post_id;
         $product->price = $request->price;
         $product->off = $request->off;
-        $product->coach = $request->coach;
+        $product->trainer_id = $request->trainer_id;
         $product->duration = $request->duration;
         $product->year = $request->year;
 
@@ -69,7 +71,8 @@ class ProductsController extends Controller
         $categories = Category::all();
         $posts = Post::all();
         $tags = Tag::all();
-        return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories', 'tags']));
+        $trainers = Trainer::all();
+        return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories', 'tags', 'trainers']));
     }
 
     public function update(Request $request, Product $product)
@@ -101,7 +104,7 @@ class ProductsController extends Controller
                 'post_id' => $request->post_id,
                 'price' => $request->price,
                 'off' => $request->off,
-                'coach' => $request->coach,
+                'trainer_id' => $request->trainer_id,
                 'duration' => $request->duration,
                 'year' => $request->year,
                 'image' => $images,
@@ -129,7 +132,7 @@ class ProductsController extends Controller
                 'post_id' => $request->post_id,
                 'price' => $request->price,
                 'off' => $request->off,
-                'coach' => $request->coach,
+                'trainer_id' => $request->trainer_id,
                 'duration' => $request->duration,
                 'year' => $request->year,
             ]);

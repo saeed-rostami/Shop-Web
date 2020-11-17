@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Category;
 use App\Post;
 use App\Product;
+use App\Trainer;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,10 @@ class RouteServiceProvider extends ServiceProvider
 
        Route::bind('slug', function ($slug){
         return Product::query()->where('slug', $slug)->first();
+    });
+
+       Route::bind('name', function ($name){
+        return Trainer::query()->where('name', $name)->first();
     });
 
         parent::boot();

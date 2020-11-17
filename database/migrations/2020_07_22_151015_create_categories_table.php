@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('title' , 255);
             $table->string('image', 255);
+            $table->unsignedBigInteger('views')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

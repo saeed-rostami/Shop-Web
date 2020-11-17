@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Post;
+use App\Trainer;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class TrainersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Category $category)
+    public function index()
     {
-        $categories = Category::query()->orderByDesc('views')->get();
-        return view('Main.index', compact('categories'));
+        $trainers = Trainer::all();
+        return view('Main.Trainers' , compact('trainers'));
     }
 
     /**
@@ -32,7 +31,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,10 +42,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Category $category
+     * @param  \App\Trainer  $trainers
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Trainer $trainers)
     {
         //
     }
@@ -54,10 +53,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Category $category
+     * @param  \App\Trainer  $trainers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Trainer $trainers)
     {
         //
     }
@@ -65,11 +64,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Category $category
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Trainer  $trainers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Trainer $trainers)
     {
         //
     }
@@ -77,10 +76,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Category $category
+     * @param  \App\Trainer  $trainers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Trainer $trainers)
     {
         //
     }

@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->coach}}  </h5>
+                            <h5 class="text-muted ">{{$product->trainer->name}}  </h5>
                             <span class="purple font-weight-bold"> : گردآورنده</span>
                         </div>
 
@@ -75,7 +75,8 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
-                            <input type="hidden" name="coach" value="{{$product->coach}}">
+                            <input type="hidden" name="price" value="{{$product->off}}">
+                            <input type="hidden" name="coach" value="{{$product->trainer->name}}">
                             <input type="hidden" name="slug" value="{{$product->slug}}">
                             <input type="hidden" name="post" value="{{$product->post->title}}">
                             <input type="hidden" name="cat" value="{{$product->post->category->title}}">

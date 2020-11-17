@@ -18,7 +18,8 @@ class PostController extends Controller
      */
     public function index(Request $request, Category $category)
     {
-        $posts = $category->posts()->paginate(6);
+        $category->increment('views');
+        $posts = $category->posts()->orderByDesc('views')->paginate(6);
         $counts = $category->posts()->count();
 
         if (!count($posts)) {

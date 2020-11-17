@@ -33,7 +33,7 @@
                     <td>{{$product->title}}</td>
                     <td>{{$product->post->title}}</td>
                     <td>{{$product->post->category->title}}</td>
-                    <td>{{$product->coach}}</td>
+                    <td>{{$product->trainer->name}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->off}}</td>
                     <td>{{$product->year}}</td>
@@ -49,7 +49,7 @@
                     </td>
 
                     <td>
-                        <a href="{{route('edit-product' , $product->id)}}" class="btn
+                        <a href="{{route('edit-product' , $product->title)}}" class="btn
                              btn-outline-info">ویرایش
                         </a>
                     </td>

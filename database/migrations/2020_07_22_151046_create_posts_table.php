@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('category_id')->index();
             $table->string('title' , 255);
             $table->string('image', 255);
+            $table->unsignedBigInteger('views')->default(0);
             $table->softDeletes();
             $table->timestamps();
 

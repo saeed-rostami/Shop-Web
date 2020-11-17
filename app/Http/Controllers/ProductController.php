@@ -18,7 +18,8 @@ class ProductController extends Controller
      */
     public function index(Request $request, Category $category, Post $post, Product $product)
     {
-        $products = $post->products()->paginate(9);
+        $post->increment('views');
+        $products = $post->products()->orderByDesc('views')->paginate(9);
         $counts = $post->products()->count();
 
         if (!count($products)) {
@@ -62,6 +63,7 @@ class ProductController extends Controller
      */
     public function show(Request $request, Category $category, Post $post, Product $product)
     {
+        $product->increment('views');
         $product = Product::query()->where('slug', $product->slug)->firstOrFail();
         return view('Main.Product', compact('product'));
     }

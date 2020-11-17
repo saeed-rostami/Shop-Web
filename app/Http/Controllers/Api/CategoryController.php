@@ -13,7 +13,6 @@ class CategoryController extends Controller
 {
     public function index(Request $request, Category $category)
     {
-//        $categories = Category::all();
         $categories = new CategoryCollection(Category::all());
         $allProducts = new ProductCollection(Product::all());
         if ($request->expectsJson()){

@@ -78,6 +78,9 @@
             </li>
             {{--dropdown--}}
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('Trainers')}}">مبارزان و تمرین دهندگان</a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('Home')}}">صفحه اصلی</a>

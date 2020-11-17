@@ -2,9 +2,9 @@
 
 @section('Admin.Content')
     <div class="col-12 mb-3">
-        <h1 class="text-dark">مدیریت برچسب ها</h1>
+        <h1 class="text-dark"> مدیریت تمرین دهنده ها</h1>
         <button class="btn btn-block btn-warning" data-toggle="modal"
-                data-target="#AddTag">وارد کردن برچسب جدید
+                data-target="#AddTrainer">وارد کردن تمرین دهنده جدید
         </button>
     </div>
     <div class="col-12">
@@ -13,20 +13,22 @@
             <thead>
             <tr class="text-warning">
                 <th scope="col">#</th>
-                <th scope="col">نام برچسب</th>
+                <th scope="col">نام تمرین دهنده</th>
+                <th scope="col">تصویر</th>
                 <th scope="col">عملیات حذف</th>
                 <th scope="col">عملیات ویرایش</th>
 
             </tr>
             </thead>
             <tbody>
-            @foreach($tags as $tag)
+            @foreach($trainers as $trainer)
 
                 <tr>
-                    <th scope="row">{{$tag->id}}</th>
-                    <td>{{$tag->name}}</td>
+                    <th scope="row">{{$trainer->id}}</th>
+                    <td>{{$trainer->name}}</td>
+                    <td>{{$trainer->image}}</td>
                     <td>
-                        <form action="{{route('Delete-Tag' , $tag->name)}}" method="post">
+                        <form action="{{route('Delete-Trainer' , $trainer->name)}}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn
@@ -36,7 +38,7 @@
                     </td>
 
                     <td>
-                        <a href="{{route('edit-Tag' , $tag->name)}}" class="btn
+                        <a href="{{route('edit-Trainer', $trainer->name)}}" class="btn
                              btn-outline-info">ویرایش
                         </a>
                     </td>
@@ -49,4 +51,4 @@
     </div>
 @endsection
 
-@include('Admin.Partials._AddTag')
+@include('Admin.Partials._AddTrainer')

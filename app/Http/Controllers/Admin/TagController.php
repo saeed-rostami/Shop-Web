@@ -65,7 +65,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return view('Admin.Partials._EditTag', compact('tag'));
     }
 
     /**
@@ -77,7 +77,11 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $tag->update([
+            'name' => $request->name,
+        ]);
+        $tag->save();
+        return redirect()->route('Admin-Tags')->with('success', 'تغییرات با موفقیت اعمال شدند');
     }
 
     /**
@@ -86,8 +90,10 @@ class TagController extends Controller
      * @param  \App\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function deleteTag(Tag $tag)
     {
-        //
+        $tag->delete();
+        return redirect()->back()->with('success', 'برچسب مورد نظر با موفقیت حذف شد');
+
     }
 }

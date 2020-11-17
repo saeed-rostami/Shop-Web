@@ -38,11 +38,19 @@
                                               placeholder="(توضیحات اضافه محصول(اختیاری"></textarea>
                                 </div>
 
-                                {{--coach--}}
+                                {{--trainer--}}
                                 <div class="form-group row">
-                                    <input type="text" class="form-control input" name="coach"
-                                           value="{{ old('coach') }}" autocomplete="coach" autofocus
-                                           placeholder="(آموزش دهنده یا تولید کننده(اختیاری">
+                                    <label for="trainer_id" class="text-primary">
+                                      تمرین دهنده
+                                    </label>
+                                    <select name="trainer_id" class="form-control">
+                                        <option>#</option>
+                                        @foreach($trainers as $trainer)
+                                            <option value="{{$trainer->id}}">{{$trainer->name}}</option>
+                                        @endforeach
+
+                                    </select>
+
                                 </div>
 
 

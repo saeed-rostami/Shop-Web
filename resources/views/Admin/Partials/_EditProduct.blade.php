@@ -35,12 +35,19 @@
                        placeholder="توضیحات اضافه محصول">
             </div>
 
-            {{--coach--}}
+            {{--trainer--}}
             <div class="form-group">
-                <label for="coach">
-                    آموزش دهنده یا تولید کننده
+                <label for="trainer_id">
+                    تمرین دهنده
                 </label>
-                <input type="text" value="{{$product->coach}}" name="coach" class="form-control">
+                <select name="trainer_id" class="form-control">
+                    <option value="{{$product->trainer->id}}">{{$product->trainer->name}}</option>
+                    @foreach($trainers as $trainer)
+                        <option value="{{$trainer->id}}">{{$trainer->name}}</option>
+                    @endforeach
+
+                </select>
+
             </div>
 
             {{--year--}}
@@ -81,7 +88,7 @@
 
             {{--post--}}
             <div class="form-group">
-                <label for="category_id">
+                <label for="post_id">
                     رشته ورزشی
                 </label>
                 <select name="post_id" class="form-control">
@@ -129,3 +136,4 @@
         $('.js-example-basic-multiple').select2().val({!! json_encode($product->tags->pluck('id')) !!}).trigger('change')
     });
 </script>
+

@@ -10,7 +10,7 @@ use App\Casts\Json;
 class Product extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'image' , 'description' , 'extra_description' , 'price' , 'year' , 'coach' , 'post_id' , 'duration' , 'off' ];
+    protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'post_id', 'duration', 'off' , 'trainer_id'];
 
     public function breadcrumbName()
     {
@@ -40,6 +40,10 @@ class Product extends Model
         return $this->belongsToMany(Order::class);
     }
 
+    public function trainer()
+    {
+        return $this->belongsTo(Trainer::class);
+    }
 
 
 }
