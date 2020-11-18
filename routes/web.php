@@ -101,6 +101,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
 //*************
 //trainers
 Route::get('/trainers', 'TrainersController@index')->name('Trainers');
+Route::get('/trainers/{trainer:name}', 'TrainersController@show')->name('Trainer-Show');
 
 
 Route::get('/{category:title}', 'PostController@index')->name('Category');

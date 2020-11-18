@@ -16,8 +16,3 @@
     </div>
 @endsection
 
-@push('Products.css')
-    <link rel="stylesheet" href="{{asset('CSS/Products/Products.css')}}">
-@endpush
-
-

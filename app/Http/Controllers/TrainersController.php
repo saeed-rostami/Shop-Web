@@ -14,7 +14,7 @@ class TrainersController extends Controller
      */
     public function index()
     {
-        $trainers = Trainer::all();
+        $trainers = Trainer::query()->orderByDesc('views')->paginate(24);
         return view('Main.Trainers' , compact('trainers'));
     }
 
@@ -45,9 +45,10 @@ class TrainersController extends Controller
      * @param  \App\Trainer  $trainers
      * @return \Illuminate\Http\Response
      */
-    public function show(Trainer $trainers)
+    public function show(Trainer $trainer)
     {
-        //
+        $trainer->increment('views');
+        return view('Main.Trainer', compact('trainer'));
     }
 
     /**

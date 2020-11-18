@@ -23,7 +23,6 @@ mix.js('resources/js/Admin-Custom.js' , 'public/js/AdminCustom');
 mix.postCss('resources/sass/Admin-Custom.css' , 'public/css/AdminCustom');
 mix.postCss('resources/sass/Breadcrumb.css' , 'public/css/Breadcrumb');
 mix.postCss('resources/sass/Navbar.css' , 'public/css/Navbar');
-mix.postCss('resources/sass/Products.css' , 'public/css/Products');
 mix.postCss('resources/sass/pagination.css' , 'public/css/Pagination');
 
 mix.copyDirectory('resources/fonts', 'public/fonts');

@@ -19,7 +19,6 @@
 
 
     <link href="{{ asset('CSS/Navbar/Navbar.css') }}" rel="stylesheet">
-    @stack('Products.css')
     @stack('Breadcrumb.css')
     @stack('Pagination.css')
     @stack('searchNav.scss')
