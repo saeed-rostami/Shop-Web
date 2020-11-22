@@ -1,4 +1,15 @@
-<div class="d-md-none d-flex justify-content-around black-bg">
+
+
+<div class="container d-md-none d-flex justify-content-between black-bg">
+
+    <div>
+        <a class="purple" href="{{route('Home')}}">
+            فروشگاه
+            <img class="rounded-circle ml-1" src="{{asset('images/logo.jpg')}}" alt="">
+        </a>
+    </div>
+
+
     {{--login--}}
 @guest()
         <div>
@@ -23,20 +34,5 @@
     @endauth
 
     {{--login--}}
-
-
-    {{--search--}}
-        <form class="form-inline w-50">
-            <div class="input-group ">
-                <input type="text" class="form-control" placeholder="جستجو">
-                <div class="input-group-append">
-                    <button class="btn purple-bg" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-
-        </form>
-    {{--end-search--}}
 
 </div>

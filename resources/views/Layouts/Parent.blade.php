@@ -19,9 +19,11 @@
 
 
     <link href="{{ asset('CSS/Navbar/Navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('CSS/searchBar.css') }}" rel="stylesheet">
+
     @stack('Breadcrumb.css')
     @stack('Pagination.css')
-    @stack('searchNav.scss')
+
 
     <title>@yield('Title')</title>
 </head>
@@ -32,6 +34,9 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
 @include('Layouts.Header')
+
+@include('Layouts.Banner')
+
 <div class="main">
 
     <!--preloader-->

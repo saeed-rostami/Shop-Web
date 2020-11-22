@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
+Route::get('/search', function (){
+    return view('search');
+});
 
 Route::get('/posts', 'PostController@all');
 
@@ -38,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/remove-all', 'CardController@removeAll')->name('removeAll');
 
     Route::post('/buy', "OrderController@buy")->name('buy');
+    Route::get('/checkout/{transactionId}/{amount}','OrderController@zarinpalCallback1')->name('checkout');
 
 //    user-profile
     Route::get('/profile', "UserController@profile")->name('Profile');
@@ -47,54 +51,54 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //admin*****
-Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Admin'], function () {
 
-    Route::get('/dashboard', 'Admin\AdminController@adminPanel')->name('Admin-Panel');
+    Route::get('/dashboard', 'AdminController@adminPanel')->name('Admin-Panel');
 
 //    index
-    Route::get('/categories', 'Admin\CategoriesController@categories')->name('Admin-Categories');
-    Route::get('/posts', 'Admin\PostsController@posts')->name('Admin-Posts');
-    Route::get('/products', 'Admin\ProductsController@products')->name('Admin-Products');
-    Route::get('/tags', 'Admin\TagController@index')->name('Admin-Tags');
-    Route::get('/trainers', 'Admin\TrainersController@index')->name('Admin-Trainer');
+    Route::get('/categories', 'CategoriesController@categories')->name('Admin-Categories');
+    Route::get('/posts', 'PostsController@posts')->name('Admin-Posts');
+    Route::get('/products', 'ProductsController@products')->name('Admin-Products');
+    Route::get('/tags', 'TagController@index')->name('Admin-Tags');
+    Route::get('/trainers', 'TrainersController@index')->name('Admin-Trainer');
 
 //    store
-    Route::post('/store-category', 'Admin\CategoriesController@storeCategory')->name('storeCategory');
-    Route::post('/store-post', 'Admin\PostsController@storePost')->name('storePost');
-    Route::post('/store-product', 'Admin\ProductsController@storeProduct')->name('storeProduct');
-    Route::post('/store-tag', 'Admin\TagController@storeTag')->name('storeTag');
-    Route::post('/store-trainer', 'Admin\TrainersController@storeTrainer')->name('storeTrainer');
+    Route::post('/store-category', 'CategoriesController@storeCategory')->name('storeCategory');
+    Route::post('/store-post', 'PostsController@storePost')->name('storePost');
+    Route::post('/store-product', 'ProductsController@storeProduct')->name('storeProduct');
+    Route::post('/store-tag', 'TagController@storeTag')->name('storeTag');
+    Route::post('/store-trainer', 'TrainersController@storeTrainer')->name('storeTrainer');
 
 //update***
 //    category-update
-    Route::get('/edit/category/{category}', 'Admin\CategoriesController@edit')->name('edit-category');
-    Route::put('/update-category/{category}', 'Admin\CategoriesController@update')->name('Update-Category');
+    Route::get('/edit/category/{category}', 'CategoriesController@edit')->name('edit-category');
+    Route::put('/update-category/{category}', 'CategoriesController@update')->name('Update-Category');
 
     //    post-update
-    Route::get('/edit/post/{post}', 'Admin\PostsController@edit')->name('edit-post');
-    Route::put('/update-post/{post}', 'Admin\PostsController@update')->name('Update-Post');
+    Route::get('/edit/post/{post}', 'PostsController@edit')->name('edit-post');
+    Route::put('/update-post/{post}', 'PostsController@update')->name('Update-Post');
 
 
 //   product-update
-    Route::get('/edit/product/{product:title}', 'Admin\ProductsController@edit')->name('edit-product');
-    Route::put('/update-product/{product}', 'Admin\ProductsController@update')->name('Update-Product');
+    Route::get('/edit/product/{product:title}', 'ProductsController@edit')->name('edit-product');
+    Route::put('/update-product/{product}', 'ProductsController@update')->name('Update-Product');
 
 
 // Tag-update
-    Route::get('/edit/tag/{tag:name}', 'Admin\TagController@edit')->name('edit-Tag');
-    Route::put('/update-tag/{tag:name}', 'Admin\TagController@update')->name('Update-Tag');
+    Route::get('/edit/tag/{tag:name}', 'TagController@edit')->name('edit-Tag');
+    Route::put('/update-tag/{tag:name}', 'TagController@update')->name('Update-Tag');
 
     // trainer-update
-    Route::get('/edit/trainer/{trainer:name}', 'Admin\TrainersController@edit')->name('edit-Trainer');
-    Route::put('/update-trainer/{trainer:name}', 'Admin\TrainersController@update')->name('Update-Trainer');
+    Route::get('/edit/trainer/{trainer:name}', 'TrainersController@edit')->name('edit-Trainer');
+    Route::put('/update-trainer/{trainer:name}', 'TrainersController@update')->name('Update-Trainer');
 
 
 //    delete
-    Route::delete('/delete-category/{category:title}', 'Admin\CategoriesController@deleteCategory')->name('Delete-Category');
-    Route::delete('/delete-post/{post:title}', 'Admin\PostsController@deletePost')->name('Delete-Post');
-    Route::delete('/delete-product/{product:title}', 'Admin\ProductsController@deleteProduct')->name('Delete-Product');
-    Route::delete('/delete-tag/{tag:name}', 'Admin\TagController@deleteTag')->name('Delete-Tag');
-    Route::delete('/delete-trainer/{trainer:name}', 'Admin\TrainersController@deleteTrainer')->name('Delete-Trainer');
+    Route::delete('/delete-category/{category:title}', 'CategoriesController@deleteCategory')->name('Delete-Category');
+    Route::delete('/delete-post/{post:title}', 'PostsController@deletePost')->name('Delete-Post');
+    Route::delete('/delete-product/{product:title}', 'ProductsController@deleteProduct')->name('Delete-Product');
+    Route::delete('/delete-tag/{tag:name}', 'TagController@deleteTag')->name('Delete-Tag');
+    Route::delete('/delete-trainer/{trainer:name}', 'TrainersController@deleteTrainer')->name('Delete-Trainer');
 });
 
 
@@ -111,6 +115,8 @@ Route::get('/{category:title}/{post:title}', 'ProductController@index')->name('P
 Route::get('/{category:title}/{post:title}/products', 'ProductController@fetch_data');
 
 Route::get('/{category:title}/{post:title}/{product:slug}', 'ProductController@show')->name('Product');
+
+
 
 
 

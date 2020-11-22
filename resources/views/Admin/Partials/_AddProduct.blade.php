@@ -44,7 +44,7 @@
                                       تمرین دهنده
                                     </label>
                                     <select name="trainer_id" class="form-control">
-                                        <option>#</option>
+                                        <option value="" disabled selected>تمرین دهنده را انتخاب کنید</option>
                                         @foreach($trainers as $trainer)
                                             <option value="{{$trainer->id}}">{{$trainer->name}}</option>
                                         @endforeach
@@ -89,7 +89,7 @@
                                         رشته ورزشی
                                     </label>
                                     <select name="post_id" class="form-control">
-                                        <option>#</option>
+                                        <option value="" disabled selected>  رشته ورزشی را انتخاب کنید</option>
                                         @foreach($posts as $post)
                                             <option value="{{$post->id}}">{{$post->title}}</option>
                                         @endforeach
@@ -113,10 +113,22 @@
 
                                 </div>
 
-
+                                <label for="image[]" class="text-primary">
+                                    تصاویر محصول
+                                </label>
                                 <div class="form-group row">
                                     <input type="file" class="form-control" name="image[]" multiple
-                                           placeholder="تصویر کتگوری">
+                                           placeholder="تصاویر محصول">
+                                </div>
+
+
+                                <label for="demo" class="text-primary">
+                                    دمو محصول
+                                </label>
+                                <div class="form-group row">
+                                    <input type="file" class="form-control" name="demo"
+                                           formenctype="multipart/form-data"
+                                           placeholder="دمو محصول">
                                 </div>
 
 

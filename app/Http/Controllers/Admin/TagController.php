@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminTagRequest;
 use App\Http\Resources\Product;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -36,7 +37,7 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function storeTag(Request $request)
+    public function storeTag(AdminTagRequest $request)
     {
         $tag = new Tag();
         $tag->name = $request->name;
@@ -75,7 +76,7 @@ class TagController extends Controller
      * @param  \App\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(AdminTagRequest $request, Tag $tag)
     {
         $tag->update([
             'name' => $request->name,

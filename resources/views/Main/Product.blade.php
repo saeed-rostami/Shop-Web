@@ -8,22 +8,33 @@
 @section('Content')
     <section class="container">
         <div class="row ">
-            {{--products-gallery--}}
-            <div class="col-12 col-md-6 products-gallery text-white text-center">
-                <h1 class=>گالری تصاویر</h1>
-                <div class="row">
-                    @foreach($product->image as $image)
-                        <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4  thumb">
-                            <a href="{{asset('Images/Products/'.$image)}}">
-                                <figure><img class="img-fluid img-thumbnail" src="{{asset("images/products/".$image)}}"
-                                             alt="">
-                                </figure>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            {{--end-products-gallery--}}
+           <div class="col-12 col-md-6">
+               {{--products-gallery--}}
+               <div class="col-12 products-gallery text-white text-center">
+                   <h1 class=>گالری تصاویر</h1>
+                   <div class="row">
+                       @foreach($product->image as $image)
+                           <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4  thumb">
+                               <a href="{{asset('Images/Products/'.$image)}}">
+                                   <figure><img class="img-fluid img-thumbnail" src="{{asset("images/products/".$image)}}"
+                                                alt="">
+                                   </figure>
+                               </a>
+                           </div>
+                       @endforeach
+                   </div>
+               </div>
+               {{--end-products-gallery--}}
+
+               {{--products-video--}}
+               <div class="col-12 products-gallery text-white text-center">
+                   <h1 class=>دمو آموزش</h1>
+                   <div class="row">
+
+                   </div>
+               </div>
+               {{--end-products-video--}}
+           </div>
 
             {{--products-detail--}}
             <div class="col-12 col-md-6">
@@ -75,7 +86,7 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
-                            <input type="hidden" name="price" value="{{$product->off}}">
+                            <input type="hidden" name="off" value="{{$product->off}}">
                             <input type="hidden" name="coach" value="{{$product->trainer->name}}">
                             <input type="hidden" name="slug" value="{{$product->slug}}">
                             <input type="hidden" name="post" value="{{$product->post->title}}">

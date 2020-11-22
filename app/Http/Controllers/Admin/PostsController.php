@@ -9,6 +9,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\AdminPostRequest;
 
 class PostsController extends Controller
 {
@@ -22,7 +23,7 @@ class PostsController extends Controller
     }
 
 //    store
-    public function storePost(Request $request)
+    public function storePost(AdminPostRequest $request)
     {
         $post = new Post();
         $post->title = $request->title;
@@ -49,7 +50,7 @@ class PostsController extends Controller
         return view('Admin.Partials._EditPost', compact(['post', 'categories']));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(AdminPostRequest $request, Post $post)
     {
         if ($request->image !== null) {
             $oldImage = $post->image;

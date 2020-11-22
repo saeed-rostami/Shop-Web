@@ -9,17 +9,6 @@
     </a>
     {{--end--logo--}}
 
-    {{--search--}}
-    <div>
-        <form class="form-inline my-2 my-lg-0 d-none d-lg-block">
-            <input class="form-control mr-sm-2" type="search" placeholder="آموزش مورد نظر خود را جستجو کنید"
-                   aria-label="Search">
-            <button class="btn my-2 my-sm-0 p-0" type="submit">
-                <img class="rounded-circle" src="{{asset('images/search.png')}}" alt="">
-            </button>
-        </form>
-    </div>
-    {{--end-search--}}
 
     {{--navtoggler--}}
     <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

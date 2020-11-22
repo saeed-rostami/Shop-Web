@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminCategoryRequest;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class CategoriesController extends Controller
 {
@@ -18,15 +20,14 @@ class CategoriesController extends Controller
     }
 
 //    store
-    public function storeCategory(Request $request)
+    public function storeCategory(AdminCategoryRequest $request)
     {
-
         $category = new Category();
         $category->title = $request->title;
         $image = $request->file('image');
         $title = $request->title;
         $extension = $image->getClientOriginalExtension();
-        $fileName = time() . '.' . $title . '.' . $extension;
+        $fileName = $title . '.' . $extension;
         $image->move("Images/Categories/", $fileName);
 
         $category->image = $fileName;
@@ -43,7 +44,7 @@ class CategoriesController extends Controller
         return view('Admin.Partials._EditCategory', compact('category'));
     }
 
-    public function update(Request $request, Category $category)
+    public function update(AdminCategoryRequest $request, Category $category)
     {
         if ($request->image !== null) {
             $oldImage = $category->image;

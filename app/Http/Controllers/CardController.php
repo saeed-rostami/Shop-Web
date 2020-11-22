@@ -12,7 +12,6 @@ class CardController extends Controller
 {
     public function AddProduct(Request $request)
     {
-
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });

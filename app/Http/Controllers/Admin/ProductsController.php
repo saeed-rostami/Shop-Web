@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminProductRequest;
 use App\Post;
 use App\Product;
 use App\Tag;
@@ -27,7 +28,7 @@ class ProductsController extends Controller
     }
 
 //    store
-    public function storeProduct(Request $request)
+    public function storeProduct(AdminProductRequest $request)
     {
         $product = new Product();
         $product->title = $request->title;
@@ -75,7 +76,7 @@ class ProductsController extends Controller
         return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories', 'tags', 'trainers']));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(AdminProductRequest $request, Product $product)
     {
         if ($request->image !== null) {
             $oldImages = $product->image;

@@ -15,10 +15,15 @@
                animate__fadeIn trainer shadow">
                     <a href="{{route('Trainer-Show' , $trainer->name)}}">
                         <div class="img-container d-flex justify-content-center align-items-center">
-                            <img laoding="lazy"
-                                 src="{{asset("images/Trainers/".$trainer->image)}}"
-                                 class="img-fluid rounded-circle shadow"
-                                 alt="">
+                            <img
+
+                                @if(! $trainer->image)
+                                src="{{asset("images/Trainers/placeholder.jpg")}}"
+                                @else
+                                src="{{asset("Images/Trainers/".$trainer->image)}}"
+                                @endif
+                                alt="#"
+                                 class="img-fluid rounded-circle">
                         </div>
                         <h6 class="blue text-center mt-1 trainer-name">{{$trainer->name}}</h6>
                     </a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminTrainerRequest;
 use App\Http\Resources\Product;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -18,7 +19,7 @@ class TrainersController extends Controller
     }
 
 //store
-    public function storeTrainer(Request $request)
+    public function storeTrainer(AdminTrainerRequest $request)
     {
         $trainer = new Trainer();
 
@@ -50,7 +51,7 @@ class TrainersController extends Controller
     }
 
 //update
-    public function update(Request $request, Trainer $trainer)
+    public function update(AdminTrainerRequest $request, Trainer $trainer)
     {
         if ($request->image !== null) {
             $oldImage = $trainer->image;

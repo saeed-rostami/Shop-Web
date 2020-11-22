@@ -18,7 +18,7 @@
                     دسته ورزشی
                 </label>
                 <select name="category_id" class="form-control">
-                    <option>#</option>
+                    <option value="" disabled selected>دسته ورزشی را انتخاب کنید</option>
                     @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->title}}</option>
                     @endforeach
