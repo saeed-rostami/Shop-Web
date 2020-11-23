@@ -30,6 +30,8 @@ class ProductsController extends Controller
 //    store
     public function storeProduct(AdminProductRequest $request)
     {
+        $title = $request->title;
+
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
@@ -41,17 +43,23 @@ class ProductsController extends Controller
         $product->duration = $request->duration;
         $product->year = $request->year;
 
-        if ($request->hasFile('image')) {
-            $images = $request->file('image');
-            $title = $request->title;
+       if ($request->hasFile('demo')){
+           $demo = $request->file('demo');
+           $extension = $demo->getClientOriginalName();
+           $demoFileName = $title . '.' . $extension;
+           $demo->move(public_path() . "/videos/Products", $demoFileName);
+           $product->demo = $demoFileName;
+       }
 
-            foreach ($images as $image) {
-                $extension = $image->getClientOriginalName();
-                $fileName = $title . '.' . $extension;
-                $image->move(public_path() . "/Images/Products/", $fileName);
-                $file[] = $fileName;
-            }
+
+        $images = $request->file('image');
+        foreach ($images as $image) {
+            $extension = $image->getClientOriginalName();
+            $fileName = $title . '.' . $extension;
+            $image->move(public_path() . "/Images/Products/", $fileName);
+            $file[] = $fileName;
         }
+
 
         $product->image = $file;
         $product->save();
@@ -109,7 +117,6 @@ class ProductsController extends Controller
                 'duration' => $request->duration,
                 'year' => $request->year,
                 'image' => $images,
-
             ]);
 
 
@@ -159,6 +166,10 @@ class ProductsController extends Controller
             $file_img = public_path("/images/products/{$image}");
             File::delete($file_img);
         }
+
+        $demo = $product->demo;
+        $file_demo = public_path("/videos/Products/{$demo}");
+        File::delete($file_demo);
         $product->delete();
         return redirect()->back()->with('success', 'محصول مورد نظر مورد نظر با موفقیت حذف  شد');
     }

@@ -26,14 +26,30 @@
                </div>
                {{--end-products-gallery--}}
 
+
                {{--products-video--}}
+
                <div class="col-12 products-gallery text-white text-center">
                    <h1 class=>دمو آموزش</h1>
-                   <div class="row">
+                   <div class="row ">
+                      <div class="border-light shadow">
 
+                          @if($product->demo)
+                          <video controls class="w-100 h-100">
+                              <source src="{{asset('videos/Products/' . $product->demo)}}">
+                          </video>
+
+                          @else
+                              <h5 class="purple">برای این آموزش دمو موجود نمی باشد</h5>
+                          @endif
+                      </div>
                    </div>
                </div>
+
                {{--end-products-video--}}
+
+
+
            </div>
 
             {{--products-detail--}}
