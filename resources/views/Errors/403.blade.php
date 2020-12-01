@@ -8,7 +8,7 @@
         </div>
 
         <div>
-            <img src="{{asset('images/icons8-empty-box-96.png')}}" alt="" style="width: 256px;height: 256px">
+            <img src="{{asset('images/icons8-empty-box-96.png')}}" alt="" class="emptyBasket">
         </div>
     </div>
 @endsection

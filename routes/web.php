@@ -20,16 +20,17 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-Route::get('/search', function (){
-    return view('search');
-});
+// Route::get('/search', function (){
+//     return view('search');
+// });
 
-Route::get('/posts', 'PostController@all');
+// Route::get('/posts', 'PostController@all');
 
 
 Route::get('/', 'CategoryController@index')->name('Home');
 Route::post('/emailCheck', "HomeController@checkEmail")->name('EmailCheck');
 Route::post('/phoneCheck', "HomeController@checkPhone")->name('PhoneCheck');
+
 
 
 //shop and card
@@ -106,6 +107,9 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
 //trainers
 Route::get('/trainers', 'TrainersController@index')->name('Trainers');
 Route::get('/trainers/{trainer:name}', 'TrainersController@show')->name('Trainer-Show');
+
+// AllProducts
+Route::get('/products', 'ProductController@allProducts')->name('AllProducts');
 
 
 Route::get('/{category:title}', 'PostController@index')->name('Category');

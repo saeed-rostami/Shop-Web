@@ -25,7 +25,8 @@ class AdminTrainerRequest extends FormRequest
     {
         return [
             'name' => ['required' , 'string' , 'max:255' ,'unique:tags' , 'min:2'],
-            'image' => ['required' ,' mimes:jpeg,jpg,png' ,'max:1000'],
+            'description' => ['nullable', 'string' , 'max:255' , 'min:5'],
+            'image' => ['mimes:jpeg,jpg,png' ,'max:1000'],
         ];
     }
 }

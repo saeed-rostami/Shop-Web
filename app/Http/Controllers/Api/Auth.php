@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\User;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginRequest;
@@ -12,7 +13,7 @@ use App\Http\Requests\RegisterRequest;
 
 class Auth extends Controller
 {
-
+//
 //    public function login(Request $request)
 //    {
 //        $user = User::where('email', $request->emailOrPhone)
@@ -48,7 +49,7 @@ class Auth extends Controller
                     'form_params' => [
                         'grant_type' => 'password',
                         'client_id' => 2,
-                        'client_secret' => 'JkMRyPQdRzU6932XE3q1aLSl8AtIsaGWJpwHFW2r',
+                        'client_secret' => 'ft8t4yC5NCWKqIHhHeTitBlRf5edufiB1jkIJi1H',
                         'username' => $request->username,
                         'password' => $request->password,
                     ],

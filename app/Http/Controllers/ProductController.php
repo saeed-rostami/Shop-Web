@@ -39,9 +39,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function allProducts()
     {
-        //
+      $products = Product::all();
+     return view("Main.AllProducts" , compact("products"));
     }
 
     /**

@@ -14,6 +14,7 @@
                 <th scope="col">#</th>
                 <th scope="col">تیتر </th>
                 <th scope="col"> دسته</th>
+                <th scope="col"> تصویر</th>
                 <th scope="col"> عملیات حذف</th>
                 <th scope="col"> عملیات ویرایش</th>
             </tr>
@@ -25,6 +26,15 @@
                     <th scope="row">{{$post->id}}</th>
                     <td>{{$post->title}}</td>
                     <td>{{$post->category->title}}</td>
+
+
+                    
+                    @if ($post->image)
+                    <td>
+                        <a href="{{ asset('images/posts/' . $post->image) }}">نمایش</a></td>
+            
+                    @endif
+
                     <td>
                         <form action="{{route('Delete-Post' , $post->title)}}" method="post">
                             @csrf

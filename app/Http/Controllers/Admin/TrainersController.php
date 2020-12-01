@@ -31,12 +31,14 @@ class TrainersController extends Controller
             $image->move("Images/Trainers/", $fileName);
 
             $trainer->name = $request->name;
+            $trainer->description = $request->description;
             $trainer->image = $fileName;
             $trainer->save();
             $img = Image::make(public_path('/images/trainers/' . $fileName))->resize('300', '300');
             $img->save();
         } else {
             $trainer->name = $request->name;
+            $trainer->description = $request->description;
             $trainer->save();
         }
 
@@ -53,6 +55,7 @@ class TrainersController extends Controller
 //update
     public function update(AdminTrainerRequest $request, Trainer $trainer)
     {
+
         if ($request->image !== null) {
             $oldImage = $trainer->image;
             $oldFile_img = public_path("/images/trainers/{$oldImage}");
@@ -67,6 +70,7 @@ class TrainersController extends Controller
 
             $trainer->update([
                 'name' => $request->name,
+                'description' => $request->description,
                 'image' => $image
             ]);
             $trainer->save();
@@ -83,6 +87,7 @@ class TrainersController extends Controller
 
             $trainer->update([
                 'name' => $request->name,
+                'description' => $request->description,
                 'image' => null
             ]);
             $trainer->save();

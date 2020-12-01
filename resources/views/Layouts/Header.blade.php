@@ -32,11 +32,11 @@
             {{--first-dropdown--}}
             <li class="nav-item dropdown">
                 <a
-                    href="#" class="nav-link dropdown-toggle"
-                   type="button"
-                   role="button"
+            href="{{route('AllProducts')}}" class="nav-link dropdown-toggle"
+            type="button"
+            role="button"
                    id="dropdownMenu1"
-                   data-toggle="dropdown"
+                   {{-- data-toggle="dropdown" --}}
                    aria-haspopup="true"
                    aria-expanded="false">
                     آموزش ها

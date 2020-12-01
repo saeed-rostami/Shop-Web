@@ -14,6 +14,7 @@
             <tr class="text-warning">
                 <th scope="col">#</th>
                 <th scope="col">نام تمرین دهنده</th>
+                <th scope="col">بیوگرافی تمرین دهنده</th>
                 <th scope="col">تصویر</th>
                 <th scope="col">عملیات حذف</th>
                 <th scope="col">عملیات ویرایش</th>
@@ -26,7 +27,18 @@
                 <tr>
                     <th scope="row">{{$trainer->id}}</th>
                     <td>{{$trainer->name}}</td>
-                    <td>{{$trainer->image}}</td>
+                    <td>{{$trainer->description}}</td>
+    
+            @if ($trainer->image)
+            <td>
+                <a href="{{ asset('images/Trainers/' . $trainer->image) }}">نمایش</a></td>
+            @else
+            <td>
+                <span class="text-primary">تصویری انتخاب نشده</span></td>
+            @endif
+
+
+
                     <td>
                         <form action="{{route('Delete-Trainer' , $trainer->name)}}" method="post">
                             @csrf

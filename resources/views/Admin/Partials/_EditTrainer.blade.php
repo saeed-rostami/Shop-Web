@@ -11,6 +11,13 @@
                 </label>
                 <input type="text" value="{{$trainer->name}}" name="name" class="form-control">
             </div>
+            
+            <div class="form-group">
+                <label for="description">
+                    بیوگرافی مبارز
+                </label>
+                <input type="text" value="{{$trainer->description}}" name="description" class="form-control">
+            </div>
 
             <div class="form-group">
                 <label for="image">

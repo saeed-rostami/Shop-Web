@@ -14,6 +14,7 @@
             <tr class="text-warning">
                 <th scope="col">#</th>
                 <th scope="col">تیتر دسته بندی</th>
+                <th scope="col">تصویر دسته بندی</th>
                 <th scope="col">عملیات حذف</th>
                 <th scope="col">عملیات ویرایش</th>
             </tr>
@@ -25,6 +26,15 @@
                     <td>
                         {{$category->title}}
                     </td>
+
+
+                    @if ($category->image)
+                    <td>
+                        <a href="{{ asset('images/categories/' . $category->image) }}">نمایش</a></td>
+            
+                    @endif
+
+
                     <td>
                         <form action="{{route('Delete-Category' , $category->title)}}" method="post">
                             @csrf

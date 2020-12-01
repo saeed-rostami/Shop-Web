@@ -21,6 +21,13 @@
                                            value="{{ old('name') }}" autocomplete="name" autofocus
                                            placeholder="نام تمرین دهنده">
                                 </div>
+                                
+                                {{--name--}}
+                                <div class="form-group row">
+                                    <input type="text" class="form-control input" name="description"
+                                           value="{{ old('description') }}" autocomplete="description" autofocus
+                                           placeholder="بیوگرافی مبارز">
+                                </div>
 
                                 {{--image--}}
                                 <div class="form-group row">

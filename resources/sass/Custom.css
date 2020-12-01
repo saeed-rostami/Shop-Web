@@ -385,3 +385,9 @@ body {
     color: blueviolet;
 }
 
+/* emptyBasket */
+@media (max-width: 700px) {
+    .emptyBasket {
+        height: 128px !important;
+    }
+}

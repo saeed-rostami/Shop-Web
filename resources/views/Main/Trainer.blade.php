@@ -12,9 +12,7 @@
 
     <div class="row shadow">
         <div class="my-3 col-12 col-sm-12 col-md-6  col-lg-8 col-xl-8 text-white">
-            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi dolore eligendi enim eos eum
-                eveniet laboriosam magnam, neque nulla omnis placeat possimus quas qui quos ratione repellendus
-                voluptates voluptatibus.</h5>
+            <h5>{{$trainer->description}}</h5>
         </div>
 
         <div class="col-12 col-sm-12 col-md-6  col-lg-4 col-xl-4">

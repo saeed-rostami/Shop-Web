@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Trainer extends Model
 {
     use  SoftDeletes;
-    protected $fillable = ['name' , 'image'];
+    protected $fillable = ['name' , 'image' , 'description'];
 
     public function products()
     {
