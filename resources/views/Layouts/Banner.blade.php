@@ -6,7 +6,7 @@
                 <div class="row search">
                     <div class="col-12">
                         <div class="container2">
-                            <input type="text" placeholder="جستجو...">
+                            <input type="text" placeholder="....جستجو">
                             <div class="search"></div>
                         </div>
                     </div>

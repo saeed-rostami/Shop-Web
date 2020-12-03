@@ -18,7 +18,10 @@
 
                 @foreach($categories as $category)
                     <div class="col-12 col-md-6 col-lg-6 col-xl-6 my-1 animate__animated animate__fadeIn">
-                        <a href="{{route('Category' , $category->title)}}">
+                        <a href="{{route('Category' , $category->title)}}"
+                           data-toggle="tooltip"
+                           data-placement="top"
+                           title="{{$category->title}}">
                             <div class="gallery-item d-flex justify-content-center align-items-center">
                                 <h1 class="text-dynamic position-absolute text-light text-justify ">{{$category->title}}</h1>
                                 <img loading="lazy" src="{{asset("images/Categories/placeholder.png")}}"

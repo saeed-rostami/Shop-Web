@@ -10,6 +10,10 @@
         <div>
             <img src="{{asset('images/icons8-empty-box-96.png')}}" alt="" class="emptyBasket">
         </div>
+
+        <a href="{{url()->previous()}}">
+            <span class="text-white-50">بازگشت به صفحه قبل </span>
+        </a>
     </div>
 @endsection
 

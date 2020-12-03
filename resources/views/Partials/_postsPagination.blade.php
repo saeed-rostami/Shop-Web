@@ -2,7 +2,10 @@
     @foreach($posts as $post)
         <div class="col-10 col-md-6 col-lg-4 col-xl-4 feature-img my-1 animate__animated
                animate__fadeIn mb-3">
-            <a href="{{route('Posts', [$post->category->title, $post->title])}}">
+            <a href="{{route('Posts', [$post->category->title, $post->title])}}"
+               data-toggle="tooltip"
+               data-placement="top"
+               title="{{$post->title}}">
                 <div class="img-container d-flex justify-content-center align-items-center">
                     <h1 class="text-dynamic position-absolute text-light">{{$post->title}}</h1>
                     <img laoding="lazy"

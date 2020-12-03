@@ -7,7 +7,7 @@
         <img src="{{asset('images/shopping basket-lg.png')}}" alt="" class="emptyBasket">
     </div>
 
-<a href="{{route('AllProducts')}}">
-        <span class="text-white-50">ادامه خرید و بازگشت به صفحه محصولات </h6>
+    <a href="{{route('AllProducts')}}">
+        <span class="text-white-50">ادامه خرید و بازگشت به صفحه محصولات </span>
     </a>
 </div>
