@@ -8,65 +8,78 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.woff')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.eot')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.ttf')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.svg')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/iconfont.css')}}">
 
-    <!-- Styles -->
 
-    {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <!-- BEGIN: Vendor CSS-->
+{{--<link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/vendors-rtl.min.css')}}">--}}
+<!-- END: Vendor CSS-->
 
-    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
-          integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/components.css')}}">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/core/colors/palette-gradient.css')}}">
 
-    <link href="{{ asset('CSS/AdminCustom/Admin-Custom.css') }}" rel="stylesheet">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/custom-rtl.css')}}">
+    <!-- END: Custom CSS-->
+
     <link href="{{ asset('CSS/select2.min.css') }}" rel="stylesheet">
 
 
     <title>@yield('Admin-Panel')</title>
 </head>
-<body>
+
+<body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click"
+      data-menu="vertical-menu-modern" data-col="2-columns">
+
+{{--<div class="preloader d-flex justify-content-center align-items-center">--}}
+    {{--<img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">--}}
+{{--</div>--}}
+
+@includeIf('Partials._messages')
+
+
+
 <?php
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
 
-<div class="main">
-    <!--preloader-->
-    <div class="preloader d-flex justify-content-center align-items-center">
-        <img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">
-    </div>
-    <!--end-preloader-->
+<!-- BEGIN: Header-->
+@include('Admin.Layouts.Header')
+<!-- BEGIN: Main Menu-->
+@include('Admin.Layouts.SideMenu')
+<!-- BEGIN: Content-->
+@yield('AdminContent')
 
-    <div class="container py-3">
-        @includeIf('Partials._messages')
 
-        @yield("Content")
-    </div>
-</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
 
 @section('script')
     <!-- Scripts -->
 
-    {{--<script src="{{ asset('JS/jquery-3.5.1.js') }}" defer></script>--}}
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{asset('newAdmin/js/vendors.min.js')}}"></script>
+    <!-- BEGIN Vendor JS-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- BEGIN: Theme JS-->
+    <script src="{{asset('newAdmin/js/app-menu.js')}}"></script>
+    <script src="{{asset('newAdmin/js/app.js')}}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-
-    <script
-        src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
-        integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k"
-        crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    <script src="{{ asset('JS/AdminCustom/Admin-Custom.js') }}"></script>
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
     <script src="{{asset('JS/select2.min.js')}}"></script>
 @show

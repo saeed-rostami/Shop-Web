@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "animate.css": "^4.1.1",
+        "feather-icons": "^4.28.0",
         "jquery-validation": "^1.19.2",
         "magnific-popup": "^1.1.0",
         "notiflix": "^2.4.0",

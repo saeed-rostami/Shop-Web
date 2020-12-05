@@ -1,6 +1,6 @@
-@extends('Admin.Panel')
+@extends('Admin.Layouts.Parent')
 
-@section('Admin.Content')
+@section('AdminContent')
     <div class="col-12 mb-3">
         <h1 class="text-dark">مدیریت دسته بندی</h1>
         <button class="btn btn-block btn-warning" data-toggle="modal"
