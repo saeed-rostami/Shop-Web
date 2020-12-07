@@ -156,11 +156,17 @@ body {
     max-height: 450px !important;
     height: 450px !important;
     background-color: var(--mainBlack) !important;
+    outline: none;
+}
+
+.car-card a{
+    outline: none;
 }
 
 .slider-img {
     width: 100% !important;
     height: 300px;
+    outline: none;
 }
 
 .my-btn {
