@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/bootstrap-extended.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/colors.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('CSS/AdminCustom/Admin-Custom.css')}}">
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/core/menu/menu-types/vertical-menu.css')}}">
@@ -44,25 +45,28 @@
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
 
-{{--<div class="preloader d-flex justify-content-center align-items-center">--}}
-    {{--<img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">--}}
-{{--</div>--}}
-
-@includeIf('Partials._messages')
-
+<div class="preloader d-flex justify-content-center align-items-center">
+    <img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">
+</div>
 
 
 <?php
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-?>
+//?>
+
+
+@include('Admin.Partials._errorMessages')
 
 <!-- BEGIN: Header-->
 @include('Admin.Layouts.Header')
+
+
 <!-- BEGIN: Main Menu-->
 @include('Admin.Layouts.SideMenu')
 <!-- BEGIN: Content-->
+
 @yield('AdminContent')
 
 
@@ -81,6 +85,7 @@ header("Pragma: no-cache");
     <script src="{{asset('newAdmin/js/app.js')}}"></script>
 
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
+    <script src="{{asset('JS/AdminCustom/Admin-Custom.js')}}"></script>
     <script src="{{asset('JS/select2.min.js')}}"></script>
 @show
 

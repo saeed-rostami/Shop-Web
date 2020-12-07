@@ -27,16 +27,18 @@
             <li class=" nav-item "><a href="{{route('Admin-Categories')}}"><i class="feather icon-file"></i><span class="menu-title"
                                                                                      data-i18n="Chat">دسته ورزشی</span></a>
             </li>
-            <li class=" nav-item "><a href="#"><i class="feather icon-file-minus"></i><span class="menu-title"
+            <li class=" nav-item "><a href="{{route('Admin-Posts')}}"><i class="feather icon-file-minus"></i><span
+                        class="menu-title"
                                                                                            data-i18n="Todo">رشته
                     ورزشی</span></a></li>
-            <li class=" nav-item"><a href="#"><i class="feather icon-briefcase"></i><span class="menu-title"
+            <li class=" nav-item"><a href="{{route('Admin-Products')}}"><i class="feather icon-briefcase"></i><span
+                        class="menu-title"
                                                                                          data-i18n="Calender">محصولات
                 </span></a></li>
-            <li class=" nav-item "><a href="#"><i class="feather icon-user-x"></i><span class="menu-title"
+            <li class=" nav-item "><a href="{{route('Admin-Trainer')}}"><i class="feather icon-user-x"></i><span class="menu-title"
                                                                                        data-i18n="Calender">مبارزان و مربیان
                     </span></a></li>
-            <li class=" nav-item"><a href="#"><i class="feather icon-tag"></i><span class="menu-title"
+            <li class=" nav-item"><a href="{{route('Admin-Tags')}}"><i class="feather icon-tag"></i><span class="menu-title"
                                                                                    data-i18n="Calender">برچسب ها
                 </span></a></li>
             <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title"

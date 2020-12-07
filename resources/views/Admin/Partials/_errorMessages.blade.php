@@ -6,3 +6,8 @@
             @endforeach
         </div>
 @endif
+
+{{--success--}}
+@if(session("success"))
+    <input type="hidden" id="hdnInput" data-value="{{session("success")}}">
+@endif

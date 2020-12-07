@@ -107,7 +107,10 @@ $(function () {
 
   if (sessionValue) {
     Notiflix.Notify.Success(sessionValue, {
-      position: "right-bottom",
+      success: {
+        background: "#35823f"
+      },
+      position: "left-top",
       width: "400px",
       borderRadius: 15,
       fontSize: 18,
