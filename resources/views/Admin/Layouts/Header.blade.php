@@ -10,12 +10,22 @@
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name text-bold-600">حسن خسروجردی</span>
-                                <span class="user-status active">آنلاین </span></div>
+                                    class="user-name text-bold-600">{{auth()->user()->fullname}}</span>
+                                <span class="user-status active">مدیر سایت </span></div>
                             <span><i class="feather icon-user"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href=""><i class="feather icon-power"></i> خروج</a>
+
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="feather icon-power"></i>
+                                خروج
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>

@@ -8,11 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.woff')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.eot')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.ttf')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/fonts/feather.svg')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/fonts/feather/iconfont.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.woff')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.eot')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.ttf')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.svg')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/iconfont.css')}}">
 
 
     <!-- BEGIN: Vendor CSS-->
@@ -20,20 +20,20 @@
 <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('CSS/AdminCustom/Admin-Custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/Admin-Custom.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/core/colors/palette-gradient.css')}}">
 
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('newAdmin/CSS/custom-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/custom-rtl.css')}}">
     <!-- END: Custom CSS-->
 
     <link href="{{ asset('CSS/select2.min.css') }}" rel="stylesheet">
@@ -54,7 +54,7 @@
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-//?>
+?>
 
 
 @include('Admin.Partials._errorMessages')
@@ -69,7 +69,6 @@ header("Pragma: no-cache");
 
 @yield('AdminContent')
 
-
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
@@ -77,12 +76,12 @@ header("Pragma: no-cache");
     <!-- Scripts -->
 
     <!-- BEGIN: Vendor JS-->
-    <script src="{{asset('newAdmin/js/vendors.min.js')}}"></script>
+    <script src="{{asset('Admin/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{asset('newAdmin/js/app-menu.js')}}"></script>
-    <script src="{{asset('newAdmin/js/app.js')}}"></script>
+    <script src="{{asset('Admin/js/app-menu.js')}}"></script>
+    <script src="{{asset('Admin/js/app.js')}}"></script>
 
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
     <script src="{{asset('JS/AdminCustom/Admin-Custom.js')}}"></script>

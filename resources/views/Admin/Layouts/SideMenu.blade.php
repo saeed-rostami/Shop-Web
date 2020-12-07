@@ -17,7 +17,8 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class=" nav-item active"><a href="#"><i class="feather icon-home"></i><span class="menu-title"
+            <li class=" nav-item active"><a href="{{route('Admin-Panel')}}"><i class="feather icon-home"></i><span
+                        class="menu-title"
                                                                                            data-i18n="Email">خانه</span></a>
             </li>
 
