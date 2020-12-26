@@ -52510,6 +52510,14 @@ $(function () {
     Notiflix.Report.Warning("", sessionValue, "متوجه شدم");
   }
 });
+$(function () {
+  var sessionValue = $("#successBuy").data("value");
+
+  if (sessionValue) {
+    console.log(sessionValue);
+    Notiflix.Report.Success(sessionValue.title, sessionValue.body, 'بستن');
+  }
+});
 var images = document.querySelectorAll("[data-src]");
 
 function preloadImage(img) {

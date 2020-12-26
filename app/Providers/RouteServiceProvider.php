@@ -34,21 +34,21 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       Route::bind('title', function ($title){
-           return Category::query()->where('title', $title)->first();
-       });
+//       Route::bind('title', function ($title){
+//           return Category::query()->where('title', $title)->first();
+//       });
+//
+//       Route::bind('title', function ($title){
+//        return Post::query()->where('title', $title)->first();
+//    });
+//
+//       Route::bind('slug', function ($slug){
+//        return Product::query()->where('slug', $slug)->first();
+//    });
 
-       Route::bind('title', function ($title){
-        return Post::query()->where('title', $title)->first();
-    });
-
-       Route::bind('slug', function ($slug){
-        return Product::query()->where('slug', $slug)->first();
-    });
-
-       Route::bind('name', function ($name){
-        return Trainer::query()->where('name', $name)->first();
-    });
+//       Route::bind('name', function ($name){
+//        return Trainer::query()->where('name', $name)->first();
+//    });
 
         parent::boot();
     }

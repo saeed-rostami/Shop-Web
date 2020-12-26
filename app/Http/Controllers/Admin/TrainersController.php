@@ -31,14 +31,14 @@ class TrainersController extends Controller
             $image->move("Images/Trainers/", $fileName);
 
             $trainer->name = $request->name;
-            $trainer->description = $request->description;
+//            $trainer->description = $request->description;
             $trainer->image = $fileName;
             $trainer->save();
             $img = Image::make(public_path('/images/trainers/' . $fileName))->resize('300', '300');
             $img->save();
         } else {
             $trainer->name = $request->name;
-            $trainer->description = $request->description;
+//            $trainer->description = $request->description;
             $trainer->save();
         }
 

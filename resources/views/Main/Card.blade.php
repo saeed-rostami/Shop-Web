@@ -96,13 +96,13 @@
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">{{Cart::tax()}}</h5>
+                                <h5 class="font-weight-bold">بدون مالیت</h5>
 
                                 <strong class="text-muted">مالیات</strong>
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">{{Cart::total()}}</h5>
+                                <h5 class="font-weight-bold">{{Cart::subtotal()}}</h5>
                                 <strong class="text-muted">قیمت کل</strong>
 
                             </li>

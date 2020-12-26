@@ -20,3 +20,11 @@
 @if(session("cardExist"))
     <input type="hidden" id="cardExist" data-value="{{session("cardExist")}}">
 @endif
+
+
+@if(session("successBuy"))
+    <input type="hidden" id="successBuy" data-value='{
+     "title" : "{{session("successBuy.title")}}" ,
+    "body" :  "{{session("successBuy.body")}}"
+    }'>
+@endif

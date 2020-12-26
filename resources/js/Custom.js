@@ -258,6 +258,17 @@ $(function () {
     }
 });
 
+$(function () {
+    let sessionValue = $("#successBuy").data("value");
+    if (sessionValue) {
+        console.log(sessionValue);
+
+        Notiflix.Report.Success(sessionValue.title,
+            sessionValue.body,
+            'بستن');
+    }
+});
+
 
 const images = document.querySelectorAll("[data-src]");
 

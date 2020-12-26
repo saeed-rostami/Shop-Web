@@ -30,7 +30,7 @@ class CardController extends Controller
                 'postTitle' => $request->post,
                 'catTitle' => $request->cat,
                 'slug' => $request->slug,
-            ]
+            ],
         ]);
         return redirect()->back()->with('CardSuccess', 'محصول مورد نظر با موفقیت به سبد خرید اضافه شد');
     }
@@ -40,14 +40,6 @@ class CardController extends Controller
         return view('Main.Card');
     }
 
-//    public function reduce($id)
-//    {
-//        $oldCard = Session::has('card') ? Session::get('card') : null;
-//        $card = new Card($oldCard);
-//        $card->reduce($id);
-//        Session::put('card', $card);
-//        return redirect()->back();
-//    }
 
     public function remove($id)
     {

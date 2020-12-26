@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/remove-all', 'CardController@removeAll')->name('removeAll');
 
     Route::post('/buy', "OrderController@buy")->name('buy');
-    Route::get('/checkout/{transactionId}/{amount}','OrderController@zarinpalCallback1')->name('checkout');
+    Route::get('/callback','OrderController@callback')->name('callback');
 
 //    user-profile
     Route::get('/profile', "UserController@profile")->name('Profile');
