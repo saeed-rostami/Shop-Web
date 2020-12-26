@@ -41,7 +41,7 @@
                                         </form>
 
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{$item->price}}</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{$item->price}} هزار تومن</strong></td>
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
@@ -102,7 +102,7 @@
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">{{Cart::subtotal()}}</h5>
+                                <h5 class="font-weight-bold">{{Cart::subtotal()}} هزار تومن</h5>
                                 <strong class="text-muted">قیمت کل</strong>
 
                             </li>

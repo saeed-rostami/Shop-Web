@@ -14,36 +14,34 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function buy(Request $request)
+    public function buy()
     {
         $amount = Cart::subtotal();
-        dd( (int)($amount));
-
-//        $amount = (int)$amount . "000";
+        $amount = substr($amount, 0, strpos($amount, "."));
 
         $results = Zarinpal::request(
             url(route('callback')),
-            '1000',
+            $amount,
             'laravel'
         );
         dd($results);
-//        if (isset($results['Authority']) && !empty($results['Authority'])) {
-//            $order = Order::create([
-//                'authority' => $results['Authority'],
-//                'user_id' => auth()->user()->id,
-//                'total' => $amount,
-//                'status' => 0,
-//            ]);
-//
-//            $items = Cart::content();
-//            foreach ($items as $item) {
-//                $order->products()->attach($item->id);
-//            }
-//
-//            Zarinpal::redirect();
-//        } else {
-//            return redirect()->back()->with('success', 'مشکل در برقراری ارتباط با درگاه رخ داده است لطفا بعدا تلاش فرمایید');
-//        }
+        if (isset($results['Authority']) && !empty($results['Authority'])) {
+            $order = Order::create([
+                'authority' => $results['Authority'],
+                'user_id' => auth()->user()->id,
+                'total' => $amount,
+                'status' => 0,
+            ]);
+
+            $items = Cart::content();
+            foreach ($items as $item) {
+                $order->products()->attach($item->id);
+            }
+
+            Zarinpal::redirect();
+        } else {
+            return redirect()->back()->with('success', 'مشکل در برقراری ارتباط با درگاه رخ داده است لطفا بعدا تلاش فرمایید');
+        }
     }
 
     public function callback()
