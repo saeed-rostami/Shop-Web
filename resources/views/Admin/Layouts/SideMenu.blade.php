@@ -22,7 +22,7 @@
                                                                                            data-i18n="Email">خانه</span></a>
             </li>
 
-            <li class=" nav-item"><a href="#"><i class="feather icon-truck"></i><span class="menu-title"
+            <li class=" nav-item"><a href="{{route('Admin-Orders')}}"><i class="feather icon-truck"></i><span class="menu-title"
                                                                                      data-i18n="Email">سفارشات
                 </span></a></li>
             <li class=" nav-item "><a href="{{route('Admin-Categories')}}"><i class="feather icon-file"></i><span class="menu-title"

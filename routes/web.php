@@ -62,6 +62,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
     Route::get('/products', 'ProductsController@products')->name('Admin-Products');
     Route::get('/tags', 'TagController@index')->name('Admin-Tags');
     Route::get('/trainers', 'TrainersController@index')->name('Admin-Trainer');
+    Route::get('/orders', 'OrdersController@index')->name('Admin-Orders');
 
 //    store
     Route::post('/store-category', 'CategoriesController@storeCategory')->name('storeCategory');

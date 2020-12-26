@@ -19,12 +19,13 @@ class OrderController extends Controller
     {
         $amount = Cart::subtotal();
         $amount = substr($amount, 0, strpos($amount, "."));
+        $amount = str_replace(',' , '' , $amount);
+        $amount = (int) $amount;
         $results = Zarinpal::request(
             url(route('callback')),
             $amount,
             'laravel'
         );
-        dd($results);
         if (isset($results['Authority']) && !empty($results['Authority'])) {
             $order = Order::create([
                 'authority' => $results['Authority'],
