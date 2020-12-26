@@ -19,10 +19,6 @@ class AdminController extends Controller
 
     public function adminPanel()
     {
-        $categories = Category::all();
-        $posts = Post::all();
-        $products = Product::all();
-
-        return view('Admin.Layouts.Parent' , compact(['categories' , 'posts' , 'products']));
+        return view('Admin.Panel');
     }
 }

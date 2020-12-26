@@ -67,9 +67,6 @@ header("Pragma: no-cache");
 @include('Admin.Layouts.SideMenu')
 <!-- BEGIN: Content-->
 
-<div>
-    <h1>this is dashboard</h1>
-</div>
 @yield('AdminContent')
 
 <div class="sidenav-overlay"></div>
