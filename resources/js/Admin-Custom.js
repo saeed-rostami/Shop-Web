@@ -1,11 +1,11 @@
 //preloader
-$(document).ready(function () {
-    document.querySelector('.preloader').classList.add('hidePreloader');
-    $('.js-example-basic-multiple').select2({
-        placeholder: 'انتخاب کنید',
-        allowClear: true,
-    });
-});
+// $(document).ready(function () {
+//     document.querySelector('.preloader').classList.add('hidePreloader');
+//     $('.js-example-basic-multiple').select2({
+//         placeholder: 'انتخاب کنید',
+//         allowClear: true,
+//     });
+// });
 
 //session alert
 $(function () {

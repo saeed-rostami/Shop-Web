@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//use App\Http\Helpers;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -18,7 +19,6 @@ class OrderController extends Controller
     {
         $amount = Cart::subtotal();
         $amount = substr($amount, 0, strpos($amount, "."));
-
         $results = Zarinpal::request(
             url(route('callback')),
             $amount,

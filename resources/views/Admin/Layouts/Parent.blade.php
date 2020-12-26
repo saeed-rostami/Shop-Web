@@ -45,9 +45,9 @@
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
 
-<div class="preloader d-flex justify-content-center align-items-center">
-    <img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">
-</div>
+{{--<div class="preloader d-flex justify-content-center align-items-center">--}}
+    {{--<img src="{{asset('images/302.gif')}}" alt="preloader" style="background-color: var(--mainGrey)">--}}
+{{--</div>--}}
 
 
 <?php
@@ -67,6 +67,9 @@ header("Pragma: no-cache");
 @include('Admin.Layouts.SideMenu')
 <!-- BEGIN: Content-->
 
+<div>
+    <h1>this is dashboard</h1>
+</div>
 @yield('AdminContent')
 
 <div class="sidenav-overlay"></div>
