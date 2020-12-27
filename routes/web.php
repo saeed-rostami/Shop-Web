@@ -63,6 +63,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
     Route::get('/tags', 'TagController@index')->name('Admin-Tags');
     Route::get('/trainers', 'TrainersController@index')->name('Admin-Trainer');
     Route::get('/orders', 'OrdersController@index')->name('Admin-Orders');
+    Route::get('/order/{order}', 'OrdersController@order')->name('Admin-Order');
 
 //    store
     Route::post('/store-category', 'CategoriesController@storeCategory')->name('storeCategory');
@@ -93,6 +94,9 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
     // trainer-update
     Route::get('/edit/trainer/{trainer:name}', 'TrainersController@edit')->name('edit-Trainer');
     Route::put('/update-trainer/{trainer:name}', 'TrainersController@update')->name('Update-Trainer');
+
+//    order-update
+    Route::put('/update-order/{order}', 'OrdersController@changeStatus')->name('Update-Order');
 
 
 //    delete
