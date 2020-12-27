@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
@@ -32,17 +31,16 @@ Route::post('/emailCheck', "HomeController@checkEmail")->name('EmailCheck');
 Route::post('/phoneCheck', "HomeController@checkPhone")->name('PhoneCheck');
 
 
-
 //shop and card
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/shoppingcard', 'CardController@CardIndex')->name('CardIndex')->middleware('verified');
+    Route::get('/shoppingcard', 'CardController@CardIndex')->name('CardIndex');
     Route::post('/add-to-card', 'CardController@AddProduct')->name('AddProduct');
     Route::delete('/remove-item/{product}', 'CardController@remove')->name('remove');
     Route::delete('/remove-all', 'CardController@removeAll')->name('removeAll');
 
     Route::post('/buy', "OrderController@buy")->name('buy');
-    Route::get('/callback','OrderController@callback')->name('callback');
+    Route::get('/callback', 'OrderController@callback')->name('callback');
 
 //    user-profile
     Route::get('/profile', "UserController@profile")->name('Profile');
@@ -52,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //admin*****
-Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Admin'], function () {
+Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/dashboard', 'AdminController@adminPanel')->name('Admin-Panel');
 
@@ -64,6 +62,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
     Route::get('/trainers', 'TrainersController@index')->name('Admin-Trainer');
     Route::get('/orders', 'OrdersController@index')->name('Admin-Orders');
     Route::get('/order/{order}', 'OrdersController@order')->name('Admin-Order');
+    Route::get('/users', 'UsersController@users')->name('Admin-Users');
 
 //    store
     Route::post('/store-category', 'CategoriesController@storeCategory')->name('storeCategory');
@@ -99,12 +98,17 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin' , 'namespace' => 'Adm
     Route::put('/update-order/{order}', 'OrdersController@changeStatus')->name('Update-Order');
 
 
+    //    user-update
+    Route::get('/update-user/{user}', 'UsersController@edit')->name('Edit-User');
+    Route::put('/update-user/{user}', 'UsersController@update')->name('Update-User');
+
 //    delete
     Route::delete('/delete-category/{category:title}', 'CategoriesController@deleteCategory')->name('Delete-Category');
     Route::delete('/delete-post/{post:title}', 'PostsController@deletePost')->name('Delete-Post');
     Route::delete('/delete-product/{product:title}', 'ProductsController@deleteProduct')->name('Delete-Product');
     Route::delete('/delete-tag/{tag:name}', 'TagController@deleteTag')->name('Delete-Tag');
     Route::delete('/delete-trainer/{trainer:name}', 'TrainersController@deleteTrainer')->name('Delete-Trainer');
+    Route::delete('/delete-user/{user}', 'UsersController@destroy')->name('Delete-User');
 });
 
 

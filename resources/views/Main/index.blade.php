@@ -4,6 +4,7 @@
 @endsection
 
 @section('Content')
+
     <section class="gallery py-3 mb-4" id="galley">
         <div class="container">
 

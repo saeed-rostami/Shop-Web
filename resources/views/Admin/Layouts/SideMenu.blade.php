@@ -42,7 +42,7 @@
             <li class=" nav-item"><a href="{{route('Admin-Tags')}}"><i class="feather icon-tag"></i><span class="menu-title"
                                                                                    data-i18n="Calender">برچسب ها
                 </span></a></li>
-            <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title"
+            <li class=" nav-item"><a href="{{route('Admin-Users')}}"><i class="feather icon-user"></i><span class="menu-title"
                                                                                     data-i18n="Calender">کاربران</span></a>
             </li>
 
