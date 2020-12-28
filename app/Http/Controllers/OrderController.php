@@ -53,9 +53,11 @@ class OrderController extends Controller
             return redirect()->back()->with('success', 'خطایی رخ داده و یا اطلاعات درست نمیباشد');
         }
         $verified_request = Zarinpal::verify('ok', $order->total, $authority);
+
         if ($verified_request['Status'] === 'success') {
             $order->update([
-                'status' => true
+                'status' => true,
+//                TODO REFiD
             ]);
             $order->save();
             Cart::destroy();
