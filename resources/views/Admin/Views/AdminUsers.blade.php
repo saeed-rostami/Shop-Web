@@ -72,7 +72,7 @@
                                     <td>
                                         <a href="{{route('Edit-User' , $user->id)}}"
                                            class="btn
-                btn-outline-info mb-2"
+                btn-outline-info mb-2 disabled"
                                         >ویرایش</a>
                                     </td>
 

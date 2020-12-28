@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="{{route('Admin-Panel')}}">
                     <div class="brand-logo"></div>
                     <h2 class="brand-text mb-0">پنل مدیریت</h2>
                 </a>
