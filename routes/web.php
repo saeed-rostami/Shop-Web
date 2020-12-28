@@ -32,7 +32,7 @@ Route::post('/phoneCheck', "HomeController@checkPhone")->name('PhoneCheck');
 
 
 //shop and card
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth' , 'verify']], function () {
 
     Route::get('/shoppingcard', 'CardController@CardIndex')->name('CardIndex');
     Route::post('/add-to-card', 'CardController@AddProduct')->name('AddProduct');

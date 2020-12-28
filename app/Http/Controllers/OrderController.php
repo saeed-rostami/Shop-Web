@@ -13,14 +13,15 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function buy()
+    public function buy(Request $request)
     {
         $amount = Cart::subtotal();
         $amount = substr($amount, 0, strpos($amount, "."));
-        $amount = str_replace(',' , '' , $amount);
-        $amount = (int) $amount;
+        $amount = str_replace(',', '', $amount);
+        $amount = (int)$amount;
         $results = Zarinpal::request(
             url(route('callback')),
             $amount,
@@ -28,7 +29,9 @@ class OrderController extends Controller
         );
         if (isset($results['Authority']) && !empty($results['Authority'])) {
             $order = Order::create([
+                'refID' => null,
                 'authority' => $results['Authority'],
+                'address' => $request->address,
                 'user_id' => auth()->user()->id,
                 'total' => $amount,
                 'status' => 0,
@@ -47,6 +50,7 @@ class OrderController extends Controller
 
     public function callback()
     {
+
         $authority = \request('Authority');
         $order = Order::query()->firstWhere('authority', $authority);
         if (!$order || !$authority) {
@@ -57,7 +61,7 @@ class OrderController extends Controller
         if ($verified_request['Status'] === 'success') {
             $order->update([
                 'status' => true,
-//                TODO REFiD
+                'refID' => $verified_request['RefID'],
             ]);
             $order->save();
             Cart::destroy();

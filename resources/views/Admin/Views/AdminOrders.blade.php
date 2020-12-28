@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{$order->id}}</td>
                                     <td>
-                                        {{$order->authority}}
+                                        {{$order->refID}}
                                     </td>
                                     <td>{{$order->user->fullname}}</td>
                                     <td><strong class="badge badge-{{$order->status ? 'success' : 'danger'}}">

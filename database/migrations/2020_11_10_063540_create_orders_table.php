@@ -16,9 +16,11 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('refID')->nullable()->default(null);
             $table->string('authority');
             $table->unsignedBigInteger('total');
             $table->boolean('status')->default(0);
+            $table->longText('address');
             $table->softDeletes();
             $table->timestamps();
 

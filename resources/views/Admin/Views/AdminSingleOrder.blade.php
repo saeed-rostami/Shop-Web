@@ -26,7 +26,7 @@
                             <tr>
                                 <td>{{$order->id}}</td>
                                 <td>
-                                    {{$order->authority}}
+                                    {{$order->refID}}
                                 </td>
                                 <td>{{$order->user->fullname}}</td>
                                 <td><strong class="badge badge-{{$order->status ? 'success' : 'danger'}}">
@@ -98,6 +98,12 @@
                                 </button>
                             </form>
                         </div>
+                    </div>
+                    <hr>
+                    <div class="col-6 border">
+                       <span class="badge badge-info"> مشخصات و آدرس خریدار</span>
+                        <h3>{{$order->address}}</h3>
+                        <h3>{{$order->user->phone}}</h3>
                     </div>
                 </div>
             </div>

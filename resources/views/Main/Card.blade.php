@@ -109,7 +109,12 @@
                         </ul>
                      <form action="{{route('buy')}}" method="post">
                          @csrf
-                         <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت نهایی</button>
+                         <div class="form-group">
+                             <label for="address">لطفا آدرس محل سکونت خود را همراه استان و شهر وارد نمایید</label>
+                             <textarea class="form-control rounded" name="address" id="address" rows="3"
+                                       placeholder="آدرس را وارد نمایید"></textarea>
+                         </div>
+                         <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت صورتحساب</button>
                      </form>
                     </div>
                 </div>
