@@ -5,12 +5,13 @@
         <span
             class="badge badge-success"> {{$order->total}}</span>
         <hr>
-        @foreach($order->products as $product)
             <strong> محصولات خریداری شده
                 <img style="width: 40px; height: 40px"
                      src="{{asset('images/product.png')}}" alt="">
             </strong>
-            <strong class="badge badge-success"><a
+        @foreach($order->products as $product)
+
+        <strong class="badge badge-success mt-1"><a
                     style="text-decoration: none"
                     class="text-white"
                     href="{{route('Product' ,

@@ -16,7 +16,7 @@
                     }}</p>
                     <div class="card-footer text-capitalize d-flex flex-column">
                         <h5 class="car-price purple-bg rounded text-white-50">قیمت : {{$product->price}}
-                            تومان </h5>
+                             </h5>
                     </div>
                     <div class="d-flex justify-content-center align-items-center align-content-center mb-1">
                         <form method="post" action="{{route('AddProduct')}}">

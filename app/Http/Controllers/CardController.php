@@ -12,6 +12,8 @@ class CardController extends Controller
 {
     public function AddProduct(Request $request)
     {
+        $price = $request->price;
+        $price = str_replace(' تومان', '', $price);
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
@@ -23,7 +25,7 @@ class CardController extends Controller
             'id' => $request->id,
             'name' => $request->title,
             'qty' => 1,
-            'price' => $request->price,
+            'price' => $price,
             'options' => [
                 'coach' => $request->coach,
                 'image' => $request->image,

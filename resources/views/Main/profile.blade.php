@@ -6,25 +6,26 @@
         <div class="col-12 col-md-6 rounded black-bg">
             <h3 class="text-white-50">مشخصات کاربری</h3>
 
-            <strong> نام : {{$user->name}}<img style="width: 40px; height: 40px" src="{{asset('images/test-account.png')}}"
-                                           alt=""></strong>
+            <strong> نام : {{$user->name}}<img style="width: 40px; height: 40px"
+                                               src="{{asset('images/test-account.png')}}"
+                                               alt=""></strong>
             <br>
             <strong> نام خانوادگی : {{$user->family}}<img style="width: 40px; height: 40px"
-                                                      src="{{asset('images/family.png')}}" alt=""></strong>
+                                                          src="{{asset('images/family.png')}}" alt=""></strong>
             <br>
 
             @includeIf('Partials._emailActivationBadge')
 
             <strong>{{$user->email}} : پست الکترونیکی <img style="width: 40px; height: 40px"
-                                                       src="{{asset('images/email.png')}}" alt=""></strong>
+                                                           src="{{asset('images/email.png')}}" alt=""></strong>
             <br>
 
             <strong>{{$user->phone}} : شماره همراه <img style="width: 40px; height: 40px"
-                                                    src="{{asset('images/phone.png')}}" alt=""></strong>
+                                                        src="{{asset('images/phone.png')}}" alt=""></strong>
             <br>
 
             <strong>{{$user->created_at}} : تاریخ عضویت <img style="width: 40px; height: 40px"
-                                                         src="{{asset('images/date.png')}}" alt=""></strong>
+                                                             src="{{asset('images/date.png')}}" alt=""></strong>
         </div>
 
         {{--order--}}

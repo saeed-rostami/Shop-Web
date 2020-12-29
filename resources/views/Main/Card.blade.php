@@ -102,7 +102,7 @@
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">{{Cart::subtotal()}} هزار تومن</h5>
+                                <h5 class="font-weight-bold">{{Cart::subtotal()}} تومن</h5>
                                 <strong class="text-muted">قیمت کل</strong>
 
                             </li>

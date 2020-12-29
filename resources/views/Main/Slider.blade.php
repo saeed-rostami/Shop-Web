@@ -23,7 +23,7 @@
                     }}</p>
 
                     <div class="purple-bg rounded p-2">
-                        <h5 class="text-white-50">قیمت :  {{$prod->price}} تومان </h5>
+                        <h5 class="text-white-50">قیمت :  {{$prod->price}} </h5>
                     </div>
                 </div>
             </div>

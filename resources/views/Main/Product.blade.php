@@ -65,33 +65,44 @@
                         <h3 class="text-muted text-center">مشخصات</h3>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->price}} تومان </h5>
-                            <span class="purple font-weight-bold"> : قیمت</span>
+                            <h5 class="text-muted ">{{$product->price}} </h5>
+                              <span class="purple font-weight-bold"> : قیمت</span><img style="width: 40px; height: 40px"
+                                                                                       src="{{asset('images/price.png')}}" alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->off}} تومان </h5>
-                            <span class="purple font-weight-bold"> : تخفیف</span>
+                            <h5 class="text-muted ">{{$product->off}}  </h5>
+                            <span class="purple font-weight-bold"> : تخفیف</span><img style="width: 40px; height: 40px"
+                                                                                      src="{{asset('images/coupon.png')}}"
+                                                                                      alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex ">
                             <h5 class="text-muted ">30000$ </h5>
-                            <span class="purple font-weight-bold">: قیمت در آمازون</span>
+                            <span class="purple font-weight-bold">: قیمت در آمازون</span><img style="width: 40px; height: 40px"
+                                                                                              src="{{asset
+                                                                                              ('images/amazon.png')}}" alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->year}}  </h5>
-                            <span class="purple font-weight-bold"> : سال انتشار</span>
+                            <span class="purple font-weight-bold"> : سال انتشار</span><img style="width: 40px; height: 40px"
+                                                                                           src="{{asset('images/date.png')
+                                                                                           }}" alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->trainer->name}}  </h5>
-                            <span class="purple font-weight-bold"> : گردآورنده</span>
+                            <span class="purple font-weight-bold"> : گردآورنده</span><img style="width: 40px; height: 40px"
+                                                                                          src="{{asset('images/trainer.png')}}"
+                                                                                          alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->duration}}  </h5>
-                            <span class="purple font-weight-bold"> : مدت آموزش</span>
+                            <span class="purple font-weight-bold"> : مدت آموزش</span><img style="width: 40px; height: 40px"
+                                                                                          src="{{asset('images/time.png')}}"
+                                                                                          alt="">
                         </div>
 
                     </div>

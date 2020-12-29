@@ -10,7 +10,7 @@ use App\Casts\Json;
 class Product extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'post_id', 'duration', 'off' , 'trainer_id'];
+    protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'post_id', 'duration', 'off', 'trainer_id'];
 
     public function breadcrumbName()
     {
@@ -25,6 +25,21 @@ class Product extends Model
 
     protected $casts = ['image' => Json::class];
 
+    public function getPriceAttribute($value)
+    {
+        return $value . " " . 'تومان';
+    }
+
+    public function getOffAttribute($value)
+    {
+        if ($value)
+            return $value . " " . 'تومان';
+        else
+           return 'بدون تخفیف';
+    }
+
+
+//    relations
     public function post()
     {
         return $this->belongsTo(Post::class);
@@ -44,6 +59,7 @@ class Product extends Model
     {
         return $this->belongsTo(Trainer::class);
     }
+//    end-relations
 
 
 }
