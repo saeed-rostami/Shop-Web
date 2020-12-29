@@ -7,6 +7,7 @@ use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Zarinpal\Laravel\Facade\Zarinpal;
+use Hekmatinasser\Verta;
 
 class OrderController extends Controller
 {

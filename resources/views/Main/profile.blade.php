@@ -6,16 +6,25 @@
         <div class="col-12 col-md-6 rounded black-bg">
             <h3 class="text-white-50">مشخصات کاربری</h3>
 
-            <h5> نام : {{$user->name}}<img style="width: 40px; height: 40px" src="{{asset('images/test-account.png')}}"
-                                           alt=""></h5>
-            <h5> نام خانوادگی : {{$user->family}}<img style="width: 40px; height: 40px"
-                                                      src="{{asset('images/family.png')}}" alt=""></h5>
+            <strong> نام : {{$user->name}}<img style="width: 40px; height: 40px" src="{{asset('images/test-account.png')}}"
+                                           alt=""></strong>
+            <br>
+            <strong> نام خانوادگی : {{$user->family}}<img style="width: 40px; height: 40px"
+                                                      src="{{asset('images/family.png')}}" alt=""></strong>
+            <br>
+
             @includeIf('Partials._emailActivationBadge')
 
-            <h5>{{$user->email}} : پست الکترونیکی <img style="width: 40px; height: 40px"
-                                                       src="{{asset('images/email.png')}}" alt=""></h5>
-            <h5>{{$user->phone}} : شماره همراه <img style="width: 40px; height: 40px"
-                                                    src="{{asset('images/phone.png')}}" alt=""></h5>
+            <strong>{{$user->email}} : پست الکترونیکی <img style="width: 40px; height: 40px"
+                                                       src="{{asset('images/email.png')}}" alt=""></strong>
+            <br>
+
+            <strong>{{$user->phone}} : شماره همراه <img style="width: 40px; height: 40px"
+                                                    src="{{asset('images/phone.png')}}" alt=""></strong>
+            <br>
+
+            <strong>{{$user->created_at}} : تاریخ عضویت <img style="width: 40px; height: 40px"
+                                                         src="{{asset('images/date.png')}}" alt=""></strong>
         </div>
 
         {{--order--}}
@@ -28,9 +37,18 @@
 
                 <thead>
                 <tr>
-                    <th>تاریخ سفارش</th>
-                    <th>وضعیت</th>
-                    <th> جزئیات سفارش</th>
+                    <th>تاریخ سفارش
+                        <img style="width: 40px; height: 40px"
+                             src="{{asset('images/date.png')}}" alt="">
+                    </th>
+                    <th>وضعیت
+                        <img style="width: 40px; height: 40px"
+                             src="{{asset('images/check.png')}}" alt="">
+                    </th>
+                    <th> جزئیات سفارش
+                        <img style="width: 40px; height: 40px"
+                             src="{{asset('images/detail.png')}}" alt="">
+                    </th>
                 </tr>
 
                 </thead>
@@ -38,7 +56,10 @@
 
                 @foreach($user->orders as $order)
                     <tr>
-                        <td>{{$order->created_at}}</td>
+                        <td>
+                            <strong>{{$user->created_at}}</strong>
+
+                        </td>
                         <td><strong class="badge badge-{{$order->status ? 'success' : 'danger'}}">
 
                                 @if($order->status)
@@ -53,23 +74,15 @@
 
                             <a class="btn purple" data-toggle="collapse" href="#collapseExample" role="button"
                                aria-expanded="false" aria-controls="collapseExample">
-                                جزئیات
+                                <strong>جزئیات</strong>
+
                             </a>
 
-                            <div class="collapse" id="collapseExample">
-                                <div class="card card-body">
-                                    <h5>مبلغ سفارش : <span class="badge badge-success"> {{$order->total}}</span></h5>
-                                    <hr>
-                                    @foreach($order->products as $product)
-                                        <h5> محصولات خریداری شده</h5>
-                                        <p class="badge badge-success"><a class="text-dark" href="{{route('Product' ,
-                                        [$product->post->category->title, $product->post->title,  $product->slug])}}">{{$product->title}}</a>
-                                        </p>
-                                    @endforeach
-                                </div>
-                            </div>
                         </td>
                     </tr>
+
+                    @include('Partials._orderDetailUserProfile')
+
                 @endforeach
                 </tbody>
             </table>
