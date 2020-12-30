@@ -12,11 +12,13 @@
 
                 <!--footer-->
                 <div class="d-flex flex-column justify-content-around text-center">
-                    <p class="text-white-50 font-weight-bold">{{Str::limit($product->title ,'25')
+                    <p class="text-white-50 font-weight-bold mt-1">{{Str::limit($product->title ,'25')
                     }}</p>
-                    <div class="card-footer text-capitalize d-flex flex-column">
-                        <h5 class="car-price purple-bg rounded text-white-50">قیمت : {{$product->price}}
-                             </h5>
+                    <div class="card-footer text-capitalize d-flex flex-column align-items-end">
+                        <strong class="text-white-50">قیمت : {{$product->price}}
+                        </strong>
+                        <strong class="text-white-50">تخفیف : {{$product->off}}
+                        </strong>
                     </div>
                     <div class="d-flex justify-content-center align-items-center align-content-center mb-1">
                         <form method="post" action="{{route('AddProduct')}}">
@@ -45,9 +47,9 @@
         </div>
     @endforeach
 
-        <div class="my-3">
-            {{$products->links()}}
-        </div>
+    <div class="my-3">
+        {{$products->links()}}
+    </div>
 </div>
 
 @push('productsPagination.js')

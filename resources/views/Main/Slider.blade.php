@@ -22,8 +22,11 @@
                     <p>{{Str::limit($prod->title ,'25')
                     }}</p>
 
-                    <div class="purple-bg rounded p-2">
-                        <h5 class="text-white-50">قیمت :  {{$prod->price}} </h5>
+                    <div class="text-capitalize d-flex flex-column align-items-end">
+                        <strong class="text-white-50">قیمت : {{$prod->price}}
+                        </strong>
+                        <strong class="text-white-50">تخفیف : {{$prod->off}}
+                        </strong>
                     </div>
                 </div>
             </div>

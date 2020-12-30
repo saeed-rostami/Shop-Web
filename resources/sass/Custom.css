@@ -292,7 +292,6 @@ body {
 .custom-btn {
     border-radius: 45%;
     padding: 1rem;
-    border: 2px solid blueviolet !important;
     color: blueviolet !important;
     font-size: 1.3rem;
 }
