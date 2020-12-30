@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Helpers;
+use App\Http\Helpers;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -20,12 +20,10 @@ class OrderController extends Controller
     public function buy(Request $request)
     {
         $amount = Cart::subtotal();
-        $amount = substr($amount, 0, strpos($amount, "."));
-        $amount = str_replace(',', '', $amount);
-        $amount = (int)$amount;
+        $price = Helpers\amount($amount);
         $results = Zarinpal::request(
             url(route('callback')),
-            $amount,
+            $price,
             'laravel'
         );
         if (isset($results['Authority']) && !empty($results['Authority'])) {
@@ -34,7 +32,7 @@ class OrderController extends Controller
                 'authority' => $results['Authority'],
                 'address' => $request->address,
                 'user_id' => auth()->user()->id,
-                'total' => $amount,
+                'total' => $price,
                 'status' => 0,
             ]);
 

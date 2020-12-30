@@ -58,7 +58,7 @@
                 @foreach($user->orders as $order)
                     <tr>
                         <td>
-                            <strong>{{$user->created_at}}</strong>
+                            <strong>{{$order->created_at}}</strong>
 
                         </td>
                         <td><strong class="badge badge-{{$order->status ? 'success' : 'danger'}}">
@@ -73,14 +73,15 @@
                             </strong></td>
                         <td>
 
-                            <a class="btn purple" data-toggle="collapse" href="#collapseExample" role="button"
-                               aria-expanded="false" aria-controls="collapseExample">
+                            <a class="btn purple toggle"
+                            >
                                 <strong>جزئیات</strong>
-
                             </a>
 
                         </td>
+
                     </tr>
+
 
                     @include('Partials._orderDetailUserProfile')
 
@@ -92,4 +93,3 @@
 
     </div>
 @endsection
-
