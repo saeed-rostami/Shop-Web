@@ -1,7 +1,7 @@
 @extends('Layouts.Parent')
 
 @section('Content')
- <div class="col-12 col-md-8 justify-content-center">
+ <div class="col-12 col-md-8 justify-content-center black-bg rounded">
      <form action="{{route('Store-Profile')}}" method="post">
          @csrf
          @method('PUT')

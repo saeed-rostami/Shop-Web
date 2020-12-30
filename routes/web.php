@@ -47,6 +47,10 @@ Route::group(['middleware' => ['auth' , 'verify']], function () {
     Route::get('/edit-profile', "UserController@editProfile")->name('Edit-Profile');
     Route::put('/edit-profile', "UserController@storeProfile")->name('Store-Profile');
 
+//receipt
+    Route::get('/receipt', "UserController@receipt")->name('Receipt');
+
+
 });
 
 //admin*****

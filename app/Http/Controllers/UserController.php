@@ -30,11 +30,17 @@ class UserController extends Controller
     {
         $user = User::query()->find($request->user()->id);
         $user->update([
-           $user->name = $request->name,
-           $user->family = $request->family,
-           $user->phone = $request->phone,
+            $user->name = $request->name,
+            $user->family = $request->family,
+            $user->phone = $request->phone,
         ]);
         $user->save();
         return redirect()->back()->with('success', 'تغییرات با موفقیت انجام شد');
+    }
+
+    public function receipt()
+    {
+        $user = Auth::user();
+        return view('Main.Receipt', compact('user'));
     }
 }
