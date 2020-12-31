@@ -67,7 +67,7 @@
                             <label for="price">
                                 قیمت
                             </label>
-                            <input type="text" value="{{$product->price}}" name="price" class="form-control">
+                            <input type="text" value="{{\App\Http\Helpers\price($product->price)}}" name="price" class="form-control">
                         </div>
 
                         {{--off--}}
@@ -76,7 +76,7 @@
                         </label>
                         <div class="form-group">
                             <input type="text" class="form-control" name="off"
-                                   value="{{ $product->off }}"
+                                   value="{{ \App\Http\Helpers\off($product->off) }}"
                                    placeholder="تخفیف">
                         </div>
 

@@ -55,7 +55,7 @@ class ProductsController extends Controller
         $images = $request->file('image');
         foreach ($images as $image) {
             $extension = $image->getClientOriginalName();
-            $fileName = $title . '.' . $extension;
+            $fileName = $extension;
             $image->move(public_path() . "/Images/Products/", $fileName);
             $file[] = $fileName;
         }
@@ -93,12 +93,11 @@ class ProductsController extends Controller
                 File::delete($oldFile_img);
             }
 
-            $title = $request->title;
             $newImages = $request->file('image');
 
             foreach ($newImages as $newImage) {
                 $extension = $newImage->getClientOriginalName();
-                $image = time() . "." . $title . "." . $extension;
+                $image = $extension;
                 $newImage->move("Images/Products/", $image);
 
                 $images[] = $image;

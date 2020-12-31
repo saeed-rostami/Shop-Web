@@ -41,7 +41,7 @@
                                         </form>
 
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{$item->price}} هزار تومن</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{$item->price}} تومن</strong></td>
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
@@ -96,9 +96,9 @@
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">بدون مالیت</h5>
+                                <h5 class="font-weight-bold">بدون تخفیف</h5>
 
-                                <strong class="text-muted">مالیات</strong>
+                                <strong class="text-muted">تخفیف</strong>
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 

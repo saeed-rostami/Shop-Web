@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Card;
+use function App\Http\Helpers\price;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -13,7 +14,7 @@ class CardController extends Controller
     public function AddProduct(Request $request)
     {
         $price = $request->price;
-        $price = str_replace(' تومان', '', $price);
+        $price = price($price);
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
@@ -31,7 +32,8 @@ class CardController extends Controller
             'qty' => 1,
             'price' => $price,
             'options' => [
-                'coach' => $request->coach,
+                'trainer' => $request->trainer,
+                'off' => $request->off,
                 'image' => $request->image,
                 'postTitle' => $request->post,
                 'catTitle' => $request->cat,
