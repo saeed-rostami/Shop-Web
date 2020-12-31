@@ -52363,6 +52363,22 @@ $(function () {
       }
     }
   });
+  $("#buyForm").validate({
+    rules: {
+      address: {
+        maxlength: 255,
+        minlength: 10,
+        required: true
+      }
+    },
+    messages: {
+      address: {
+        required: 'لطفا آدرس را وارد کنید',
+        maxlength: 'تعداد کارکتر آدرس وارد شده بیش از حد مجاز است',
+        minlength: 'تعداد کارکتر آدرس وارد شده نباید کمتر از 10 باشد'
+      }
+    }
+  });
 }); //register validation
 
 $(function () {
@@ -52495,27 +52511,43 @@ $(function () {
   if (sessionValue) {
     Notiflix.Report.Failure("عملیات نا موفق", "ایمیل یا رمز عبور وارد شده اشتباه میباشد", 'متوجه شدم');
   }
-});
+}); // cardExist
+
 $(function () {
-  var sessionValue = $("#CardSuccess").data('value');
+  var sessionValue = $("#cardExist").data("value");
 
   if (sessionValue) {
-    Notiflix.Report.Success("عملیات موفق", sessionValue, "متوجه شدم");
+    console.log(sessionValue);
+    Notiflix.Report.Info(sessionValue.title, sessionValue.message, sessionValue.button);
   }
-});
+}); // emptyBasket
+
 $(function () {
-  var sessionValue = $("#cardExist").data('value');
+  var sessionValue = $("#emptyBasket").data("value");
 
   if (sessionValue) {
-    Notiflix.Report.Warning("", sessionValue, "متوجه شدم");
+    console.log(sessionValue);
+    Notiflix.Report.Info(sessionValue.title, sessionValue.message, sessionValue.button);
   }
-});
+}); // successBuy
+
 $(function () {
   var sessionValue = $("#successBuy").data("value");
 
   if (sessionValue) {
     console.log(sessionValue);
-    Notiflix.Report.Success(sessionValue.title, sessionValue.body, 'بستن');
+    Notiflix.Report.Success(sessionValue.title, sessionValue.message, sessionValue.button);
+  }
+}); // fail
+
+$(function () {
+  var sessionValue = $("#fail").data("value");
+
+  if (sessionValue) {
+    console.log(sessionValue);
+    console.log(sessionValue.title);
+    console.log(sessionValue.message);
+    Notiflix.Report.Failure(sessionValue.title, sessionValue.message, sessionValue.button);
   }
 });
 var images = document.querySelectorAll("[data-src]");

@@ -18,7 +18,11 @@ class CardController extends Controller
             return $cartItem->id === $request->id;
         });
         if ($duplicate->isNotEmpty()) {
-            return redirect()->back()->with('cardExist', 'محصول مورد نظر در سبد خرید شما موجود میباشد');
+            return redirect()->back()->with('cardExist', [
+                'title' => 'هشدار',
+                'message' => 'محصول مورد نظر در سبد خرید شما موجود است',
+                'button' => 'متوجه شدم'
+            ]);
         }
 
         $item = Cart::add([
@@ -34,7 +38,11 @@ class CardController extends Controller
                 'slug' => $request->slug,
             ],
         ]);
-        return redirect()->back()->with('CardSuccess', 'محصول مورد نظر با موفقیت به سبد خرید اضافه شد');
+        return redirect()->back()->with('successBuy', [
+            'title' => 'عملیات موفق',
+            'message' => 'محصول مورد نظر با موفقیت به سبد خرید اضافه شد',
+            'button' => 'بستن'
+        ]);
     }
 
     public function CardIndex()
@@ -46,12 +54,20 @@ class CardController extends Controller
     public function remove($id)
     {
         Cart::remove($id);
-        return redirect()->back()->with('CardSuccess', 'محصول مورد نظر از سبد خرید حذف شد');
+        return redirect()->back()->with('successBuy', [
+            'title' => 'عملیات موفق',
+            'message' => 'محصول مورد نظر با از سبد خرید حذف شد',
+            'button' => 'بستن'
+        ]);
     }
 
     public function removeAll()
     {
         Cart::destroy();
-        return redirect()->back()->with('CardSuccess', 'سبد خرید شما خالی شد');
+        return redirect()->back()->with('emptyBasket', [
+            'title' => 'عملیات موفق',
+            'message' => 'سبد خرید شما خالی است',
+            'button' => 'بستن'
+        ]);
     }
 }

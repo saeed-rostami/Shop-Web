@@ -12,19 +12,38 @@
 
 
 
-{{--card--}}
-@if(session("CardSuccess"))
-    <input type="hidden" id="CardSuccess" data-value="{{session("CardSuccess")}}">
+@if(session("emptyBasket"))
+    <input type="hidden" id="emptyBasket" data-value='{
+     "title" : "{{session("emptyBasket.title")}}" ,
+    "message" :  "{{session("emptyBasket.message")}}",
+    "button" :  "{{session("emptyBasket.button")}}"
+    }'>
 @endif
 
+
 @if(session("cardExist"))
-    <input type="hidden" id="cardExist" data-value="{{session("cardExist")}}">
+    <input type="hidden" id="cardExist" data-value='{
+     "title" : "{{session("cardExist.title")}}" ,
+    "message" :  "{{session("cardExist.message")}}",
+    "button" :  "{{session("cardExist.button")}}"
+    }'>
 @endif
 
 
 @if(session("successBuy"))
     <input type="hidden" id="successBuy" data-value='{
      "title" : "{{session("successBuy.title")}}" ,
-    "body" :  "{{session("successBuy.body")}}"
+    "message" :  "{{session("successBuy.message")}}",
+    "button" :  "{{session("successBuy.button")}}"
+    }'>
+@endif
+
+
+
+@if(session("fail"))
+    <input type="hidden" id="fail" data-value='{
+     "title" : "{{session('fail.title')}}" ,
+    "message" :  "{{session('fail.message')}}",
+    "button" :  "{{session('fail.button')}}"
     }'>
 @endif

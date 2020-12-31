@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helpers;
+use App\Http\Requests\OrderRequest;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class OrderController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function buy(Request $request)
+    public function buy(OrderRequest $request)
     {
         $amount = Cart::subtotal();
         $price = Helpers\amount($amount);
@@ -43,7 +44,11 @@ class OrderController extends Controller
 
             Zarinpal::redirect();
         } else {
-            return redirect()->back()->with('success', 'مشکل در برقراری ارتباط با درگاه رخ داده است لطفا بعدا تلاش فرمایید');
+            return redirect()->back()->with('fail', [
+                'title' => 'ناموفق',
+                'message' => 'مشکل در برقراری ارتباط با درگاه رخ داده است لطفا بعدا تلاش فرمایید',
+                'button' => 'متوجه شدم'
+            ]);
         }
     }
 
@@ -53,7 +58,12 @@ class OrderController extends Controller
         $authority = \request('Authority');
         $order = Order::query()->firstWhere('authority', $authority);
         if (!$order || !$authority) {
-            return redirect()->back()->with('success', 'خطایی رخ داده و یا اطلاعات درست نمیباشد');
+
+            return redirect()->back()->with('fail', [
+                'title' => 'ناموفق',
+                'message' => 'خطایی رخ داده است یا اطلاعات نادرست است',
+                'button' => 'متوجه شدم'
+            ]);
         }
         $verified_request = Zarinpal::verify('ok', $order->total, $authority);
 
@@ -66,12 +76,18 @@ class OrderController extends Controller
             Cart::destroy();
             session()->flash('successBuy', [
                 'title' => 'خرید با موفقیت انجام شد...',
-                'body' => 'با تشکر از خرید شما',
+                'message' => 'با تشکر از خرید شما',
+                'button' => 'بستن'
             ]);
 
             return redirect('/');
         } else {
-            return redirect('/')->with('success', 'پرداخت ناموفق و لطفا دوباره تلاش کنید');
+
+            return redirect('/')->with('fail', [
+                'title' => 'ناموفق',
+                'message' => 'خطایی رخ داده است لطفا بعدا تلاش فرمایید',
+                'button' => 'متوجه شدم'
+            ]);
 
         }
     }

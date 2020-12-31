@@ -38,7 +38,11 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
             ? new Response('', 201)
-            : redirect($this->redirectPath())->with("success" , "حساب کاربری شما با موفقیت ایجاد شد");
+            : redirect($this->redirectPath())->with('successBuy', [
+                'title' => 'با تشکر',
+                'message' => 'حساب کاربری شما با موفقیت ایجاد شد',
+                'button' => 'بستن'
+            ]);
     }
 
     use RegistersUsers;

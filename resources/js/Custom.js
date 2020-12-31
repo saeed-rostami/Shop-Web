@@ -86,6 +86,24 @@ $(function () {
         }
     });
 
+    $("#buyForm").validate({
+        rules: {
+            address: {
+                maxlength: 255,
+                minlength: 10,
+                required: true,
+            },
+        },
+        messages: {
+            address: {
+                required: 'لطفا آدرس را وارد کنید',
+                maxlength: 'تعداد کارکتر آدرس وارد شده بیش از حد مجاز است',
+                minlength: 'تعداد کارکتر آدرس وارد شده نباید کمتر از 10 باشد',
+            },
+
+        }
+    });
+
 });
 
 //register validation
@@ -236,36 +254,56 @@ $(function () {
     }
 });
 
+
+
+// cardExist
 $(function () {
-    let sessionValue = $("#CardSuccess").data('value');
+    let sessionValue = $("#cardExist").data("value");
     if (sessionValue) {
-        Notiflix.Report.Success(
-            "عملیات موفق",
-            sessionValue,
-            "متوجه شدم",
-        );
+        console.log(sessionValue);
+
+        Notiflix.Report.Info(sessionValue.title,
+            sessionValue.message,
+            sessionValue.button);
     }
 });
 
+
+// emptyBasket
 $(function () {
-    let sessionValue = $("#cardExist").data('value');
+    let sessionValue = $("#emptyBasket").data("value");
     if (sessionValue) {
-        Notiflix.Report.Warning(
-            "",
-            sessionValue,
-            "متوجه شدم",
-        );
+        console.log(sessionValue);
+
+        Notiflix.Report.Info(sessionValue.title,
+            sessionValue.message,
+            sessionValue.button);
     }
 });
 
+// successBuy
 $(function () {
     let sessionValue = $("#successBuy").data("value");
     if (sessionValue) {
         console.log(sessionValue);
 
         Notiflix.Report.Success(sessionValue.title,
-            sessionValue.body,
-            'بستن');
+            sessionValue.message,
+            sessionValue.button);
+    }
+});
+
+// fail
+$(function () {
+    let sessionValue = $("#fail").data("value");
+    if (sessionValue) {
+        console.log(sessionValue);
+        console.log(sessionValue.title);
+        console.log(sessionValue.message);
+
+        Notiflix.Report.Failure(sessionValue.title,
+            sessionValue.message,
+            sessionValue.button);
     }
 });
 

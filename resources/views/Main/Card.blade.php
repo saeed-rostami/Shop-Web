@@ -112,7 +112,7 @@
 
                             </li>
                         </ul>
-                     <form action="{{route('buy')}}" method="post">
+                     <form action="{{route('buy')}}" method="post" id="buyForm">
                          @csrf
                          <div class="form-group">
                              <label for="address">لطفا آدرس محل سکونت خود را همراه استان و شهر وارد نمایید</label>
