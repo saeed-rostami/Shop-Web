@@ -35,22 +35,6 @@ class Product extends Model
         $this->attributes['price'] = str_replace(' تومان', '', $value);
     }
 
-    public function getOffAttribute($value)
-    {
-        if ($value)
-            return $value . " " . 'تومان';
-        else
-            return 'بدون تخفیف';
-    }
-
-    public function setOffAttribute($value)
-    {
-        if ($value)
-            $this->attributes['off'] = str_replace(' تومان', '', $value);
-        else
-            $this->attributes['off'] = null;
-    }
-
 
 //    relations
     public function post()

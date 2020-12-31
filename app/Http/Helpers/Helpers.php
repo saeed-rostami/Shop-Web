@@ -16,12 +16,13 @@ function price($value)
     return $price;
 }
 
-function off($value)
-{
-    if ($value) {
-        $off = str_replace(' تومان', '', $value);
-    } else {
-        $off = str_replace('بدون تخفیف', '', $value);
-    }
-    return $off;
-}
+//
+//function off($value)
+//{
+////    if ($value) {
+//        $off = str_replace(' تومان', '', $value);
+////    } else {
+////        $off = str_replace('بدون تخفیف', '', $value);
+////    }
+//    return $off;
+//}

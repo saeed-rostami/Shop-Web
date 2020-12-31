@@ -24,7 +24,7 @@
                     <input type="hidden" name="id" value="{{$product->id}}">
                     <input type="hidden" name="title" value="{{$product->title}}">
                     <input type="hidden" name="price" value="{{$product->price}}">
-                    <input type="hidden" name="off" value="{{\App\Http\Helpers\off($product->off)}}">
+                    <input type="hidden" name="off" value="{{$product->off}}">
                     <input type="hidden" name="trainer" value="{{$product->trainer->name}}">
                     <input type="hidden" name="slug" value="{{$product->slug}}">
                     <input type="hidden" name="post" value="{{$product->post->title}}">

@@ -15,6 +15,7 @@ class CardController extends Controller
     {
         $price = $request->price;
         $price = price($price);
+        $amount = $price - $request->off;
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
@@ -30,7 +31,7 @@ class CardController extends Controller
             'id' => $request->id,
             'name' => $request->title,
             'qty' => 1,
-            'price' => $price,
+            'price' => $amount,
             'options' => [
                 'trainer' => $request->trainer,
                 'off' => $request->off,

@@ -41,7 +41,14 @@
                                 <td>{{$product->post->category->title}}</td>
                                 <td>{{$product->trainer->name}}</td>
                                 <td>{{$product->price}}</td>
-                                <td>{{$product->off}}</td>
+                                <td>
+                                    @if($product->off)
+                                        {{$product->off}}
+                                        @else
+                                    بدون تخفیف
+                                        @endif
+
+                                </td>
                                 <td>{{$product->year}}</td>
                                 <td>{{$product->duration}}</td>
                                 <td>

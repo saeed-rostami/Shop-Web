@@ -18,6 +18,9 @@
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">قیمت محصول</div>
                                 </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">تخفیف محصول</div>
+                                </th>
                                 <th class="border-0 bg-light">
                                     <div class="p-2 px-3 text-uppercase">نام محصول</div>
                                 </th>
@@ -42,6 +45,14 @@
 
                                     </td>
                                     <td class="border-0 align-middle"><strong>{{$item->price}} تومن</strong></td>
+                                    <td class="border-0 align-middle"><strong>
+                                            @if($item->options->off)
+                                                {{$item->options->off}}
+                                                @else
+                                                بدون تخفیف
+                                                @endif
+
+                                            تومن</strong></td>
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
@@ -96,9 +107,6 @@
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 
-                                <h5 class="font-weight-bold">بدون تخفیف</h5>
-
-                                <strong class="text-muted">تخفیف</strong>
 
                             <li class="d-flex justify-content-between py-3 border-bottom">
 

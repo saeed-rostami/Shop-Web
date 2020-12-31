@@ -76,7 +76,7 @@
                         </label>
                         <div class="form-group">
                             <input type="text" class="form-control" name="off"
-                                   value="{{ \App\Http\Helpers\off($product->off) }}"
+                                   value="{{$product->off}}"
                                    placeholder="تخفیف">
                         </div>
 
