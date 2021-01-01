@@ -25,7 +25,10 @@
                     <div class="text-capitalize d-flex flex-column align-items-end">
                         <strong class="text-white-50">قیمت : {{$prod->price}}
                         </strong>
-                        <strong class="text-white-50">تخفیف : {{$prod->off}}
+                        <strong class="text-white-50">تخفیف : {{$prod->off}} درصد
+                        </strong>
+
+                        <strong class="text-white-50">قیمت نهایی : {{$prod->discount_price}} تومان
                         </strong>
                     </div>
                 </div>

@@ -16,6 +16,9 @@
                                     <div class="py-2 text-uppercase">حذف</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">قیمت نهایی محصول</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">قیمت محصول</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
@@ -44,15 +47,18 @@
                                         </form>
 
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{$item->price}} تومن</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{$item->price}}
+                                            تومن</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{$item->options->main_price}}
+                                            تومن</strong></td>
                                     <td class="border-0 align-middle"><strong>
                                             @if($item->options->off)
-                                                {{$item->options->off}}
+                                                {{$item->options->off}}درصد
                                                 @else
                                                 بدون تخفیف
                                                 @endif
 
-                                            تومن</strong></td>
+                                            </strong></td>
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">

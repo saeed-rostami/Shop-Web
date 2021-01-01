@@ -2,6 +2,7 @@
 
 namespace App;
 
+use function App\Http\Helpers\price;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
@@ -11,6 +12,8 @@ class Product extends Model
 {
     use SoftDeletes;
     protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'post_id', 'duration', 'off', 'trainer_id'];
+
+    protected $appends = ['discount_price'];
 
     public function breadcrumbName()
     {
@@ -33,6 +36,12 @@ class Product extends Model
     public function setPriceAttribute($value)
     {
         $this->attributes['price'] = str_replace(' تومان', '', $value);
+    }
+
+//discount_price
+    public function getDiscountPriceAttribute()
+    {
+        return price($this->price) - ($this->off / 100) * price($this->price);
     }
 
 

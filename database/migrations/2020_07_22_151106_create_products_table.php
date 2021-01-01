@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->string('demo')->nullable();
             $table->unsignedBigInteger('price');
-            $table->unsignedBigInteger('off')->nullable();
+            $table->tinyInteger('off')->nullable();
             $table->time('duration')->nullable();
             $table->year('year');
             $table->unsignedBigInteger('views')->default(0);

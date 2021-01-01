@@ -15,7 +15,10 @@
             <div class="card-footer text-capitalize d-flex flex-column align-items-end">
                 <strong class="text-white-50">قیمت : {{$product->price}}
                 </strong>
-                <strong class="text-white-50">تخفیف : {{$product->off}}
+                <strong class="text-white-50">تخفیف : {{$product->off}} درصد
+                </strong>
+
+                <strong class="text-white-50">قیمت نهایی : {{$product->discount_price}} تومان
                 </strong>
             </div>
             <div class="d-flex justify-content-center align-items-center align-content-center mb-1">
@@ -24,6 +27,7 @@
                     <input type="hidden" name="id" value="{{$product->id}}">
                     <input type="hidden" name="title" value="{{$product->title}}">
                     <input type="hidden" name="price" value="{{$product->price}}">
+                    <input type="hidden" name="discount_price" value="{{$product->discount_price}}">
                     <input type="hidden" name="off" value="{{$product->off}}">
                     <input type="hidden" name="trainer" value="{{$product->trainer->name}}">
                     <input type="hidden" name="slug" value="{{$product->slug}}">

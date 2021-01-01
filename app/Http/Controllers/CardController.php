@@ -13,9 +13,9 @@ class CardController extends Controller
 {
     public function AddProduct(Request $request)
     {
+//        dd($request->all());
         $price = $request->price;
         $price = price($price);
-        $amount = $price - $request->off;
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
@@ -31,10 +31,11 @@ class CardController extends Controller
             'id' => $request->id,
             'name' => $request->title,
             'qty' => 1,
-            'price' => $amount,
+            'price' => $request->discount_price,
             'options' => [
                 'trainer' => $request->trainer,
                 'off' => $request->off,
+                'main_price' => $price,
                 'image' => $request->image,
                 'postTitle' => $request->post,
                 'catTitle' => $request->cat,
@@ -50,6 +51,7 @@ class CardController extends Controller
 
     public function CardIndex()
     {
+//        dd(Cart::content());
         return view('Main.Card');
     }
 

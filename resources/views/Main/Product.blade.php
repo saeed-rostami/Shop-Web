@@ -71,8 +71,16 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->off}}  </h5>
+                            <h5 class="text-muted ">{{$product->off}} درصد </h5>
                             <span class="purple font-weight-bold"> : تخفیف</span><img style="width: 40px; height: 40px"
+                                                                                      src="{{asset('images/coupon.png')}}"
+                                                                                      alt="">
+                        </div>
+
+                        <div class="text-white ml-1 d-flex">
+                            <h5 class="text-muted ">{{$product->discount_price}} تومان </h5>
+                            <span class="purple font-weight-bold"> : قیمت نهایی</span><img style="width: 40px; height:
+                            40px"
                                                                                       src="{{asset('images/coupon.png')}}"
                                                                                       alt="">
                         </div>
@@ -113,6 +121,7 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
+                            <input type="hidden" name="discount_price" value="{{$product->discount_price}}">
                             <input type="hidden" name="off" value="{{$product->off}}">
                             <input type="hidden" name="trainer" value="{{$product->trainer->name}}">
                             <input type="hidden" name="slug" value="{{$product->slug}}">

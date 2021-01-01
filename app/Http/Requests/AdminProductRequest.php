@@ -32,7 +32,7 @@ class AdminProductRequest extends FormRequest
             'trainer_id' => ['required'],
             'year' => ['required'],
             'duration' => ['nullable'],
-            'off' => ['integer', 'nullable'],
+            'off' => ['integer', 'nullable' , 'between:1,100'],
             'image' => ['required'],
             'demo' => ['nullable']
         ];
