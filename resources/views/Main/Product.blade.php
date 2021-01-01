@@ -65,13 +65,19 @@
                         <h3 class="text-muted text-center">مشخصات</h3>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->price}} </h5>
+                            <h5 class="text-muted @if($product->off) : strikethrough ? '' @endif">{{$product->price}} </h5>
                               <span class="purple font-weight-bold"> : قیمت</span><img style="width: 40px; height: 40px"
                                                                                        src="{{asset('images/price.png')}}" alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->off}} درصد </h5>
+                            <h5 class="text-muted ">
+                                @if($product->off)
+                                    {{$product->off}}درصد
+                                @else
+                                    بدون تخفیف
+                                @endif
+                            </h5>
                             <span class="purple font-weight-bold"> : تخفیف</span><img style="width: 40px; height: 40px"
                                                                                       src="{{asset('images/coupon.png')}}"
                                                                                       alt="">

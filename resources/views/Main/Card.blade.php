@@ -49,7 +49,7 @@
                                     </td>
                                     <td class="border-0 align-middle"><strong>{{$item->price}}
                                             تومن</strong></td>
-                                    <td class="border-0 align-middle"><strong>{{$item->options->main_price}}
+                                    <td class="border-0 align-middle @if($item->options->off) : strikethrough ? '' @endif"><strong>{{$item->options->main_price}}
                                             تومن</strong></td>
                                     <td class="border-0 align-middle"><strong>
                                             @if($item->options->off)

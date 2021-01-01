@@ -23,9 +23,14 @@
                     }}</p>
 
                     <div class="text-capitalize d-flex flex-column align-items-end">
-                        <strong class="text-white-50">قیمت : {{$prod->price}}
+                        <strong class="text-white-50 @if($prod->off) : strikethrough ? '' @endif ">قیمت : {{$prod->price}}
                         </strong>
-                        <strong class="text-white-50">تخفیف : {{$prod->off}} درصد
+                        <strong class="text-white-50">تخفیف :
+                            @if($prod->off)
+                                {{$prod->off}}درصد
+                            @else
+                                بدون تخفیف
+                            @endif
                         </strong>
 
                         <strong class="text-white-50">قیمت نهایی : {{$prod->discount_price}} تومان
@@ -37,7 +42,6 @@
     </div>
 
 </div>
-
 
 
 

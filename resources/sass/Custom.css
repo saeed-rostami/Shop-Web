@@ -396,3 +396,24 @@ body {
         height: 128px !important;
     }
 }
+
+
+/*strikethrough*/
+ .strikethrough {
+     position: relative;
+ }
+.strikethrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 2px solid #dd0031!important;
+    border-color: inherit;
+
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
