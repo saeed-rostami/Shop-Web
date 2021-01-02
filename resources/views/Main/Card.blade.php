@@ -7,7 +7,7 @@
 
         <div class="container">
             <div class="row py-5 bg-white rounded shadow-sm">
-                <div class="col-lg-6">
+                <div class="col-12">
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="rounded">
@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-12">
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">فرآیند پرداخت</div>
                     <div class="p-4">
                         <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you
