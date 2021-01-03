@@ -255,7 +255,6 @@ $(function () {
 });
 
 
-
 // cardExist
 $(function () {
     let sessionValue = $("#cardExist").data("value");

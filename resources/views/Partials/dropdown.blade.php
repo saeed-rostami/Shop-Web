@@ -18,7 +18,6 @@
     @endif
 
     <a class="dropdown-item mb-2" href="{{route('Receipt')}}">
-      @includeIf('Partials._emailActivationBadge')
         <img src="{{asset('images/receipt.png')}}" alt="" style="width: 32px;height: 32px">
         فاکتورها و خرید ها
     </a>
