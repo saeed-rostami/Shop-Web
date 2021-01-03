@@ -38,7 +38,7 @@ class TrainersController extends Controller
             $img->save();
         } else {
             $trainer->name = $request->name;
-//            $trainer->description = $request->description;
+            $trainer->info = $request->info;
             $trainer->save();
         }
 
@@ -70,7 +70,7 @@ class TrainersController extends Controller
 
             $trainer->update([
                 'name' => $request->name,
-                'description' => $request->description,
+                $trainer->info = $request->info,
                 'image' => $image
             ]);
             $trainer->save();
@@ -87,7 +87,7 @@ class TrainersController extends Controller
 
             $trainer->update([
                 'name' => $request->name,
-                'description' => $request->description,
+                $trainer->info = $request->info,
                 'image' => null
             ]);
             $trainer->save();

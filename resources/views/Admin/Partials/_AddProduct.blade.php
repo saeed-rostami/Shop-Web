@@ -77,7 +77,7 @@
 
                                 {{--duration--}}
                                 <div class="form-group row">
-                                    <input type="time" class="form-control input" name="duration"
+                                    <input type="text" class="form-control input" name="duration"
                                            value="{{ old('duration') }}" autocomplete="duration" autofocus
                                            placeholder="(مدت آموزش(اختیاری">
                                 </div>

@@ -27,7 +27,7 @@
                         </strong>
                         <strong class="text-white-50">تخفیف :
                             @if($prod->off)
-                                {{$prod->off}}درصد
+                                {{$prod->off}}   درصد
                             @else
                                 بدون تخفیف
                             @endif

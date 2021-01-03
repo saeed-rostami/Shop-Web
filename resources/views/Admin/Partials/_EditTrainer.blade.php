@@ -18,10 +18,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">
+                            <label for="info">
                                 بیوگرافی مبارز
                             </label>
-                            <input type="text" value="{{$trainer->description}}" name="description" class="form-control">
+                            <input type="text" value="{{$trainer->info}}" name="info" class="form-control">
                         </div>
 
                         <div class="form-group">

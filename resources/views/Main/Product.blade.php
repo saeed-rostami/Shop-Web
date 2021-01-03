@@ -73,7 +73,7 @@
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">
                                 @if($product->off)
-                                    {{$product->off}}درصد
+                                    {{$product->off}}%
                                 @else
                                     بدون تخفیف
                                 @endif
@@ -84,7 +84,8 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->discount_price}} تومان </h5>
+                            <h5 class="text-muted"> {{$product->discount_price}} تومان
+                            </h5>
                             <span class="purple font-weight-bold"> : قیمت نهایی</span><img style="width: 40px; height:
                             40px"
                                                                                       src="{{asset('images/coupon.png')}}"
@@ -113,7 +114,7 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->duration}}  </h5>
+                            <h5 class="text-muted ">{{$product->duration}}  ساعت</h5>
                             <span class="purple font-weight-bold"> : مدت آموزش</span><img style="width: 40px; height: 40px"
                                                                                           src="{{asset('images/time.png')}}"
                                                                                           alt="">

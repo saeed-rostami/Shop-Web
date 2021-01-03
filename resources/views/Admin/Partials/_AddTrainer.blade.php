@@ -24,8 +24,8 @@
                                 
                                 {{--name--}}
                                 <div class="form-group row">
-                                    <input type="text" class="form-control input" name="description"
-                                           value="{{ old('description') }}" autocomplete="description" autofocus
+                                    <input type="text" class="form-control input" name="info"
+                                           value="{{ old('info') }}" autocomplete="info" autofocus
                                            placeholder="بیوگرافی مبارز">
                                 </div>
 

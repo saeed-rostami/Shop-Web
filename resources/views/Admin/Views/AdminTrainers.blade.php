@@ -32,7 +32,7 @@
                             <tr>
                                 <th scope="row">{{$trainer->id}}</th>
                                 <td>{{$trainer->name}}</td>
-                                <td>{{$trainer->description}}</td>
+                                <td>{{$trainer->info}}</td>
 
                                 @if ($trainer->image)
                                     <td>
