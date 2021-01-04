@@ -65,7 +65,7 @@
                         <h3 class="text-muted text-center">مشخصات</h3>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted @if($product->off) : strikethrough ? '' @endif">{{$product->price}} </h5>
+                            <h5 class="text-muted @if($product->off) : strikethrough ? '' @endif">{{\App\Http\Helpers\toPersianNum($product->price)}} </h5>
                               <span class="purple font-weight-bold"> : قیمت</span><img style="width: 40px; height: 40px"
                                                                                        src="{{asset('images/price.png')}}" alt="">
                         </div>
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted"> {{$product->discount_price}} تومان
+                            <h5 class="text-muted"> {{\App\Http\Helpers\toPersianNum($product->discount_price)}} تومان
                             </h5>
                             <span class="purple font-weight-bold"> : قیمت نهایی</span><img style="width: 40px; height:
                             40px"

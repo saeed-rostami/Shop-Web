@@ -23,17 +23,25 @@
                            data-toggle="tooltip"
                            data-placement="top"
                            title="{{$category->title}}">
-                            <div class="gallery-item d-flex justify-content-center align-items-center">
-                                <h1 class="text-dynamic position-absolute text-light text-justify ">{{$category->title}}</h1>
-                                <img loading="lazy" src="{{asset("images/Categories/placeholder.png")}}"
-                                     data-src="{{asset
+                            <div class="grid">
+                                <figure class="effect-roxy">
+                                    <img loading="lazy" src="{{asset("images/Categories/placeholder.png")}}"
+                                         data-src="{{asset
                                 ("Images/Categories/".$category->image)}}" alt="#"
-                                     class="gallery-img
-                                img-fluid rounded">
+                                         class="
+                                img-fluid">
+                                    <figcaption>
+                                        <h2 class="text-dynamic">{{$category->title}}</h2>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </a>
                     </div>
                 @endforeach
+
+
+
+                {{----}}
 
 
             </div>

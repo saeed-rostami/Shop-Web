@@ -47,9 +47,10 @@
                                         </form>
 
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{$item->price}}
+                                    <td class="border-0 align-middle"><strong>{{\App\Http\Helpers\toPersianNum($item->price)}}
                                             تومن</strong></td>
-                                    <td class="border-0 align-middle @if($item->options->off) : strikethrough ? '' @endif"><strong>{{$item->options->main_price}}
+                                    <td class="border-0 align-middle @if($item->options->off) : strikethrough ? ''
+@endif"><strong>{{\App\Http\Helpers\toPersianNum($item->options->main_price)}}
                                             تومن</strong></td>
                                     <td class="border-0 align-middle"><strong>
                                             @if($item->options->off)
@@ -118,8 +119,8 @@
 
                                 <h5 class="font-weight-bold">
 
-                                    {{\App\Http\Helpers\amount
-                                (Cart::subtotal())}}
+                                    {{\App\Http\Helpers\toPersianNum(\App\Http\Helpers\amount
+                                (Cart::subtotal()))}}
                                     تومان
                                 </h5>
                                 <strong class="text-muted">قیمت کل</strong>

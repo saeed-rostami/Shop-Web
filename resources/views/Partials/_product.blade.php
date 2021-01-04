@@ -13,7 +13,7 @@
             <p class="text-white-50 font-weight-bold mt-1">{{Str::limit($product->title ,'25')
                     }}</p>
             <div class="card-footer text-capitalize d-flex flex-column align-items-end">
-                <strong class="text-white-50 @if($product->off) : strikethrough ? '' @endif">قیمت : {{$product->price}}
+                <strong class="text-white-50 @if($product->off) : strikethrough ? '' @endif">قیمت : {{\App\Http\Helpers\toPersianNum($product->price)}}
                 </strong>
                 <strong class="text-white-50">تخفیف :
 
@@ -24,7 +24,7 @@
                     @endif
                 </strong>
 
-                <strong class="text-white-50">قیمت نهایی : {{$product->discount_price}} تومان
+                <strong class="text-white-50">قیمت نهایی : {{\App\Http\Helpers\toPersianNum($product->discount_price)}} تومان
                 </strong>
             </div>
             <div class="d-flex justify-content-center align-items-center align-content-center mb-1">

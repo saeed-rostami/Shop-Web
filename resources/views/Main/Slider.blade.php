@@ -23,7 +23,7 @@
                     }}</p>
 
                     <div class="text-capitalize d-flex flex-column align-items-end">
-                        <strong class="text-white-50 @if($prod->off) : strikethrough ? '' @endif ">قیمت : {{$prod->price}}
+                        <strong class="text-white-50 @if($prod->off) : strikethrough ? '' @endif ">قیمت : {{\App\Http\Helpers\toPersianNum($prod->price)}}
                         </strong>
                         <strong class="text-white-50">تخفیف :
                             @if($prod->off)
@@ -33,7 +33,7 @@
                             @endif
                         </strong>
 
-                        <strong class="text-white-50">قیمت نهایی : {{$prod->discount_price}} تومان
+                        <strong class="text-white-50">قیمت نهایی : {{\App\Http\Helpers\toPersianNum($prod->discount_price)}} تومان
                         </strong>
                     </div>
                 </div>

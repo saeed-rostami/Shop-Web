@@ -2,16 +2,21 @@
     @foreach($posts as $post)
         <div class="col-10 col-md-6 col-lg-4 col-xl-4 feature-img my-1 animate__animated
                animate__fadeIn mb-3">
-            <a href="{{route('Posts', [$post->category->title, $post->title])}}"
+            <a href="{{route('Posts' , [$post->category->title, $post->title])}}"
                data-toggle="tooltip"
                data-placement="top"
                title="{{$post->title}}">
-                <div class="img-container d-flex justify-content-center align-items-center">
-                    <h1 class="text-dynamic position-absolute text-light">{{$post->title}}</h1>
-                    <img laoding="lazy"
-                         src="{{asset("images/Posts/".$post->image)}}"
-                         class="img-fluid feature-photo"
-                         alt="">
+                <div class="grid">
+                    <figure class="effect-roxy">
+                        <img loading="lazy" src="{{asset("images/Categories/placeholder.png")}}"
+                             data-src="{{asset
+                                ("Images/Posts/".$post->image)}}" alt="#"
+                             class="
+                                img-fluid">
+                        <figcaption>
+                            <h2 class="text-dynamic">{{$post->title}}</h2>
+                        </figcaption>
+                    </figure>
                 </div>
             </a>
         </div>
