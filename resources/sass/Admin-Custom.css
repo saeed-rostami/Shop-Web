@@ -1,14 +1,16 @@
-
 /*preloader*/
-.preloader{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: var(--mainGrey);
-    z-index: 999;
-}
-.hidePreloader{
-    display: none !important;
-}
+/*.preloader {*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    /*left: 0;*/
+    /*background: var(--mainGrey);*/
+    /*z-index: 999;*/
+/*}*/
+
+/*.hidePreloader {*/
+    /*display: none !important;*/
+/*}*/
+
+

@@ -8,6 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/Admin-Custom.css')}}">
+
+
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.woff')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.eot')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/fonts/feather/fonts/feather.ttf')}}">
@@ -24,7 +27,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/colors.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/Admin-Custom.css')}}">
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('Admin/CSS/core/menu/menu-types/vertical-menu.css')}}">

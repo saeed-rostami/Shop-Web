@@ -45,6 +45,10 @@
             <li class=" nav-item"><a href="{{route('Admin-Users')}}"><i class="feather icon-user"></i><span class="menu-title"
                                                                                     data-i18n="Calender">کاربران</span></a>
             </li>
+            <li class=" nav-item"><a href="{{route('Admin-Customers')}}"><i class="feather icon-user-plus"></i><span
+                        class="menu-title"
+                                                                                    data-i18n="Calender">مشتریان</span></a>
+            </li>
 
         </ul>
     </div>

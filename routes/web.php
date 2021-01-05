@@ -67,6 +67,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admi
     Route::get('/orders', 'OrdersController@index')->name('Admin-Orders');
     Route::get('/order/{order}', 'OrdersController@order')->name('Admin-Order');
     Route::get('/users', 'UsersController@users')->name('Admin-Users');
+    Route::get('/customers', 'CustomersController@index')->name('Admin-Customers');
 
 //    store
     Route::post('/store-category', 'CategoriesController@storeCategory')->name('storeCategory');
