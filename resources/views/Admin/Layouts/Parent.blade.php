@@ -39,6 +39,7 @@
     <link href="{{ asset('CSS/select2.min.css') }}" rel="stylesheet">
 
 
+
     <title>@yield('Admin-Panel')</title>
 </head>
 
@@ -86,6 +87,8 @@ header("Pragma: no-cache");
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
     <script src="{{asset('JS/AdminCustom/Admin-Custom.js')}}"></script>
     <script src="{{asset('JS/select2.min.js')}}"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
 @show
 
 </body>

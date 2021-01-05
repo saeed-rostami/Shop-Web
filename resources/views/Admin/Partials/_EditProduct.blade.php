@@ -24,14 +24,17 @@
                             <label for="description">
                                 توضیحات
                             </label>
-                            <input type="text" value="{{$product->description}}" name="description" class="form-control">
+                            <input type="text" class="form-control" name="description"
+                                   value="{{$product->description}}" autocomplete="description"
+                                   autofocus
+                                   placeholder="توضیحات">
                         </div>
 
                         {{--extra-description--}}
 
                         <div class="form-group">
                             <label for="extra_description">
-                                توضیحات اضافه محصول
+                                توضیحات اضافه محصول(ختیاری)
                             </label>
                             <input type="text" class="form-control" name="extra_description"
                                    value="{{$product->extra_description}}" autocomplete="extra_description"
