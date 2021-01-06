@@ -19,9 +19,9 @@ mix.js(['resources/js/app.js',
 
 mix.js('resources/js/postsPagination.js' , 'public/js/Pagination');
 mix.js('resources/js/productsPagination.js' , 'public/js/Pagination');
-mix.js('resources/js/Admin-Custom.js' , 'public/js/AdminCustom');
+mix.js('resources/js/Admin-Custom.js' , 'public/Admin/js');
 
-mix.postCss('resources/sass/Admin-Custom.css' , 'public/css/Admin/CSS');
+mix.postCss('resources/sass/Admin-Custom.css' , 'public/Admin/CSS');
 mix.postCss('resources/sass/Breadcrumb.css' , 'public/css/Breadcrumb');
 mix.postCss('resources/sass/Navbar.css' , 'public/css/Navbar');
 mix.postCss('resources/sass/pagination.css' , 'public/css/Pagination');

@@ -1,16 +1,10 @@
-/*preloader*/
-/*.preloader {*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*right: 0;*/
-    /*left: 0;*/
-    /*background: var(--mainGrey);*/
-    /*z-index: 999;*/
-/*}*/
+ion-icon {
+    --ionicon-stroke-width: 16px;
+    color: black;
+    font-size: 85px;
+}
 
-/*.hidePreloader {*/
-    /*display: none !important;*/
-/*}*/
-
-
+.box:hover div {
+    padding-left: 1rem;
+    transition: 0.5s ease-in-out;
+}

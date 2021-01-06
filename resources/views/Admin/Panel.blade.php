@@ -75,17 +75,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    ion-icon {
-        --ionicon-stroke-width: 16px;
-        color: black;
-        font-size: 85px;
-    }
-
-    .box:hover div {
-        padding-left: 1rem;
-        transition: 0.5s ease-in-out;
-    }
-
-</style>

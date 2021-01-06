@@ -87,7 +87,7 @@ header("Pragma: no-cache");
     <script src="{{asset('Admin/js/app.js')}}"></script>
 
     <script src="{{asset('JS/notiflix-aio-2.4.0.min.js')}}"></script>
-    <script src="{{asset('JS/AdminCustom/Admin-Custom.js')}}"></script>
+    <script src="{{asset('Admin/js/Admin-Custom.js')}}"></script>
     <script src="{{asset('JS/select2.min.js')}}"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
