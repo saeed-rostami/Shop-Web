@@ -131,6 +131,17 @@
                             <input type="file" name="image[]" class="form-control-file" multiple>
                         </div>
 
+
+                        {{--demo--}}
+                        <label for="demo" class="text-primary">
+                            دمو محصول
+                        </label>
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="demo"
+                                   formenctype="multipart/form-data"
+                                   placeholder="دمو محصول">
+                        </div>
+
                         <div class="form-group">
                             <button class="btn btn-block btn-info" type="submit">ثبت تغییرات</button>
                         </div>

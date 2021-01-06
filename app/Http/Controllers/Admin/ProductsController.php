@@ -45,8 +45,8 @@ class ProductsController extends Controller
 
        if ($request->hasFile('demo')){
            $demo = $request->file('demo');
-           $extension = $demo->getClientOriginalName();
-           $demoFileName = $title . '.' . $extension;
+//           $extension = $demo->getClientOriginalName();
+           $demoFileName = $title;
            $demo->move(public_path() . "/videos/Products", $demoFileName);
            $product->demo = $demoFileName;
        }
