@@ -4,8 +4,8 @@
 <nav class="navbar navbar-expand-lg black-bg w-100">
     {{--logo--}}
     <a class="navbar-brand d-none d-md-block purple" href="{{route('Home')}}">
-        فروشگاه
-        <img class="rounded-circle ml-1" src="{{asset('images/logo.jpg')}}" alt="">
+        <img class="rounded-circle ml-1" src="{{asset('images/razmoamooz.png')}}" alt="" style="width: 75px; height:
+        75px">
     </a>
     {{--end--logo--}}
 
