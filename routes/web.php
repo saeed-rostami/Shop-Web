@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-// Route::get('/search', function (){
-//     return view('search');
-// });
+ Route::get('/search', 'SearchController@search')->name('Search');
 
 // Route::get('/posts', 'PostController@all');
 
