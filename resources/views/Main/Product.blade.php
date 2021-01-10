@@ -7,6 +7,17 @@
 
 @section('Content')
     <section class="container">
+
+        @foreach(auth()->user()->orders as $order)
+            @foreach($order->products as $prod)
+
+
+                <span class="text-white">
+                {{$prod->id}}
+                </span>
+                @endforeach
+
+        @endforeach
         <div class="row ">
            <div class="col-12 col-md-6">
                {{--products-gallery--}}
@@ -145,6 +156,7 @@
                                 کردن به سبد خرید
                             </button>
                         </form>
+
                     </div>
                 </div>
 

@@ -21,7 +21,7 @@ class Product extends JsonResource
             'image' => $this->image,
             'description' => $this->description,
             'price' => $this->price ,
-            'year' => $this->year,
+            'year' => $this->year,            
             'coach' => $this->coach,
             'post'  => $this->post->title,
             'category'  => $this->post->category->title,

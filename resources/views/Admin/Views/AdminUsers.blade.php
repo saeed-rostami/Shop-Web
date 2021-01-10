@@ -38,8 +38,10 @@
 
                                     <td>
                                         {{$user->email}}
-                                        @if(! $user->email)
+                                        @if($user->email &&  $user->email_verified_at === null)
                                             <span class="badge badge-danger">تایید نشده</span>
+                                        @elseif(! $user->email)
+                                            <span class="badge badge-info">ایمیل واردنشده</span>
                                         @endif
                                     </td>
 

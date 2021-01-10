@@ -16,7 +16,9 @@
 
             @includeIf('Partials._emailActivationBadge')
 
-            <strong>{{$user->email}} : پست الکترونیکی <img class="mt-2" style="width: 40px; height: 40px"
+            <strong>   پست الکترونیکی : {{($user->email) ? $user->email : 'ایمیل وارد نشده است'}}<img class="mt-2"
+                                                                                              style="width: 40px; height:
+            40px"
                                                            src="{{asset('images/email.png')}}" alt=""></strong>
             <br>
 
