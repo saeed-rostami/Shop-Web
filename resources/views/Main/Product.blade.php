@@ -7,61 +7,50 @@
 
 @section('Content')
     <section class="container">
-
-        @foreach(auth()->user()->orders as $order)
-            @foreach($order->products as $prod)
-
-
-                <span class="text-white">
-                {{$prod->id}}
-                </span>
-                @endforeach
-
-        @endforeach
         <div class="row ">
-           <div class="col-12 col-md-6">
-               {{--products-gallery--}}
-               <div class="col-12 products-gallery text-white text-center">
-                   <h1 class=>گالری تصاویر</h1>
-                   <div class="row">
-                       @foreach($product->image as $image)
-                           <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4  thumb">
-                               <a href="{{asset('Images/Products/'.$image)}}">
-                                   <figure><img class="img-fluid img-thumbnail" src="{{asset("images/products/".$image)}}"
-                                                alt="">
-                                   </figure>
-                               </a>
-                           </div>
-                       @endforeach
-                   </div>
-               </div>
-               {{--end-products-gallery--}}
+            <div class="col-12 col-md-6">
+                {{--products-gallery--}}
+                <div class="col-12 products-gallery text-white text-center">
+                    <h1 class=>گالری تصاویر</h1>
+                    <div class="row">
+                        @foreach($product->image as $image)
+                            <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4  thumb">
+                                <a href="{{asset('Images/Products/'.$image)}}">
+                                    <figure><img class="img-fluid img-thumbnail"
+                                                 src="{{asset("images/products/".$image)}}"
+                                                 alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                {{--end-products-gallery--}}
 
 
-               {{--products-video--}}
+                {{--products-video--}}
 
-               <div class="col-12 products-gallery text-white text-center">
-                   <h1 class=>دمو آموزش</h1>
-                   <div class="row ">
-                      <div class="border-light shadow">
+                <div class="col-12 products-gallery text-white text-center">
+                    <h1 class=>دمو آموزش</h1>
+                    <div class="row ">
+                        <div class="border-light shadow">
 
-                          @if($product->demo)
-                          <video controls class="w-100 h-100">
-                              <source src="{{asset('videos/Products/' . $product->demo)}}">
-                          </video>
+                            @if($product->demo)
+                                <video controls class="w-100 h-100">
+                                    <source src="{{asset('videos/Products/' . $product->demo)}}">
+                                </video>
 
-                          @else
-                              <h5 class="purple">برای این آموزش دمو موجود نمی باشد</h5>
-                          @endif
-                      </div>
-                   </div>
-               </div>
+                            @else
+                                <h5 class="purple">برای این آموزش دمو موجود نمی باشد</h5>
+                            @endif
+                        </div>
+                    </div>
+                </div>
 
-               {{--end-products-video--}}
+                {{--end-products-video--}}
 
 
-
-           </div>
+            </div>
 
             {{--products-detail--}}
             <div class="col-12 col-md-6">
@@ -77,8 +66,9 @@
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted @if($product->off) : strikethrough ? '' @endif">{{\App\Http\Helpers\toPersianNum($product->price)}} </h5>
-                              <span class="purple font-weight-bold"> : قیمت</span><img style="width: 40px; height: 40px"
-                                                                                       src="{{asset('images/price.png')}}" alt="">
+                            <span class="purple font-weight-bold"> : قیمت</span><img style="width: 40px; height: 40px"
+                                                                                     src="{{asset('images/price.png')}}"
+                                                                                     alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
@@ -99,36 +89,41 @@
                             </h5>
                             <span class="purple font-weight-bold"> : قیمت نهایی</span><img style="width: 40px; height:
                             40px"
-                                                                                      src="{{asset('images/coupon.png')}}"
-                                                                                      alt="">
+                                                                                           src="{{asset('images/coupon.png')}}"
+                                                                                           alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex ">
                             <h5 class="text-muted ">30000$ </h5>
-                            <span class="purple font-weight-bold">: قیمت در آمازون</span><img style="width: 40px; height: 40px"
-                                                                                              src="{{asset
-                                                                                              ('images/amazon.png')}}" alt="">
+                            <span class="purple font-weight-bold">: قیمت در آمازون</span><img
+                                style="width: 40px; height: 40px"
+                                src="{{asset
+                                                                                              ('images/amazon.png')}}"
+                                alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->year}}  </h5>
-                            <span class="purple font-weight-bold"> : سال انتشار</span><img style="width: 40px; height: 40px"
-                                                                                           src="{{asset('images/date.png')
+                            <span class="purple font-weight-bold"> : سال انتشار</span><img
+                                style="width: 40px; height: 40px"
+                                src="{{asset('images/date.png')
                                                                                            }}" alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
                             <h5 class="text-muted ">{{$product->trainer->name}}  </h5>
-                            <span class="purple font-weight-bold"> : گردآورنده</span><img style="width: 40px; height: 40px"
-                                                                                          src="{{asset('images/trainer.png')}}"
-                                                                                          alt="">
+                            <span class="purple font-weight-bold"> : گردآورنده</span><img
+                                style="width: 40px; height: 40px"
+                                src="{{asset('images/trainer.png')}}"
+                                alt="">
                         </div>
 
                         <div class="text-white ml-1 d-flex">
-                            <h5 class="text-muted ">{{$product->duration}}  ساعت</h5>
-                            <span class="purple font-weight-bold"> : مدت آموزش</span><img style="width: 40px; height: 40px"
-                                                                                          src="{{asset('images/time.png')}}"
-                                                                                          alt="">
+                            <h5 class="text-muted ">{{$product->duration}} ساعت</h5>
+                            <span class="purple font-weight-bold"> : مدت آموزش</span><img
+                                style="width: 40px; height: 40px"
+                                src="{{asset('images/time.png')}}"
+                                alt="">
                         </div>
 
                     </div>
