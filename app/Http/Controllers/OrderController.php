@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Helpers;
 use App\Http\Requests\OrderRequest;
 use App\Order;
+use App\Product;
+use App\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Zarinpal\Laravel\Facade\Zarinpal;
 use Hekmatinasser\Verta;
 
@@ -28,7 +32,7 @@ class OrderController extends Controller
             'laravel'
         );
         if (isset($results['Authority']) && !empty($results['Authority'])) {
-            $order = Order::create([
+            Order::create([
                 'refID' => null,
                 'authority' => $results['Authority'],
                 'address' => $request->address,
@@ -37,10 +41,10 @@ class OrderController extends Controller
                 'status' => 0,
             ]);
 
-            $items = Cart::content();
-            foreach ($items as $item) {
-                $order->products()->attach($item->id);
-            }
+//            $items = Cart::content();
+//            foreach ($items as $item) {
+//                $order->products()->attach($item->id);
+//            }
 
             Zarinpal::redirect();
         } else {
@@ -58,7 +62,6 @@ class OrderController extends Controller
         $authority = \request('Authority');
         $order = Order::query()->firstWhere('authority', $authority);
         if (!$order || !$authority) {
-
             return redirect()->back()->with('fail', [
                 'title' => 'ناموفق',
                 'message' => 'خطایی رخ داده است یا اطلاعات نادرست است',
@@ -72,6 +75,11 @@ class OrderController extends Controller
                 'status' => true,
                 'refID' => $verified_request['RefID'],
             ]);
+            $items = Cart::content();
+            foreach ($items as $item) {
+                $order->products()->attach($item->id);
+                auth()->user()->products()->attach($item->id);
+            }
             $order->save();
             Cart::destroy();
             session()->flash('successBuy', [

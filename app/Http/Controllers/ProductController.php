@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Order;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
+    public $productsId = [];
+
     /**
      * Display a listing of the resource.
      *
@@ -28,78 +34,33 @@ class ProductController extends Controller
         return view('Main.Products', compact(['products', 'counts']));
     }
 
-    function fetch_data(Request $request, Category $category, Post $post , Product $product)
+    function fetch_data(Request $request, Category $category, Post $post, Product $product)
     {
         $products = $post->products()->paginate(9);
         return View::make('Partials._productsPagination')->with('products', $products)->render();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function allProducts()
     {
-      $products = Product::all();
-     return view("Main.AllProducts" , compact("products"));
+        $products = Product::all();
+        return view("Main.AllProducts", compact("products"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
-     */
     public function show(Request $request, Category $category, Post $post, Product $product)
     {
+//        $boughtProducts = auth()->user()->orders()->with('products')->get()->pluck('products')->flatten();
+        $boughtProducts = Auth::user()->products()->get();
+
+        foreach ($boughtProducts as $boughtProduct) {
+            array_push($this->productsId, $boughtProduct->id);
+        }
+
         $product->increment('views');
         $product = Product::query()->where('slug', $product->slug)->firstOrFail();
-        return view('Main.Product', compact('product'));
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
-    {
-        //
+        $bought = in_array($product->id, $this->productsId);
+        return view('Main.Product', compact('product', 'bought'));
     }
 }

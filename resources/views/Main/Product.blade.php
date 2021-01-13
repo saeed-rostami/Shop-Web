@@ -143,6 +143,10 @@
 
                             <input type="hidden" name="image" value="{{json_encode($product->image[0])}}">
 
+                            @if($bought)
+                            <p class="alert alert-warning">شما این محصول را خریداری کرده ایید</p>
+                            @endif
+
                             <button type="submit" class="btn custom-btn
                     ">
                                 <img src="{{asset('images/add-to-basket.png')}}" alt=""
@@ -157,7 +161,7 @@
 
                 {{--tags--}}
                 @include('Partials._productTags')
-                {{--tags--}}
+                tags
             </div>
             {{--end-products-detail--}}
 

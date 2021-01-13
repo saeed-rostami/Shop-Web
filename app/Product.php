@@ -65,6 +65,11 @@ class Product extends Model
     {
         return $this->belongsTo(Trainer::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 //    end-relations
 
 
