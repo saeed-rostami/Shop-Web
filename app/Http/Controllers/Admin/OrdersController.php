@@ -28,4 +28,26 @@ class OrdersController extends Controller
        $order->save();
        return redirect()->back()->with('success' , 'تغییرات با موفقیت اعما شدند');
     }
+
+
+    public function successShip(Order $order)
+    {
+        $order->update([
+            'ship_id' => \request()->ship_id,
+            'ship_status' => true
+        ]);
+        $order->save();
+        return redirect()->back()->with('success' , 'سفارش ارسال شد');
+    }
+
+    public function failShip(Order $order)
+    {
+        $order->update([
+            'ship_id' => null,
+            'ship_status' =>  false
+        ]);
+        $order->save();
+        return redirect()->back()->with('success' , 'سفارش ارسال نشد');
+
+    }
 }

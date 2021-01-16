@@ -99,6 +99,10 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admi
 //    order-update
     Route::put('/update-order/{order}', 'OrdersController@changeStatus')->name('Update-Order');
 
+    Route::put('/success-order-ship/{order}', 'OrdersController@successShip')->name('Success-Order-Ship');
+
+    Route::put('/fail-order-ship/{order}', 'OrdersController@failShip')->name('Fail-Order-Ship');
+
 
     //    user-update
     Route::get('/update-user/{user}', 'UsersController@edit')->name('Edit-User');

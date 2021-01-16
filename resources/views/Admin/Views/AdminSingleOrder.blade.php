@@ -16,6 +16,8 @@
                                 <th>وضعیت پرداخت</th>
                                 <th>تاریخ پرداخت</th>
                                 <th>مبلغ سفارش</th>
+                                <th>وضعیت ارسال</th>
+                                <th>شناسه مرسوله</th>
                                 <th> حذف سفارش</th>
                             </tr>
 
@@ -44,6 +46,23 @@
                                     label-danger">{{$order->created_at}}</strong></td>
 
                                 <td><strong>{{$order->total}}</strong></td>
+                                <td>
+                                    @if($order->ship_status === null)
+                                        <strong class="badge badge-warning">در حال بررسی</strong>
+                                    @elseif($order->ship_status === 1)
+                                        <strong class="badge badge-success">رسال شد</strong>
+
+                                    @else
+                                        <strong class="badge badge-danger">ارسال نشد</strong>
+
+                                    @endif
+                                </td>
+
+                                <td>
+                                    {{$order->ship_id}}
+                                </td>
+
+
                                 <td>
                                     <a href="#" type="button" class="btn
                                         btn-danger">
@@ -101,9 +120,46 @@
                     </div>
                     <hr>
                     <div class="col-6 border">
-                       <span class="badge badge-info"> مشخصات و آدرس خریدار</span>
+                        <span class="badge badge-info"> مشخصات و آدرس خریدار</span>
                         <h3>{{$order->address}}</h3>
                         <h3>{{$order->user->phone}}</h3>
+                    </div>
+
+                    <div class="col-6">
+                        <h1 class="my-2 badge badge-info">تغییر وضعیت ارسال مرسوله</h1>
+
+
+                        {{--success--}}
+                        <div>
+                            <form action="{{route('Success-Order-Ship' , $order->id)}}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <input name="ship_id" type="number" placeholder="کدر رهگیری مرسوله">
+                                <button type="submit" class="btn
+                                        btn-success">
+                                <span>
+                                    ارسال
+                                </span>
+                                </button>
+                            </form>
+                        </div>
+
+
+                        {{--fail--}}
+                        <div>
+                            <form action="{{route('Fail-Order-Ship' , $order->id)}}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn
+                                        btn-danger">
+                                <span>
+                                    عدم ارسال
+                                </span>
+                                </button>
+                            </form>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

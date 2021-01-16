@@ -19,6 +19,8 @@
                                 <th>وضعیت پرداخت</th>
                                 <th>تاریخ پرداخت</th>
                                 <th>مبلغ سفارش</th>
+                                <th>وضعیت ارسال</th>
+                                <th>شناسه مرسوله</th>
                                 <th> جزئیات سفارش</th>
                             </tr>
 
@@ -47,6 +49,22 @@
                                     label-danger">{{$order->created_at}}</strong></td>
 
                                     <td><strong>{{$order->total}}</strong></td>
+                                    <td>
+                                        @if($order->ship_status === null)
+                                            <strong class="badge badge-warning">در حال بررسی</strong>
+                                        @elseif($order->ship_status === 1)
+                                            <strong class="badge badge-success">رسال شد</strong>
+
+                                        @else
+                                            <strong class="badge badge-danger">ارسال نشد</strong>
+
+                                        @endif
+                                    </td>
+
+                                    <td>
+                                        {{$order->ship_id}}
+                                    </td>
+
                                     <td>
                                         <a href="{{route('Admin-Order' , $order->id)}}" type="button" class="btn
                                         btn-warning">

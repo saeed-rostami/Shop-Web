@@ -20,6 +20,8 @@ class CreateOrdersTable extends Migration
             $table->string('authority');
             $table->unsignedBigInteger('total');
             $table->boolean('status')->default(0);
+            $table->boolean('ship_status')->nullable()->default(null);
+            $table->string('ship_id')->nullable()->default(null);
             $table->longText('address');
             $table->softDeletes();
             $table->timestamps();
