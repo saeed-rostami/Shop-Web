@@ -1,4 +1,3 @@
-
 @extends('Layouts.Parent')
 
 @section('Content')
@@ -47,19 +46,20 @@
                                         </form>
 
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{\App\Http\Helpers\toPersianNum($item->price)}}
+                                    <td class="border-0 align-middle">
+                                        <strong>{{\App\Http\Helpers\toPersianNum(number_format($item->price))}}
                                             تومن</strong></td>
                                     <td class="border-0 align-middle @if($item->options->off) : strikethrough ? ''
-@endif"><strong>{{\App\Http\Helpers\toPersianNum($item->options->main_price)}}
+@endif"><strong>{{\App\Http\Helpers\toPersianNum(number_format($item->options->main_price))}}
                                             تومن</strong></td>
                                     <td class="border-0 align-middle"><strong>
                                             @if($item->options->off)
                                                 {{$item->options->off}}درصد
-                                                @else
+                                            @else
                                                 بدون تخفیف
-                                                @endif
+                                            @endif
 
-                                            </strong></td>
+                                        </strong></td>
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
@@ -119,23 +119,23 @@
 
                                 <h5 class="font-weight-bold">
 
-                                    {{\App\Http\Helpers\toPersianNum(\App\Http\Helpers\amount
-                                (Cart::subtotal()))}}
+                                    {{\App\Http\Helpers\toPersianNum(number_format(\App\Http\Helpers\amount(Cart::subtotal())))}}
                                     تومان
                                 </h5>
                                 <strong class="text-muted">قیمت کل</strong>
 
                             </li>
                         </ul>
-                     <form action="{{route('buy')}}" method="post" id="buyForm">
-                         @csrf
-                         <div class="form-group">
-                             <label for="address">لطفا آدرس محل سکونت خود را همراه استان و شهر وارد نمایید</label>
-                             <textarea class="form-control rounded" name="address" id="address" rows="3"
-                                       placeholder="آدرس را وارد نمایید"></textarea>
-                         </div>
-                         <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت صورتحساب</button>
-                     </form>
+                        <form action="{{route('buy')}}" method="post" id="buyForm">
+                            @csrf
+                            <div class="form-group">
+                                <label for="address">لطفا آدرس محل سکونت خود را همراه استان و شهر وارد نمایید</label>
+                                <textarea class="form-control rounded" name="address" id="address" rows="3"
+                                          placeholder="آدرس را وارد نمایید"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">پرداخت صورتحساب
+                            </button>
+                        </form>
                     </div>
                 </div>
 

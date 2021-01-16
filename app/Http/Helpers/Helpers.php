@@ -10,11 +10,11 @@ function amount($amount)
     return $amount = (int)$amount;
 }
 
-function price($value)
-{
-    $price = str_replace(' تومان', '', $value);
-    return $price;
-}
+//function price($value)
+//{
+//    $price = str_replace(' تومان', '', $value);
+//    return $price;
+//}
 
 //
 //function off($value)

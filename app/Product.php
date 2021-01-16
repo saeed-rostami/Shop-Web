@@ -28,20 +28,20 @@ class Product extends Model
 
     protected $casts = ['image' => Json::class];
 
-    public function getPriceAttribute($value)
-    {
-        return $value . " " . 'تومان';
-    }
+//    public function getPriceAttribute($value)
+//    {
+//        return $value . " " . 'تومان';
+//    }
 
-    public function setPriceAttribute($value)
-    {
-        $this->attributes['price'] = str_replace(' تومان', '', $value);
-    }
+//    public function setPriceAttribute($value)
+//    {
+//        $this->attributes['price'] = str_replace(' تومان', '', $value);
+//    }
 
 //discount_price
     public function getDiscountPriceAttribute()
     {
-        return price($this->price) - ($this->off / 100) * price($this->price);
+        return $this->price - ($this->off / 100) * $this->price;
     }
 
 
