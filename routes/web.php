@@ -21,7 +21,6 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 
  Route::get('/search', 'SearchController@search')->name('Search');
 
-// Route::get('/posts', 'PostController@all');
 
 
 Route::get('/', 'CategoryController@index')->name('Home');
