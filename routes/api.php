@@ -45,7 +45,7 @@ Route::namespace('Api')->group(function () {
 
     Route::get('/', 'CategoryController@index');
     Route::get('/{category:title}', 'PostController@index');
-    Route::get('/{category:title}/{post:title}', 'ProductController@index');
-    Route::get('/{category:title}/{post:title}/{product:slug}', 'ProductController@show');
+    Route::get('/{category}/{post}', 'ProductController@index');
+    Route::get('/{category}/{post}/{product}', 'ProductController@show');
 });
 
