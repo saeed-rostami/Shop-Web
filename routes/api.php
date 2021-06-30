@@ -34,7 +34,6 @@ Route::namespace('Api')->group(function () {
 
 
 
-
 //******************
 Route::namespace('Api')->group(function () {
 

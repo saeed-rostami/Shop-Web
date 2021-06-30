@@ -13,7 +13,6 @@ class CardController extends Controller
 {
     public function AddProduct(Request $request)
     {
-//        dd($request->all());
         $price = $request->price;
         $duplicate = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
@@ -50,7 +49,6 @@ class CardController extends Controller
 
     public function CardIndex()
     {
-//        dd(Cart::content());
         return view('Main.Card');
     }
 
