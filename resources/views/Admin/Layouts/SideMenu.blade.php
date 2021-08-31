@@ -28,10 +28,10 @@
             <li class=" nav-item "><a href="{{route('Admin-Categories')}}"><i class="feather icon-file"></i><span class="menu-title"
                                                                                      data-i18n="Chat">دسته ورزشی</span></a>
             </li>
-            <li class=" nav-item "><a href="{{route('Admin-Posts')}}"><i class="feather icon-file-minus"></i><span
-                        class="menu-title"
-                                                                                           data-i18n="Todo">رشته
-                    ورزشی</span></a></li>
+            {{--<li class=" nav-item "><a href="{{route('Admin-Posts')}}"><i class="feather icon-file-minus"></i><span--}}
+                        {{--class="menu-title"--}}
+                                                                                           {{--data-i18n="Todo">رشته--}}
+                    {{--ورزشی</span></a></li>--}}
             <li class=" nav-item"><a href="{{route('Admin-Products')}}"><i class="feather icon-briefcase"></i><span
                         class="menu-title"
                                                                                          data-i18n="Calender">محصولات

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Post;
+use App\Http\Controllers\Api\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class CategoryController extends Controller
 {
@@ -15,8 +16,14 @@ class CategoryController extends Controller
      */
     public function index(Request $request, Category $category)
     {
-        $categories = Category::query()->orderByDesc('views')->get();
+        $categories = Category::query()->whereNull('parent_id')->orderByDesc('views')->get();
         return view('Main.index', compact('categories'));
+    }
+
+    function fetch_data(Request $request, Category $category)
+    {
+        $posts = $category->childs()->paginate(6);
+        return View::make('Partials._postsPagination')->with('posts', $posts)->render();
     }
 
     /**
@@ -48,7 +55,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+//        dd($category->childs()->get());
+        $posts = $category->childs()->paginate(6);
+        if (!count($posts)) {
+            return abort(403, 'در حال حاضر محتوایی برای این بخش وجود ندارد');
+        }
+        return view('Main.Posts', compact('posts'));
     }
 
     /**

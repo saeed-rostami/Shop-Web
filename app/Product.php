@@ -2,16 +2,15 @@
 
 namespace App;
 
-use function App\Http\Helpers\price;
+use App\Casts\Json;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use App\Casts\Json;
 
 class Product extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'post_id', 'duration', 'off', 'trainer_id'];
+    protected $fillable = ['title', 'image', 'description', 'extra_description', 'price', 'year', 'coach', 'category_id', 'duration', 'off', 'trainer_id'];
 
     protected $appends = ['discount_price'];
 
@@ -46,9 +45,9 @@ class Product extends Model
 
 
 //    relations
-    public function post()
+    public function category()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Category::class , 'category_id' , 'id');
     }
 
     public function tags()

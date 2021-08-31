@@ -20,14 +20,12 @@ class PostController extends Controller
     {
         $category->increment('views');
         $posts = $category->posts()->orderByDesc('views')->paginate(6);
-        $counts = $category->posts()->count();
 
         if (!count($posts)) {
             return abort(403, 'در حال حاضر محتوایی برای این بخش وجود ندارد');
         }
         return View::make('Main.Posts')->with([
             'posts' => $posts,
-            'counts' => $counts,
         ]);
     }
 

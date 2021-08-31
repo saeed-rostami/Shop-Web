@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('trainer_id');
             $table->string('title' );
             $table->string('slug')->unique();
@@ -31,8 +31,8 @@ class CreateProductsTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('trainer_id')->references('id')->on('trainers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('trainer_id')->references('id')->on('trainers')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

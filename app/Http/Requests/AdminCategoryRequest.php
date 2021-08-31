@@ -24,8 +24,8 @@ class AdminCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-         'title' => ['required' , 'string' , 'max:255'],
-            'image' => ['required' ,' mimes:jpeg,jpg,png' ,'max:1000'],
+            'title' => ['required', 'string', 'max:255'],
+            'image' => ['required', ' mimes:jpeg,jpg,png', 'max:1000'],
         ];
     }
 }

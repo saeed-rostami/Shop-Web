@@ -11,7 +11,7 @@
     <div class="responsive">
         @foreach($prods as $prod)
             <div class="card car-card ml-2">
-                <a href="{{route('Product', [$prod->post->category->title, $prod->post->title,  $prod->slug])}}">
+                <a href="{{route('Product', [$prod->category->parent->title, $prod->category->title,  $prod->slug])}}">
                     <img src="{{asset
                     ('/images/products/'.array_values($prod->image)[0])}}" class="img-fluid
                     slider-img" alt="">

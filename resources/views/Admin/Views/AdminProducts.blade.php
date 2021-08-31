@@ -37,8 +37,8 @@
                             <tr>
                                 <th scope="row">{{$product->id}}</th>
                                 <td>{{$product->title}}</td>
-                                <td>{{$product->post->title}}</td>
-                                <td>{{$product->post->category->title}}</td>
+                                <td>{{$product->category->title}}</td>
+                                <td>{{$product->category->parent->title}}</td>
                                 <td>{{$product->trainer->name}}</td>
                                 <td>{{$product->price}}</td>
                                 <td>

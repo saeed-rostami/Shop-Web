@@ -1,7 +1,7 @@
 <div class="col-10 mx-auto my-3 col-md-6 col-lg-3 animate__animated
                animate__fadeIn">
     <div class="card products-card">
-        <a href="{{route('Product' , [$product->post->category->title, $product->post->title , $product->slug])}}">
+        <a href="{{route('Product' , [$product->category->parent->title , $product->category->id , $product->slug] )}}">
 
             <img src="{{asset('/images/products/'.array_values($product->image)[0])}}"
                  class="img-fluid" alt="">
@@ -38,8 +38,8 @@
                     <input type="hidden" name="off" value="{{$product->off}}">
                     <input type="hidden" name="trainer" value="{{$product->trainer->name}}">
                     <input type="hidden" name="slug" value="{{$product->slug}}">
-                    <input type="hidden" name="post" value="{{$product->post->title}}">
-                    <input type="hidden" name="cat" value="{{$product->post->category->title}}">
+                    <input type="hidden" name="post" value="{{$product->category->title}}">
+                    <input type="hidden" name="cat" value="{{$product->category->parent->title}}">
 
                     <input type="hidden" name="image" value="{{json_encode($product->image[0])}}">
 

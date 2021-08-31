@@ -22,23 +22,23 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Category $category, Post $post, Product $product)
+    public function index(Category $category, $id)
     {
-        $post->increment('views');
-        $products = $post->products()->orderByDesc('views')->paginate(9);
-        $counts = $post->products()->count();
+        $cat = Category::query()->find($id);
+        $products = $cat->products()->orderByDesc('views')->paginate(9);
+        $cat->increment('views');
 
         if (!count($products)) {
             return abort(403, 'در حال حاضر محصولی برای این بخش وجود ندارد');
         }
-        return view('Main.Products', compact(['products', 'counts']));
+        return view('Main.Products', compact(['products']));
     }
 
-    function fetch_data(Request $request, Category $category, Post $post, Product $product)
-    {
-        $products = $post->products()->paginate(9);
-        return View::make('Partials._productsPagination')->with('products', $products)->render();
-    }
+//    function fetch_data(Request $request, Category $category, Product $product)
+//    {
+////        $products = $post->products()->paginate(9);
+//        return View::make('Partials._productsPagination')->with('products', $products)->render();
+//    }
 
 
     public function allProducts()
@@ -48,9 +48,8 @@ class ProductController extends Controller
     }
 
 
-    public function show(Request $request, Category $category, Post $post, Product $product)
+    public function show(Category $category, $id, Product $product)
     {
-//        $boughtProducts = auth()->user()->orders()->with('products')->get()->pluck('products')->flatten();
         $boughtProducts = Auth::user()->products()->get();
 
         foreach ($boughtProducts as $boughtProduct) {

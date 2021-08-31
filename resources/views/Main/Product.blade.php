@@ -139,8 +139,8 @@
                             <input type="hidden" name="off" value="{{$product->off}}">
                             <input type="hidden" name="trainer" value="{{$product->trainer->name}}">
                             <input type="hidden" name="slug" value="{{$product->slug}}">
-                            <input type="hidden" name="post" value="{{$product->post->title}}">
-                            <input type="hidden" name="cat" value="{{$product->post->category->title}}">
+                            <input type="hidden" name="post" value="{{$product->category->title}}">
+                            <input type="hidden" name="cat" value="{{$product->category->parent->title}}">
 
                             <input type="hidden" name="image" value="{{json_encode($product->image[0])}}">
 

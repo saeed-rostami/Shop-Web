@@ -2,14 +2,14 @@
 
 @section('Title')
     آموزش های
-    {{$posts[0]['category']['title']}}
+    {{$posts[0]['parent']['title']}}
 @endsection
 
 @section('Content')
 
     <div class="container">
         @includeIf('Partials._breadcrumb')
-        <h2 class="product-count text-white-50 badge badge-pill">تعداد رشته های ورزشی موجود : {{$counts}}
+        <h2 class="product-count text-white-50 badge badge-pill">تعداد رشته های ورزشی موجود : {{count($posts)}}
         </h2>
 
         <div class="row mb-2">
@@ -19,6 +19,7 @@
             </div>
         </div>
         <div>
+
             @include('Partials._postsPagination')
         </div>
 

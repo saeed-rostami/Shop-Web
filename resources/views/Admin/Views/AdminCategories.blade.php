@@ -19,6 +19,7 @@
                             <th scope="col">#</th>
                             <th scope="col">تیتر دسته بندی</th>
                             <th scope="col">تصویر دسته بندی</th>
+                            <th scope="col">دسته والد</th>
                             <th scope="col">عملیات حذف</th>
                             <th scope="col">عملیات ویرایش</th>
                         </tr>
@@ -38,6 +39,13 @@
 
                                 @endif
 
+                                <td>
+                                    @if($category->parent)
+                                        {{$category->parent->title}}
+                                        @else
+                                        ندارد
+                                    @endif
+                                </td>
 
                                 <td>
                                     <form action="{{route('Delete-Category' , $category->title)}}" method="post">

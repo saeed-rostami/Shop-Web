@@ -88,10 +88,10 @@
                                     <label for="post_id" class="text-primary">
                                         رشته ورزشی
                                     </label>
-                                    <select name="post_id" class="form-control">
+                                    <select name="category_id" class="form-control">
                                         <option value="" disabled selected>  رشته ورزشی را انتخاب کنید</option>
-                                        @foreach($posts as $post)
-                                            <option value="{{$post->id}}">{{$post->title}}</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->title}}</option>
                                         @endforeach
 
                                     </select>

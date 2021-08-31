@@ -117,7 +117,7 @@ $(document).ready(function () {
   function fetch_data(page) {
     var category = window.location.pathname;
     $.ajax({
-      url: category + "/posts?page=" + page
+      url: 'pagination' + category + '?page=' + page
     }).done(function (data) {
       $("#data-post").html(data);
       location.hash = page;

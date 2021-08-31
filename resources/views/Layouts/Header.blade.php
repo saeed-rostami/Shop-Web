@@ -48,12 +48,13 @@
                         <li class="dropdown-submenu">
                             <a class="dropdown-item text-white"
                                href='{{route('Category' , $cat->title)}}'>{{$cat->title}}</a>
-                            @if($cat->posts->count())
+                            @if($cat->childs->count())
 
                                 <ul class="dropdown-menu text-justify">
-                                    @foreach($cat->posts as $item)
+                                    @foreach($cat->childs as $item)
 
-                                        <li class="dropdown-submenu "><a class="dropdown-item text-white" href='{{route('Posts', [$cat->title, $item->title])
+                                        <li class="dropdown-submenu "><a class="dropdown-item text-white"
+                                                                         href='{{route('Posts', [$cat->title, $item->id])
                                     }}'>{{$item->title}}</a></li>
                                     @endforeach
 

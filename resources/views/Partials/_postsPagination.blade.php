@@ -2,7 +2,7 @@
     @foreach($posts as $post)
         <div class="col-10 col-md-6 col-lg-4 col-xl-4 feature-img my-1 animate__animated
                animate__fadeIn mb-3">
-            <a href="{{route('Posts' , [$post->category->title, $post->title])}}"
+            <a href="{{route('Posts' , [$post->parent->title, $post->id])}}"
                data-toggle="tooltip"
                data-placement="top"
                title="{{$post->title}}">
@@ -10,7 +10,7 @@
                     <figure class="effect-roxy">
                         <img loading="lazy" src="{{asset("images/Categories/placeholder.png")}}"
                              data-src="{{asset
-                                ("Images/Posts/".$post->image)}}" alt="#"
+                                ("Images/Categories/".$post->image)}}" alt="#"
                              class="
                                 img-fluid">
                         <figcaption>
@@ -22,9 +22,9 @@
         </div>
     @endforeach
 
-        <div class="my-3 col-12 d-flex justify-content-center">
-            {{$posts->links()}}
-        </div>
+    <div class="my-3 col-12 d-flex justify-content-center">
+        {{$posts->links()}}
+    </div>
 
 
 </div>

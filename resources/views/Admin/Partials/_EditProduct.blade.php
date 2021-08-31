@@ -98,10 +98,11 @@
                             <label for="post_id">
                                 رشته ورزشی
                             </label>
-                            <select name="post_id" class="form-control">
-                                <option value="{{$product->post->id}}">{{$product->post->title}}</option>
-                                @foreach($posts as $post)
-                                    <option value="{{$post->id}}">{{$post->title}}</option>
+                            <select name="category_id" class="form-control">
+                                @foreach($categories as $category)
+                                    <option
+ {{($category->id == $product->category->id) ? 'selected' : ''}}
+ value="{{$category->id}}">{{$category->title}}</option>
                                 @endforeach
 
                             </select>

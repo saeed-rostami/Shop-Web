@@ -2,16 +2,13 @@
 
 namespace App\Providers;
 
-use App\Category;
-use App\Post;
-use App\Product;
-use Illuminate\Auth\Notifications\VerifyEmail;
-use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
 use App\Breadcrumbs\Breadcrumbs;
+use App\Category;
+use App\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -43,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
 //        composers
         View::composer(['Layouts.Header' , 'Layouts.Footer'], function ($view){
-            $view->with('cats', Category::all());
+            $view->with('cats', Category::query()->whereNull('parent_id')->get());
         });
 
         View::composer('Main.Slider', function ($view){

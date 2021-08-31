@@ -20,10 +20,11 @@ class CategoriesController extends Controller
     }
 
 //    store
-    public function storeCategory(AdminCategoryRequest $request)
+    public function storeCategory(Request $request)
     {
         $category = new Category();
         $category->title = $request->title;
+        $category->parent_id = $request->parent_id;
         $image = $request->file('image');
         $title = $request->title;
         $extension = $image->getClientOriginalExtension();
@@ -41,11 +42,13 @@ class CategoriesController extends Controller
 //update
     public function edit(Category $category)
     {
-        return view('Admin.Partials._EditCategory', compact('category'));
+        $categories = Category::all();
+        return view('Admin.Partials._EditCategory', compact(['category' , 'categories']));
     }
 
     public function update(AdminCategoryRequest $request, Category $category)
     {
+        dd($request->all());
         if ($request->image !== null) {
             $oldImage = $category->image;
             $oldFile_img = public_path("/images/categories/{$oldImage}");
@@ -60,7 +63,8 @@ class CategoriesController extends Controller
 
             $category->update([
                 'title' => $request->title,
-                'image' => $image
+                'image' => $image,
+                'parent_id' => $request->parent_id
             ]);
 
             $img = Image::make(public_path('/images/categories/' . $image))->resize('525', '295');
@@ -70,6 +74,8 @@ class CategoriesController extends Controller
         } elseif ($request->image == null) {
             $category->update([
                 'title' => $request->title,
+                'parent_id' => $request->parent_id
+
             ]);
             return redirect()->route('Admin-Categories')->with('success', 'تغییرات با موفقیت اعمال شدند');
         } else

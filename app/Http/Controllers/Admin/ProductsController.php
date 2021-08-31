@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminProductRequest;
-use App\Post;
 use App\Product;
 use App\Tag;
 use App\Trainer;
-use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 
@@ -20,11 +18,10 @@ class ProductsController extends Controller
     public function products()
     {
         $categories = Category::all();
-        $posts = Post::all();
         $products = Product::all();
         $tags = Tag::all();
         $trainers = Trainer::all();
-        return view('Admin.Views.AdminProducts', compact(['categories', 'posts', 'products', 'tags', 'trainers']));
+        return view('Admin.Views.AdminProducts', compact(['categories', 'products', 'tags', 'trainers']));
     }
 
 //    store
@@ -36,7 +33,7 @@ class ProductsController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->extra_description = $request->extra_description;
-        $product->post_id = $request->post_id;
+        $product->category_id = $request->category_id;
         $product->price = $request->price;
         $product->off = $request->off;
         $product->trainer_id = $request->trainer_id;
@@ -75,17 +72,17 @@ class ProductsController extends Controller
     }
 
 //    update
-    public function edit(Product $product, Post $post, Category $category)
+    public function edit(Product $product, Category $category)
     {
         $categories = Category::all();
-        $posts = Post::all();
         $tags = Tag::all();
         $trainers = Trainer::all();
-        return view('Admin.Partials._EditProduct', compact(['product', 'posts', 'categories', 'tags', 'trainers']));
+        return view('Admin.Partials._EditProduct', compact(['product', 'categories', 'tags', 'trainers']));
     }
 
     public function update(AdminProductRequest $request, Product $product)
     {
+
         if ($request->image !== null) {
             $oldImages = $product->image;
             foreach ($oldImages as $oldImage) {
@@ -109,7 +106,7 @@ class ProductsController extends Controller
                 'title' => $request->title,
                 'description' => $request->description,
                 'extra_description' => $request->extra_description,
-                'post_id' => $request->post_id,
+                'category_id' => $request->category_id,
                 'price' => $request->price,
                 'off' => $request->off,
                 'trainer_id' => $request->trainer_id,
@@ -136,7 +133,7 @@ class ProductsController extends Controller
                 'title' => $request->title,
                 'description' => $request->description,
                 'extra_description' => $request->extra_description,
-                'post_id' => $request->post_id,
+                'category_id' => $request->category_id,
                 'price' => $request->price,
                 'off' => $request->off,
                 'trainer_id' => $request->trainer_id,

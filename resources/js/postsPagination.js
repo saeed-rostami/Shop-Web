@@ -4,7 +4,7 @@ $(document).ready(function () {
         console.log('started');
         $.blockUI({
             message: `<img src="http://127.0.0.1:8000/images/25.gif" alt="">`,
-            css: { backgroundColor: 'transparent', color: '#663399', border: 'none' }
+            css: {backgroundColor: 'transparent', color: '#663399', border: 'none'}
         });
     });
     $(document).ajaxStop(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
     function fetch_data(page) {
         let category = window.location.pathname;
         $.ajax({
-            url: category + "/posts?page=" + page,
+            url: 'pagination' + category + '?page=' + page,
         })
             .done(function (data) {
                 $("#data-post").html(data);

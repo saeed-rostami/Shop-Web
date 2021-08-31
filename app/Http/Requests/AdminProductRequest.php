@@ -27,7 +27,7 @@ class AdminProductRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'extra_description' => ['string', 'nullable'],
-            'post_id' => ['required'],
+            'category_id' => ['required'],
             'price' => ['required', 'integer'],
             'trainer_id' => ['required'],
             'year' => ['required'],
