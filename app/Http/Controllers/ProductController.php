@@ -50,11 +50,16 @@ class ProductController extends Controller
 
     public function show(Category $category, $id, Product $product)
     {
-        $boughtProducts = Auth::user()->products()->get();
-
-        foreach ($boughtProducts as $boughtProduct) {
-            array_push($this->productsId, $boughtProduct->id);
+        if (Auth::check()) {
+            $boughtProducts = Auth::user()->products()->get();
+            foreach ($boughtProducts as $boughtProduct) {
+                array_push($this->productsId, $boughtProduct->id);
+            }
         }
+        else
+            $boughtProducts = null;
+
+
 
         $product->increment('views');
         $product = Product::query()->where('slug', $product->slug)->firstOrFail();
